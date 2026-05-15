@@ -1,8 +1,8 @@
 {
-  "heading": "Schedule a conversation.",
+  "heading": "Book a call.",
   "body": "Most engagements start with a thirty-minute conversation. We will tell you whether we are the right fit. If not, we will tell you who is.",
-  "cta_label": "Email Sharla",
-  "cta_link": "mailto:sharla@mcculloughclark.com?subject=Conversation%20request",
+  "cta_label": "Book a call",
+  "cta_link": "https://calendly.com/mcculloughclark/consult",
   "secondary_label": "Or read about AI Operations Audits",
   "secondary_link": "/audit"
 }

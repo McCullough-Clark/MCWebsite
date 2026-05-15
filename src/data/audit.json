@@ -3,8 +3,8 @@
     "caption": "AI Advisory · AI Operations Audit",
     "heading": "A structured assessment of where AI saves real time in your business.",
     "body": "The McCullough Clark AI Operations Audit produces a documented analysis of your operational workflows, the highest-leverage automation candidates, security and compliance considerations, and an implementation plan with cost and time estimates. Three weeks. Fixed fee. No standing retainer required.",
-    "cta_label": "Schedule a conversation",
-    "cta_link": "mailto:sharla@mcculloughclark.com?subject=AI%20Operations%20Audit%20inquiry"
+    "cta_label": "Book a call",
+    "cta_link": "https://calendly.com/mcculloughclark/consult"
   },
   "whoItsFor": {
     "heading": "Who this is for.",
@@ -137,9 +137,9 @@
     ]
   },
   "cta": {
-    "heading": "Schedule a conversation.",
+    "heading": "Book a call.",
     "body": "Tell us about your business and the operational areas you find frustrating. We will tell you whether an audit makes sense for your situation. If not, we will tell you what would.",
-    "cta_label": "Email Sharla",
-    "cta_link": "mailto:sharla@mcculloughclark.com?subject=AI%20Operations%20Audit%20inquiry"
+    "cta_label": "Book a call",
+    "cta_link": "https://calendly.com/mcculloughclark/consult"
   }
 }
