@@ -7,15 +7,15 @@ const data = auditData.pricing;
 <section class="py-16 md:py-24 bg-off-white border-b border-border">
   <div class="max-w-[1200px] mx-auto px-6">
     <h2 class="text-[28px] md:text-[40px] font-medium tracking-[-0.01em] leading-[1.2] reveal mb-12">{data.heading}</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 reveal-stagger">
-      <div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-x-16 md:gap-y-0 reveal-stagger">
+      <div class="md:row-span-3 md:grid md:grid-rows-subgrid">
         <p class="text-[13px] tracking-[0.1em] uppercase text-gray mb-4">{data.fixed_fee.label}</p>
-        <h3 class="text-[48px] font-medium tracking-[-0.02em] leading-[1.1] min-h-[56px] mb-5">{data.fixed_fee.amount}</h3>
+        <h3 class="text-[48px] font-medium tracking-[-0.02em] leading-[1.1] mb-5">{data.fixed_fee.amount}</h3>
         <p class="text-secondary" set:html={md(data.fixed_fee.description)}></p>
       </div>
-      <div>
+      <div class="md:row-span-3 md:grid md:grid-rows-subgrid">
         <p class="text-[13px] tracking-[0.1em] uppercase text-gray mb-4">{data.not_included.label}</p>
-        <h3 class="text-[48px] font-medium tracking-[-0.02em] leading-[1.1] min-h-[56px] mb-5">{data.not_included.amount}</h3>
+        <h3 class="text-[48px] font-medium tracking-[-0.02em] leading-[1.1] mb-5">{data.not_included.amount}</h3>
         <p class="text-secondary" set:html={md(data.not_included.description)}></p>
       </div>
     </div>
