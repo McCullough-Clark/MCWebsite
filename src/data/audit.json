@@ -16,7 +16,7 @@
       },
       {
         "label": "Law Firms",
-        "description": "Client intake, document review, billing and time tracking workflows, and integration with practice management tools. Cybersecurity review included for any data-handling recommendation."
+        "description": "Client intake, document review, billing and time tracking workflows, and integration with practice management tools."
       },
       {
         "label": "Service Businesses",
@@ -37,8 +37,8 @@
         "description": "A ranked list of automation opportunities with estimated time savings per week, implementation complexity, and dependencies on other systems. Each candidate is scored on three dimensions: impact, feasibility, and risk."
       },
       {
-        "title": "3. Security and compliance review.",
-        "description": "For any candidate involving customer data, document handling, or regulated workflows, a security review by our cybersecurity partner is included. They carry their own E&O insurance and operate under NDA. The review covers data flow, storage, retention, and access control. Required for title agencies and law firms. Available for any client."
+        "title": "3. Risk and access review.",
+        "description": "For any candidate involving customer data, document handling, or regulated workflows, we document data flow, storage, retention, and access control as part of the analysis. This baseline review is included in every audit.\n\nFormal compliance work — SOC 2 readiness, HIPAA assessment, penetration testing — falls outside our scope. When the audit identifies a need, we help you find qualified specialists. That work is scoped and billed by them directly."
       },
       {
         "title": "4. Implementation roadmap.",
@@ -86,7 +86,7 @@
       {
         "label": "Week 2",
         "title": "Analysis and security review.",
-        "description": "We work through the operational map, score candidates, and run the security review with our cybersecurity partner for any data-handling workflows. You receive a midpoint check-in to confirm we are scoping correctly."
+        "description": "We work through the operational map, score candidates, and review data-handling workflows. You receive a midpoint check-in to confirm we are scoping correctly."
       },
       {
         "label": "Week 3",
@@ -99,8 +99,8 @@
     "heading": "Pricing.",
     "fixed_fee": {
       "label": "Fixed Fee",
-      "amount": "$7,500",
-      "description": "One-time fee for the complete audit. Payable in two installments: 50% at kickoff, 50% on delivery. Includes the cybersecurity review for regulated industries. Includes thirty days of post-delivery email support."
+      "amount": "Fixed fee",
+      "description": "One-time fixed fee for the complete audit, scoped during the initial call. Payable in two installments: 50% at kickoff, 50% on delivery. Includes thirty days of post-delivery email support."
     },
     "not_included": {
       "label": "What's Not Included",
@@ -112,7 +112,7 @@
     "items": [
       {
         "question": "How is this different from a McKinsey or Big Four AI advisory engagement?",
-        "answer": "Cost, scope, and access. Big Four firms work with enterprise clients on six-figure engagements. McCullough Clark works with five-to-fifty-employee service businesses on a fixed $7,500 fee. You also get direct access to the people doing the work, not a hierarchy of consultants."
+        "answer": "Cost, scope, and access. Big Four firms work with enterprise clients on six-figure engagements. McCullough Clark works with five-to-fifty-employee service businesses on a fixed-fee engagement. You also get direct access to the people doing the work, not a hierarchy of consultants."
       },
       {
         "question": "Do you actually build what you recommend, or is this a hand-off to vendors?",
@@ -128,7 +128,7 @@
       },
       {
         "question": "How do you handle data during the audit?",
-        "answer": "We sign mutual NDAs before kickoff. Data we collect during interviews and documentation review is stored in encrypted folders accessible only to Sharla and the cybersecurity partner (under their own NDA with us). Data is retained for the duration of the engagement plus ninety days, then deleted."
+        "answer": "We sign mutual NDAs before kickoff. Data we collect during interviews and documentation review is stored in encrypted folders accessible only to Sharla. Data is retained for the duration of the engagement plus ninety days, then deleted."
       },
       {
         "question": "Can we start with a smaller engagement to see if we work well together?",
