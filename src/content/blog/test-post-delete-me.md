@@ -8,7 +8,7 @@ featured_image: ""
 featured_image_alt: ""
 tags:
   - test
-status: Draft
+status: Published
 ---
 
 This is a placeholder post created to verify the Decap CMS blog workflow. Once you have confirmed that:
