@@ -13,29 +13,31 @@
   --font-sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-html {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth;
-}
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
 
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-}
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+  }
 
-body {
-  font-family: var(--font-sans);
-  color: var(--color-body);
-  line-height: 1.6;
-  font-size: 16px;
-  background-color: var(--color-white);
-}
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-body);
+    line-height: 1.6;
+    font-size: 16px;
+    background-color: var(--color-white);
+  }
 
-h1, h2, h3, h4, h5, h6 {
-  text-decoration: none;
+  h1, h2, h3, h4, h5, h6 {
+    text-decoration: none;
+  }
 }
 
 /* Button component — reused across many pages */
