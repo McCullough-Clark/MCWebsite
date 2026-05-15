@@ -99,11 +99,12 @@
     "heading": "Pricing.",
     "fixed_fee": {
       "label": "Fixed Fee",
-      "amount": "Fixed fee",
+      "amount": "One Flat Rate",
       "description": "One-time fixed fee for the complete audit, scoped during the initial call. Payable in two installments: 50% at kickoff, 50% on delivery. Includes thirty days of post-delivery email support."
     },
     "not_included": {
       "label": "What's Not Included",
+      "amount": "Scoped Separately.",
       "description": "Implementation work, if you choose to engage us for it, is scoped and priced separately under a new engagement letter. Standing retainers and ongoing Done-With-You work are available but not bundled into the audit."
     }
   },

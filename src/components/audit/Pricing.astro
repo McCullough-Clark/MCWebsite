@@ -15,7 +15,8 @@ const data = auditData.pricing;
       </div>
       <div>
         <p class="text-[13px] tracking-[0.1em] uppercase text-gray mb-4">{data.not_included.label}</p>
-        <p class="text-secondary mt-9" set:html={md(data.not_included.description)}></p>
+        <h3 class="text-[48px] font-medium tracking-[-0.02em] mb-5">{data.not_included.amount}</h3>
+        <p class="text-secondary" set:html={md(data.not_included.description)}></p>
       </div>
     </div>
   </div>
