@@ -9,9 +9,10 @@ interface Props {
   ogTitle: string
   ogDescription: string
   ogUrl: string
+  robots?: string
 }
 
-const { title, description, ogTitle, ogDescription, ogUrl } = Astro.props
+const { title, description, ogTitle, ogDescription, ogUrl, robots } = Astro.props
 ---
 
 <!doctype html>
@@ -22,6 +23,7 @@ const { title, description, ogTitle, ogDescription, ogUrl } = Astro.props
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    {robots && <meta name="robots" content={robots} />}
     <meta property="og:title" content={ogTitle} />
     <meta property="og:description" content={ogDescription} />
     <meta property="og:image" content="/og-image.png" />

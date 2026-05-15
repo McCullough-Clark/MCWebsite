@@ -3,48 +3,33 @@ import aboutData from '../data/homepage-about.json';
 import { md } from '../lib/markdown';
 ---
 
-<section id="about" class="section-padding" style="border-bottom: 1px solid #E5E5E5;">
-  <div class="container">
-    <h2 class="text-h2 reveal" style="margin-bottom: 24px;">{aboutData.heading}</h2>
-    <p class="text-body-large reveal" style="color: #444444; margin-bottom: 56px; max-width: 700px;" set:html={md(aboutData.lede)}></p>
-    <div class="founders-grid reveal-stagger">
+<section id="about" class="py-16 md:py-24 border-b border-border">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <h2 class="text-[28px] md:text-[40px] font-medium tracking-[-0.01em] leading-[1.2] reveal mb-6">{aboutData.heading}</h2>
+    <p class="text-xl leading-[1.5] reveal text-secondary mb-14 max-w-[700px]" set:html={md(aboutData.lede)}></p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 reveal-stagger">
       <div>
         {aboutData.founder1.photo && (
-          <img src={aboutData.founder1.photo} alt={aboutData.founder1.name} style="width: 100%; margin-bottom: 20px;" />
+          <img src={aboutData.founder1.photo} alt={aboutData.founder1.name} class="w-full mb-5" />
         )}
         {!aboutData.founder1.photo && (
           <!-- Photo slot — insert when available -->
         )}
-        <h3 class="text-h3" style="margin-bottom: 8px;">{aboutData.founder1.name}</h3>
-        <p class="text-caption" style="color: #666666; margin-bottom: 20px;">{aboutData.founder1.title}</p>
-        <p style="color: #444444;" set:html={md(aboutData.founder1.bio)}></p>
+        <h3 class="text-2xl font-medium leading-[1.3] mb-2">{aboutData.founder1.name}</h3>
+        <p class="text-[13px] tracking-[0.1em] uppercase text-gray mb-5">{aboutData.founder1.title}</p>
+        <p class="text-secondary" set:html={md(aboutData.founder1.bio)}></p>
       </div>
       <div>
         {aboutData.founder2.photo && (
-          <img src={aboutData.founder2.photo} alt={aboutData.founder2.name} style="width: 100%; margin-bottom: 20px;" />
+          <img src={aboutData.founder2.photo} alt={aboutData.founder2.name} class="w-full mb-5" />
         )}
         {!aboutData.founder2.photo && (
           <!-- Photo slot — insert when available -->
         )}
-        <h3 class="text-h3" style="margin-bottom: 8px;">{aboutData.founder2.name}</h3>
-        <p class="text-caption" style="color: #666666; margin-bottom: 20px;">{aboutData.founder2.title}</p>
-        <p style="color: #444444;" set:html={md(aboutData.founder2.bio)}></p>
+        <h3 class="text-2xl font-medium leading-[1.3] mb-2">{aboutData.founder2.name}</h3>
+        <p class="text-[13px] tracking-[0.1em] uppercase text-gray mb-5">{aboutData.founder2.title}</p>
+        <p class="text-secondary" set:html={md(aboutData.founder2.bio)}></p>
       </div>
     </div>
   </div>
 </section>
-
-<style>
-  .founders-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 64px;
-  }
-
-  @media (max-width: 767px) {
-    .founders-grid {
-      grid-template-columns: 1fr;
-      gap: 48px;
-    }
-  }
-</style>

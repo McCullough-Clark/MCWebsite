@@ -3,23 +3,17 @@ import ctaData from '../data/homepage-cta.json';
 import { md } from '../lib/markdown';
 ---
 
-<section class="section-padding">
-  <div class="container">
-    <div class="prose-width reveal">
-      <h2 class="text-h2" style="margin-bottom: 16px;">{ctaData.heading}</h2>
-      <p class="text-body-large" style="color: #444444; margin-bottom: 40px;" set:html={md(ctaData.body)}></p>
+<section class="py-16 md:py-24">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="max-w-[720px] reveal">
+      <h2 class="text-[28px] md:text-[40px] font-medium tracking-[-0.01em] leading-[1.2] mb-4">{ctaData.heading}</h2>
+      <p class="text-xl leading-[1.5] text-secondary mb-10" set:html={md(ctaData.body)}></p>
       <a
         href={ctaData.cta_link}
-        class="btn-primary"
-        style="margin-bottom: 20px;"
+        class="btn-primary mb-5"
       >
         {ctaData.cta_label}
       </a>
-      <p style="margin-top: 20px;">
-        <a href={ctaData.secondary_link} style="color: #666666; text-decoration: underline; text-underline-offset: 3px; font-size: 14px;">
-          {ctaData.secondary_label}
-        </a>
-      </p>
     </div>
   </div>
 </section>

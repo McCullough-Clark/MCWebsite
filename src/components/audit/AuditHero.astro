@@ -4,12 +4,12 @@ import { md } from '../../lib/markdown';
 const hero = auditData.hero;
 ---
 
-<section class="section-padding" style="border-bottom: 1px solid #E5E5E5;">
-  <div class="container">
-    <div class="prose-width reveal">
-      <p class="text-caption" style="color: #666666; margin-bottom: 24px;">{hero.caption}</p>
-      <h1 class="text-display" style="margin-bottom: 24px;">{hero.heading}</h1>
-      <p class="text-body-large" style="color: #444444; margin-bottom: 40px;" set:html={md(hero.body)}></p>
+<section class="py-16 md:py-24 border-b border-border">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="max-w-[720px] reveal">
+      <p class="text-[13px] tracking-[0.1em] uppercase text-gray mb-6">{hero.caption}</p>
+      <h1 class="text-[40px] md:text-[64px] font-medium tracking-[-0.02em] leading-[1.1] mb-6">{hero.heading}</h1>
+      <p class="text-xl leading-[1.5] text-secondary mb-10" set:html={md(hero.body)}></p>
       <a
         href={hero.cta_link}
         class="btn-primary"

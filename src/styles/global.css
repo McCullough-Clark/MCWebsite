@@ -7,133 +7,50 @@
   --color-off-white: #FAFAFA;
   --color-body: #1a1a1a;
   --color-border: #E5E5E5;
+  --color-secondary: #444444;
+  --color-muted: #999999;
 
   --font-sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-html {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth;
-}
-
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: var(--font-sans);
-  color: var(--color-body);
-  line-height: 1.6;
-  font-size: 16px;
-  background-color: var(--color-white);
-}
-
-/* Type scale */
-.text-display {
-  font-size: 64px;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-}
-
-.text-h2 {
-  font-size: 40px;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  line-height: 1.2;
-}
-
-.text-h3 {
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 1.3;
-  text-decoration: none;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  text-decoration: none;
-}
-
-.text-body-large {
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 1.5;
-}
-
-.text-caption {
-  font-size: 13px;
-  font-weight: 400;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.text-service-subtitle {
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-}
-
-/* Mobile type overrides */
-@media (max-width: 767px) {
-  .text-display {
-    font-size: 40px;
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
   }
-  .text-h2 {
-    font-size: 28px;
+
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-body);
+    line-height: 1.6;
+    font-size: 16px;
+    background-color: var(--color-white);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    text-decoration: none;
   }
 }
 
-/* Button style */
+/* Button component — reused across many pages */
 .btn-primary {
-  display: inline-block;
-  background-color: var(--color-black);
-  color: var(--color-white);
-  padding: 14px 28px;
-  border-radius: 4px;
-  font-size: 15px;
-  font-weight: 500;
-  text-decoration: none;
+  @apply inline-block bg-black text-white py-3.5 px-7 rounded-[4px] text-[15px] font-medium no-underline min-h-11;
   transition: opacity 0.15s ease;
-  min-height: 44px;
 }
 
 .btn-primary:hover {
   opacity: 0.85;
 }
 
-/* Section spacing */
-.section-padding {
-  padding-top: 96px;
-  padding-bottom: 96px;
-}
-
-@media (max-width: 767px) {
-  .section-padding {
-    padding-top: 64px;
-    padding-bottom: 64px;
-  }
-}
-
-/* Container */
-.container {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 24px;
-  padding-right: 24px;
-}
-
-/* Prose width */
-.prose-width {
-  max-width: 720px;
-}
-
-/* Details/FAQ styling */
+/* Details/FAQ — pseudo-elements require CSS */
 details summary {
   cursor: pointer;
   list-style: none;
@@ -156,7 +73,7 @@ details[open] summary::before {
   content: "\2212";
 }
 
-/* Scroll reveal animations */
+/* Scroll reveal — JS-toggled state */
 .reveal {
   opacity: 0;
   transform: translateY(20px);
@@ -168,7 +85,6 @@ details[open] summary::before {
   transform: translateY(0);
 }
 
-/* Staggered children within a revealed section */
 .reveal-stagger > * {
   opacity: 0;
   transform: translateY(16px);
@@ -184,7 +100,6 @@ details[open] summary::before {
 .reveal-stagger.visible > *:nth-child(2) { transition-delay: 80ms; }
 .reveal-stagger.visible > *:nth-child(3) { transition-delay: 160ms; }
 
-/* Respect reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
   .reveal,
   .reveal-stagger > * {
@@ -194,7 +109,7 @@ details[open] summary::before {
   }
 }
 
-/* Blog content typography */
+/* Blog content — nested selectors for markdown-generated HTML */
 .blog-content p {
   margin-bottom: 1.5em;
   color: #444444;
