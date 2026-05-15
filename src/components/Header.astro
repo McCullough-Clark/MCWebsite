@@ -22,7 +22,7 @@ import metadata from '../data/metadata.json';
     <div class="header-right">
       <a href={metadata.phone_link} class="header-phone">{metadata.phone}</a>
       <a
-        href={`mailto:${metadata.email}?subject=${metadata.email_subject}`}
+        href={metadata.cta_link}
         class="btn-primary"
       >
         {metadata.cta_label}
@@ -50,7 +50,7 @@ import metadata from '../data/metadata.json';
       <a href="/#about">About</a>
       <a href={metadata.phone_link} class="mobile-phone">{metadata.phone}</a>
       <a
-        href={`mailto:${metadata.email}?subject=${metadata.email_subject}`}
+        href={metadata.cta_link}
         class="btn-primary"
         style="text-align: center;"
       >
