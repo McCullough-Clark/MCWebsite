@@ -317,6 +317,7 @@ collections:
                 widget: "object"
                 fields:
                   - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Amount", name: "amount", widget: "string", hint: "Large heading text for this column" }
                   - { label: "Description", name: "description", widget: "markdown", buttons: ["bold", "italic", "link"], editor_components: [] }
 
           # FAQ
