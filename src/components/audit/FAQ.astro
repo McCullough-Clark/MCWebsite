@@ -4,18 +4,18 @@ import { md } from '../../lib/markdown';
 const data = auditData.faq;
 ---
 
-<section class="section-padding" style="border-bottom: 1px solid #E5E5E5;">
-  <div class="container">
-    <div class="prose-width reveal">
-      <h2 class="text-h2" style="margin-bottom: 48px;">{data.heading}</h2>
+<section class="py-16 md:py-24 border-b border-border">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="max-w-[720px] reveal">
+      <h2 class="text-[28px] md:text-[40px] font-medium tracking-[-0.01em] leading-[1.2] mb-12">{data.heading}</h2>
 
-      <div style="display: flex; flex-direction: column; gap: 0;">
+      <div class="flex flex-col">
         {data.items.map((item: any, i: number) => (
-          <details style={`border-top: 1px solid #E5E5E5;${i === data.items.length - 1 ? ' border-bottom: 1px solid #E5E5E5;' : ''} padding: 24px 0;`}>
-            <summary style="font-size: 16px; font-weight: 500; padding-left: 28px;">
+          <details class={`border-t border-border py-6${i === data.items.length - 1 ? ' border-b' : ''}`}>
+            <summary class="text-base font-medium pl-7">
               {item.question}
             </summary>
-            <p style="color: #444444; margin-top: 16px; padding-left: 28px;" set:html={md(item.answer)}></p>
+            <p class="text-secondary mt-4 pl-7" set:html={md(item.answer)}></p>
           </details>
         ))}
       </div>

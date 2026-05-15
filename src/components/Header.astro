@@ -2,24 +2,25 @@
 import metadata from '../data/metadata.json';
 ---
 
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="/" aria-label="McCullough Clark home" class="header-logo">
+<header class="border-b border-border">
+  <div class="max-w-[1200px] mx-auto px-6 flex items-center justify-between py-5 gap-8">
+    <a href="/" aria-label="McCullough Clark home">
       <img
         src="/logos/mc_logo_header_light.png"
         srcset="/logos/mc_logo_header_light.png 1x, /logos/mc_logo_header_light_2x.png 2x"
         alt="McCullough Clark"
+        class="h-14 max-md:h-11 w-auto block"
       />
     </a>
 
-    <nav class="header-nav" id="header-nav">
-      <a href="/#services">Services</a>
-      <a href="/blog">Articles</a>
-      <a href="/#about">About</a>
+    <nav class="hidden md:flex items-center gap-8" id="header-nav">
+      <a href="/#services" class="text-sm text-gray no-underline transition-colors duration-150 hover:text-black">Services</a>
+      <a href="/blog" class="text-sm text-gray no-underline transition-colors duration-150 hover:text-black">Articles</a>
+      <a href="/#about" class="text-sm text-gray no-underline transition-colors duration-150 hover:text-black">About</a>
     </nav>
 
-    <div class="header-right">
-      <a href={metadata.phone_link} class="header-phone">{metadata.phone}</a>
+    <div class="hidden md:flex items-center gap-6">
+      <a href={metadata.phone_link} class="text-sm text-body no-underline whitespace-nowrap">{metadata.phone}</a>
       <a
         href={metadata.cta_link}
         class="btn-primary"
@@ -29,28 +30,27 @@ import metadata from '../data/metadata.json';
     </div>
 
     <button
-      class="hamburger"
+      class="hamburger flex md:hidden flex-col justify-center gap-[5px] bg-transparent border-none cursor-pointer p-2 min-w-11 min-h-11"
       id="hamburger"
       aria-label="Open menu"
       aria-expanded="false"
       type="button"
     >
-      <span></span>
-      <span></span>
-      <span></span>
+      <span class="block w-[22px] h-0.5 bg-body transition-[transform,opacity] duration-200"></span>
+      <span class="block w-[22px] h-0.5 bg-body transition-[transform,opacity] duration-200"></span>
+      <span class="block w-[22px] h-0.5 bg-body transition-[transform,opacity] duration-200"></span>
     </button>
   </div>
 
-  <div class="mobile-menu" id="mobile-menu">
-    <nav class="mobile-nav">
-      <a href="/#services">Services</a>
-      <a href="/blog">Articles</a>
-      <a href="/#about">About</a>
-      <a href={metadata.phone_link} class="mobile-phone">{metadata.phone}</a>
+  <div class="mobile-menu block md:hidden overflow-hidden max-h-0 transition-[max-height] duration-300 border-t border-border" id="mobile-menu">
+    <nav class="flex flex-col p-6 gap-5">
+      <a href="/#services" class="text-base text-gray no-underline hover:text-black">Services</a>
+      <a href="/blog" class="text-base text-gray no-underline hover:text-black">Articles</a>
+      <a href="/#about" class="text-base text-gray no-underline hover:text-black">About</a>
+      <a href={metadata.phone_link} class="text-base text-body no-underline">{metadata.phone}</a>
       <a
         href={metadata.cta_link}
-        class="btn-primary"
-        style="text-align: center;"
+        class="btn-primary text-center"
       >
         {metadata.cta_label}
       </a>
@@ -80,76 +80,7 @@ import metadata from '../data/metadata.json';
 </script>
 
 <style>
-  .site-header {
-    border-bottom: 1px solid #E5E5E5;
-  }
-
-  .header-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    gap: 32px;
-  }
-
-  .header-logo img {
-    height: 56px;
-    width: auto;
-    display: block;
-  }
-
-  .header-nav {
-    display: flex;
-    align-items: center;
-    gap: 32px;
-  }
-
-  .header-nav a {
-    font-size: 14px;
-    color: #666666;
-    text-decoration: none;
-    transition: color 0.15s ease;
-  }
-
-  .header-nav a:hover {
-    color: #000000;
-  }
-
-  .header-right {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-  }
-
-  .header-phone {
-    font-size: 14px;
-    color: #1a1a1a;
-    text-decoration: none;
-    white-space: nowrap;
-  }
-
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 8px;
-    min-width: 44px;
-    min-height: 44px;
-  }
-
-  .hamburger span {
-    display: block;
-    width: 22px;
-    height: 2px;
-    background-color: #1a1a1a;
-    transition: transform 0.2s ease, opacity 0.2s ease;
-  }
-
+  /* Hamburger open/close animation — JS-toggled state */
   .hamburger.open span:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
   }
@@ -162,56 +93,8 @@ import metadata from '../data/metadata.json';
     transform: translateY(-7px) rotate(-45deg);
   }
 
-  .mobile-menu {
-    display: none;
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.3s ease;
-    border-top: 1px solid #E5E5E5;
-  }
-
+  /* Mobile menu slide — JS-toggled state */
   .mobile-menu.open {
     max-height: 400px;
-  }
-
-  .mobile-nav {
-    display: flex;
-    flex-direction: column;
-    padding: 24px;
-    gap: 20px;
-  }
-
-  .mobile-nav a {
-    font-size: 16px;
-    color: #666666;
-    text-decoration: none;
-  }
-
-  .mobile-nav a:hover {
-    color: #000000;
-  }
-
-  .mobile-phone {
-    font-size: 16px;
-    color: #1a1a1a !important;
-  }
-
-  @media (max-width: 767px) {
-    .header-nav,
-    .header-right {
-      display: none;
-    }
-
-    .hamburger {
-      display: flex;
-    }
-
-    .mobile-menu {
-      display: block;
-    }
-
-    .header-logo img {
-      height: 44px;
-    }
   }
 </style>

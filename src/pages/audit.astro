@@ -25,19 +25,19 @@ const cta = auditData.cta;
   <WhatsIncluded />
 
   <!-- Section 4: Sample deliverables -->
-  <section class="section-padding" style="background-color: #FAFAFA; border-bottom: 1px solid #E5E5E5;">
-    <div class="container">
-      <div class="prose-width reveal" style="margin-bottom: 48px;">
-        <h2 class="text-h2" style="margin-bottom: 16px;">{samples.heading}</h2>
-        <p style="color: #444444;" set:html={md(samples.intro)}></p>
+  <section class="py-16 md:py-24 bg-off-white border-b border-border">
+    <div class="max-w-[1200px] mx-auto px-6">
+      <div class="max-w-[720px] reveal mb-12">
+        <h2 class="text-[28px] md:text-[40px] font-medium tracking-[-0.01em] leading-[1.2] mb-4">{samples.heading}</h2>
+        <p class="text-secondary" set:html={md(samples.intro)}></p>
       </div>
-      <div class="samples-grid reveal-stagger">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 reveal-stagger">
         {samples.items.map((item: any) => (
           <div>
-            <p class="text-caption" style="color: #666666; margin-bottom: 16px;">{item.label}</p>
-            <h3 class="text-h3" style="margin-bottom: 12px;">{item.title}</h3>
-            <p style="color: #444444; margin-bottom: 20px;" set:html={md(item.description)}></p>
-            <a href={item.link_target} style="color: #666666; text-decoration: underline; text-underline-offset: 3px; font-size: 14px;">
+            <p class="text-[13px] tracking-[0.1em] uppercase text-gray mb-4">{item.label}</p>
+            <h3 class="text-2xl font-medium leading-[1.3] mb-3">{item.title}</h3>
+            <p class="text-secondary mb-5" set:html={md(item.description)}></p>
+            <a href={item.link_target} class="text-gray underline underline-offset-[3px] text-sm">
               {item.link_label}
             </a>
           </div>
@@ -51,11 +51,11 @@ const cta = auditData.cta;
   <FAQ />
 
   <!-- Final CTA -->
-  <section class="section-padding">
-    <div class="container">
-      <div class="prose-width reveal">
-        <h2 class="text-h2" style="margin-bottom: 16px;">{cta.heading}</h2>
-        <p class="text-body-large" style="color: #444444; margin-bottom: 40px;" set:html={md(cta.body)}></p>
+  <section class="py-16 md:py-24">
+    <div class="max-w-[1200px] mx-auto px-6">
+      <div class="max-w-[720px] reveal">
+        <h2 class="text-[28px] md:text-[40px] font-medium tracking-[-0.01em] leading-[1.2] mb-4">{cta.heading}</h2>
+        <p class="text-xl leading-[1.5] text-secondary mb-10" set:html={md(cta.body)}></p>
         <a
           href={cta.cta_link}
           class="btn-primary"
@@ -66,18 +66,3 @@ const cta = auditData.cta;
     </div>
   </section>
 </BaseLayout>
-
-<style>
-  .samples-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 64px;
-  }
-
-  @media (max-width: 767px) {
-    .samples-grid {
-      grid-template-columns: 1fr;
-      gap: 48px;
-    }
-  }
-</style>

@@ -4,34 +4,19 @@ import { md } from '../../lib/markdown';
 const data = auditData.pricing;
 ---
 
-<section class="section-padding" style="background-color: #FAFAFA; border-bottom: 1px solid #E5E5E5;">
-  <div class="container">
-    <h2 class="text-h2 reveal" style="margin-bottom: 48px;">{data.heading}</h2>
-    <div class="pricing-grid reveal-stagger">
+<section class="py-16 md:py-24 bg-off-white border-b border-border">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <h2 class="text-[28px] md:text-[40px] font-medium tracking-[-0.01em] leading-[1.2] reveal mb-12">{data.heading}</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 reveal-stagger">
       <div>
-        <p class="text-caption" style="color: #666666; margin-bottom: 16px;">{data.fixed_fee.label}</p>
-        <h3 style="font-size: 48px; font-weight: 500; letter-spacing: -0.02em; margin-bottom: 20px;">{data.fixed_fee.amount}</h3>
-        <p style="color: #444444;" set:html={md(data.fixed_fee.description)}></p>
+        <p class="text-[13px] tracking-[0.1em] uppercase text-gray mb-4">{data.fixed_fee.label}</p>
+        <h3 class="text-[48px] font-medium tracking-[-0.02em] mb-5">{data.fixed_fee.amount}</h3>
+        <p class="text-secondary" set:html={md(data.fixed_fee.description)}></p>
       </div>
       <div>
-        <p class="text-caption" style="color: #666666; margin-bottom: 16px;">{data.not_included.label}</p>
-        <p style="color: #444444; margin-top: 36px;" set:html={md(data.not_included.description)}></p>
+        <p class="text-[13px] tracking-[0.1em] uppercase text-gray mb-4">{data.not_included.label}</p>
+        <p class="text-secondary mt-9" set:html={md(data.not_included.description)}></p>
       </div>
     </div>
   </div>
 </section>
-
-<style>
-  .pricing-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 64px;
-  }
-
-  @media (max-width: 767px) {
-    .pricing-grid {
-      grid-template-columns: 1fr;
-      gap: 48px;
-    }
-  }
-</style>

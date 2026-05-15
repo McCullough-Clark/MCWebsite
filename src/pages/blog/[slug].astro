@@ -24,20 +24,20 @@ const ogImage = post.data.featured_image || '/og-image.png';
   ogDescription={post.data.summary}
   ogUrl={`https://mcculloughclark.com/blog/${post.id}`}
 >
-  <section class="section-padding" style="border-bottom: 1px solid #E5E5E5;">
-    <div class="container">
-      <div class="prose-width reveal">
-        <p class="text-caption" style="color: #666666; margin-bottom: 16px;">
+  <section class="py-16 md:py-24 border-b border-border">
+    <div class="max-w-[1200px] mx-auto px-6">
+      <div class="max-w-[720px] reveal">
+        <p class="text-[13px] tracking-[0.1em] uppercase text-gray mb-4">
           {post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
           {post.data.author && ` · ${post.data.author}`}
         </p>
-        <h1 class="text-display" style="margin-bottom: 32px;">{post.data.title}</h1>
+        <h1 class="text-[40px] md:text-[64px] font-medium tracking-[-0.02em] leading-[1.1] mb-8">{post.data.title}</h1>
 
         {post.data.featured_image && (
           <img
             src={post.data.featured_image}
             alt={post.data.featured_image_alt || ''}
-            style="width: 100%; margin-bottom: 40px;"
+            class="w-full mb-10"
           />
         )}
 
@@ -45,11 +45,11 @@ const ogImage = post.data.featured_image || '/og-image.png';
           <Content />
         </div>
 
-        <div style="border-top: 1px solid #E5E5E5; margin-top: 56px; padding-top: 32px;">
-          <p style="color: #444444; margin-bottom: 16px;">
+        <div class="border-t border-border mt-14 pt-8">
+          <p class="text-secondary mb-4">
             Written by Sharla Clark, EA, MBA — founder of McCullough Clark.
           </p>
-          <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center;">
+          <div class="flex gap-4 flex-wrap items-center">
             <a
               href="https://calendly.com/mcculloughclark/consult"
               class="btn-primary"
@@ -58,7 +58,7 @@ const ogImage = post.data.featured_image || '/og-image.png';
             </a>
             <a
               href="https://proadvisor.intuit.com/app/accountant/search?searchId=sharla-clark"
-              style="color: #666666; text-decoration: underline; text-underline-offset: 3px; font-size: 14px;"
+              class="text-gray underline underline-offset-[3px] text-sm"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -67,8 +67,8 @@ const ogImage = post.data.featured_image || '/og-image.png';
           </div>
         </div>
 
-        <p style="margin-top: 40px;">
-          <a href="/blog" style="color: #666666; text-decoration: underline; text-underline-offset: 3px; font-size: 14px;">
+        <p class="mt-10">
+          <a href="/blog" class="text-gray underline underline-offset-[3px] text-sm">
             ← Back to articles
           </a>
         </p>
