@@ -1,8 +1,9 @@
 ---
-title: "Test post — delete me"
+title: Test post — delete me
 date: 2026-05-14
-author: "Sharla Clark"
-summary: "This is a test post to verify the blog creation flow works end-to-end. Delete it after confirming everything works."
+author: Sharla Clark
+summary: This is a beautiful post to verify the blog creation flow works
+  end-to-end. Delete it after confirming everything works.
 featured_image: ""
 featured_image_alt: ""
 tags:
