@@ -1,0 +1,219 @@
+---
+import metadata from '../data/metadata.json';
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" aria-label="McCullough Clark home" class="header-logo">
+      <img
+        src="/logos/mc_logo_header_light.png"
+        srcset="/logos/mc_logo_header_light.png 1x, /logos/mc_logo_header_light_2x.png 2x"
+        alt="McCullough Clark"
+      />
+    </a>
+
+    <nav class="header-nav" id="header-nav">
+      <a href="/#services">Services</a>
+      <a href="/blog">Articles</a>
+      <a href="/audit">Audit</a>
+      <a href="/#about">About</a>
+    </nav>
+
+    <div class="header-right">
+      <a href={metadata.phone_link} class="header-phone">{metadata.phone}</a>
+      <a
+        href={`mailto:${metadata.email}?subject=${metadata.email_subject}`}
+        class="btn-primary"
+      >
+        {metadata.cta_label}
+      </a>
+    </div>
+
+    <button
+      class="hamburger"
+      id="hamburger"
+      aria-label="Open menu"
+      aria-expanded="false"
+      type="button"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <nav class="mobile-nav">
+      <a href="/#services">Services</a>
+      <a href="/blog">Articles</a>
+      <a href="/audit">Audit</a>
+      <a href="/#about">About</a>
+      <a href={metadata.phone_link} class="mobile-phone">{metadata.phone}</a>
+      <a
+        href={`mailto:${metadata.email}?subject=${metadata.email_subject}`}
+        class="btn-primary"
+        style="text-align: center;"
+      >
+        {metadata.cta_label}
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function () {
+    var btn = document.getElementById('hamburger');
+    var menu = document.getElementById('mobile-menu');
+    if (!btn || !menu) return;
+    btn.addEventListener('click', function () {
+      var open = menu.classList.toggle('open');
+      btn.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', String(open));
+    });
+    // Close menu when a link is clicked
+    menu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        menu.classList.remove('open');
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  });
+</script>
+
+<style>
+  .site-header {
+    border-bottom: 1px solid #E5E5E5;
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    gap: 32px;
+  }
+
+  .header-logo img {
+    height: 56px;
+    width: auto;
+    display: block;
+  }
+
+  .header-nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .header-nav a {
+    font-size: 14px;
+    color: #666666;
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .header-nav a:hover {
+    color: #000000;
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .header-phone {
+    font-size: 14px;
+    color: #1a1a1a;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: #1a1a1a;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .hamburger.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .hamburger.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .mobile-menu {
+    display: none;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+    border-top: 1px solid #E5E5E5;
+  }
+
+  .mobile-menu.open {
+    max-height: 400px;
+  }
+
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    gap: 20px;
+  }
+
+  .mobile-nav a {
+    font-size: 16px;
+    color: #666666;
+    text-decoration: none;
+  }
+
+  .mobile-nav a:hover {
+    color: #000000;
+  }
+
+  .mobile-phone {
+    font-size: 16px;
+    color: #1a1a1a !important;
+  }
+
+  @media (max-width: 767px) {
+    .header-nav,
+    .header-right {
+      display: none;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+
+    .mobile-menu {
+      display: block;
+    }
+
+    .header-logo img {
+      height: 44px;
+    }
+  }
+</style>

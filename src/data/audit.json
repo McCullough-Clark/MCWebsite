@@ -1,0 +1,145 @@
+{
+  "hero": {
+    "caption": "AI Advisory · AI Operations Audit",
+    "heading": "A structured assessment of where AI saves real time in your business.",
+    "body": "The McCullough Clark AI Operations Audit produces a documented analysis of your operational workflows, the highest-leverage automation candidates, security and compliance considerations, and an implementation plan with cost and time estimates. Three weeks. Fixed fee. No standing retainer required.",
+    "cta_label": "Schedule a conversation",
+    "cta_link": "mailto:sharla@mcculloughclark.com?subject=AI%20Operations%20Audit%20inquiry"
+  },
+  "whoItsFor": {
+    "heading": "Who this is for.",
+    "intro": "AI Operations Audits work best for service businesses with five to fifty employees, established workflows, and at least one operational area where staff time is the bottleneck. We currently focus on:",
+    "segments": [
+      {
+        "label": "Title Agencies",
+        "description": "Document coordination, three-way escrow reconciliation, client communication workflows, and integration with software like Qualia or RamQuest."
+      },
+      {
+        "label": "Law Firms",
+        "description": "Client intake, document review, billing and time tracking workflows, and integration with practice management tools. Cybersecurity review included for any data-handling recommendation."
+      },
+      {
+        "label": "Service Businesses",
+        "description": "Construction firms, wellness practices, professional services. Workflows that involve scheduling, document handling, multi-party communication, or repetitive data work."
+      }
+    ]
+  },
+  "whatsIncluded": {
+    "heading": "What you receive.",
+    "intro": "The deliverable is a written report, not a slide deck or a PowerPoint. It is structured to be the document you reference when you decide what to build first.",
+    "items": [
+      {
+        "title": "1. Operational map.",
+        "description": "A documented walkthrough of the workflows we assess, including current time spent per role, tools currently used, and pain points identified through interviews with you and key staff."
+      },
+      {
+        "title": "2. Automation candidates.",
+        "description": "A ranked list of automation opportunities with estimated time savings per week, implementation complexity, and dependencies on other systems. Each candidate is scored on three dimensions: impact, feasibility, and risk."
+      },
+      {
+        "title": "3. Security and compliance review.",
+        "description": "For any candidate involving customer data, document handling, or regulated workflows, a security review by our cybersecurity partner is included. They carry their own E&O insurance and operate under NDA. The review covers data flow, storage, retention, and access control. Required for title agencies and law firms. Available for any client."
+      },
+      {
+        "title": "4. Implementation roadmap.",
+        "description": "A phased plan with sequence, dependencies, estimated build time, and estimated cost for each phase. Includes a decision framework for what to build in-house versus contract out versus license."
+      },
+      {
+        "title": "5. Tool stack recommendations.",
+        "description": "Specific tools recommended for each automation candidate, with cost estimates and rationale. We are not affiliated with vendors. Recommendations are based on what works for your size and stack."
+      },
+      {
+        "title": "6. Pricing for build engagements.",
+        "description": "If we are a fit to build any of the recommendations, the audit includes a separate scoped engagement letter with fixed pricing. You are under no obligation to engage us for build work."
+      }
+    ]
+  },
+  "samples": {
+    "heading": "Sample deliverables.",
+    "intro": "Two sample audits, both built for businesses we own and operate, are available for review.",
+    "items": [
+      {
+        "label": "Sample 1",
+        "title": "Bookkeeping Practice Audit",
+        "description": "Self-audit of the McCullough Clark Bookkeeping service line. Identifies automation opportunities in client onboarding, month-end close, and document collection workflows.",
+        "link_label": "View sample PDF",
+        "link_target": "/pdfs/bookkeeping-practice-audit.pdf"
+      },
+      {
+        "label": "Sample 2",
+        "title": "Minerva Platform Audit",
+        "description": "Audit of the Minerva quote and booking platform, a real software product we built for a service business. Demonstrates how we approach audits of technology-enabled operations.",
+        "link_label": "View sample PDF",
+        "link_target": "/pdfs/minerva-platform-audit.pdf"
+      }
+    ]
+  },
+  "process": {
+    "heading": "The engagement.",
+    "subheading": "Three weeks from kickoff to deliverable.",
+    "weeks": [
+      {
+        "label": "Week 1",
+        "title": "Discovery and interviews.",
+        "description": "Initial kickoff call. Interviews with you and three to five key staff members. Documentation review. We listen and ask questions. Total time commitment from your team: approximately four hours."
+      },
+      {
+        "label": "Week 2",
+        "title": "Analysis and security review.",
+        "description": "We work through the operational map, score candidates, and run the security review with our cybersecurity partner for any data-handling workflows. You receive a midpoint check-in to confirm we are scoping correctly."
+      },
+      {
+        "label": "Week 3",
+        "title": "Delivery and walkthrough.",
+        "description": "Written deliverable provided in PDF. Ninety-minute walkthrough call. Thirty days of follow-up email support for clarifying questions."
+      }
+    ]
+  },
+  "pricing": {
+    "heading": "Pricing.",
+    "fixed_fee": {
+      "label": "Fixed Fee",
+      "amount": "$7,500",
+      "description": "One-time fee for the complete audit. Payable in two installments: 50% at kickoff, 50% on delivery. Includes the cybersecurity review for regulated industries. Includes thirty days of post-delivery email support."
+    },
+    "not_included": {
+      "label": "What's Not Included",
+      "description": "Implementation work, if you choose to engage us for it, is scoped and priced separately under a new engagement letter. Standing retainers and ongoing Done-With-You work are available but not bundled into the audit."
+    }
+  },
+  "faq": {
+    "heading": "Common questions.",
+    "items": [
+      {
+        "question": "How is this different from a McKinsey or Big Four AI advisory engagement?",
+        "answer": "Cost, scope, and access. Big Four firms work with enterprise clients on six-figure engagements. McCullough Clark works with five-to-fifty-employee service businesses on a fixed $7,500 fee. You also get direct access to the people doing the work, not a hierarchy of consultants."
+      },
+      {
+        "question": "Do you actually build what you recommend, or is this a hand-off to vendors?",
+        "answer": "We build it. Sharla has shipped production AI systems including a cold email platform, a voice receptionist, and a quote and booking platform. If we recommend something, we have either built something similar before or have a clear path to building it for you."
+      },
+      {
+        "question": "What if I don't want to engage you for implementation after the audit?",
+        "answer": "That happens, and it is fine. The deliverable is yours. You can take it to your internal team, another contractor, or a vendor. We do not include any clauses that require you to engage us further."
+      },
+      {
+        "question": "Is the audit useful if I am not ready to spend money on AI tools right now?",
+        "answer": "Yes, with a caveat. The audit produces a roadmap with cost and time estimates. If your current answer is \"not now,\" the audit gives you the structured plan for \"later.\" If your current answer is \"never,\" the audit may not be the right spend."
+      },
+      {
+        "question": "How do you handle data during the audit?",
+        "answer": "We sign mutual NDAs before kickoff. Data we collect during interviews and documentation review is stored in encrypted folders accessible only to Sharla and the cybersecurity partner (under their own NDA with us). Data is retained for the duration of the engagement plus ninety days, then deleted."
+      },
+      {
+        "question": "Can we start with a smaller engagement to see if we work well together?",
+        "answer": "The fixed fee structure exists to make the audit accessible without committing to a longer engagement. The audit itself is the smaller engagement. If we work well together, ongoing engagements are scoped after the audit."
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Schedule a conversation.",
+    "body": "Tell us about your business and the operational areas you find frustrating. We will tell you whether an audit makes sense for your situation. If not, we will tell you what would.",
+    "cta_label": "Email Sharla",
+    "cta_link": "mailto:sharla@mcculloughclark.com?subject=AI%20Operations%20Audit%20inquiry"
+  }
+}

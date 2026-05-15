@@ -1,0 +1,38 @@
+---
+import auditData from '../../data/audit.json';
+import { md } from '../../lib/markdown';
+const data = auditData.process;
+---
+
+<section class="section-padding" style="border-bottom: 1px solid #E5E5E5;">
+  <div class="container">
+    <div class="prose-width reveal" style="margin-bottom: 48px;">
+      <h2 class="text-h2" style="margin-bottom: 16px;">{data.heading}</h2>
+      <p class="text-body-large" style="color: #444444;">{data.subheading}</p>
+    </div>
+    <div class="process-grid reveal-stagger">
+      {data.weeks.map((week: any) => (
+        <div>
+          <p class="text-caption" style="color: #666666; margin-bottom: 16px;">{week.label}</p>
+          <h3 class="text-h3" style="margin-bottom: 12px;">{week.title}</h3>
+          <p style="color: #444444;" set:html={md(week.description)}></p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+  }
+
+  @media (max-width: 767px) {
+    .process-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+</style>

@@ -1,0 +1,24 @@
+---
+import auditData from '../../data/audit.json';
+import { md } from '../../lib/markdown';
+const data = auditData.faq;
+---
+
+<section class="section-padding" style="border-bottom: 1px solid #E5E5E5;">
+  <div class="container">
+    <div class="prose-width reveal">
+      <h2 class="text-h2" style="margin-bottom: 48px;">{data.heading}</h2>
+
+      <div style="display: flex; flex-direction: column; gap: 0;">
+        {data.items.map((item: any, i: number) => (
+          <details style={`border-top: 1px solid #E5E5E5;${i === data.items.length - 1 ? ' border-bottom: 1px solid #E5E5E5;' : ''} padding: 24px 0;`}>
+            <summary style="font-size: 16px; font-weight: 500; padding-left: 28px;">
+              {item.question}
+            </summary>
+            <p style="color: #444444; margin-top: 16px; padding-left: 28px;" set:html={md(item.answer)}></p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

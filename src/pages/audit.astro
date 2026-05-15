@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import AuditHero from '../components/audit/AuditHero.astro'
+import WhoItsFor from '../components/audit/WhoItsFor.astro'
+import WhatsIncluded from '../components/audit/WhatsIncluded.astro'
+import Process from '../components/audit/Process.astro'
+import Pricing from '../components/audit/Pricing.astro'
+import FAQ from '../components/audit/FAQ.astro'
+import auditData from '../data/audit.json'
+import { md } from '../lib/markdown'
+const samples = auditData.samples;
+const cta = auditData.cta;
+---
+
+<BaseLayout
+  title="AI Operations Audit — McCullough Clark"
+  description="A structured three-week audit of where AI saves real time in your service business. Fixed fee of $7,500. Includes security review for regulated industries."
+  ogTitle="AI Operations Audit — McCullough Clark"
+  ogDescription="Three-week assessment. Written deliverable. Fixed fee. Includes cybersecurity review for title agencies and law firms."
+  ogUrl="https://mcculloughclark.com/audit"
+>
+  <AuditHero />
+  <WhoItsFor />
+  <WhatsIncluded />
+
+  <!-- Section 4: Sample deliverables -->
+  <section class="section-padding" style="background-color: #FAFAFA; border-bottom: 1px solid #E5E5E5;">
+    <div class="container">
+      <div class="prose-width reveal" style="margin-bottom: 48px;">
+        <h2 class="text-h2" style="margin-bottom: 16px;">{samples.heading}</h2>
+        <p style="color: #444444;" set:html={md(samples.intro)}></p>
+      </div>
+      <div class="samples-grid reveal-stagger">
+        {samples.items.map((item: any) => (
+          <div>
+            <p class="text-caption" style="color: #666666; margin-bottom: 16px;">{item.label}</p>
+            <h3 class="text-h3" style="margin-bottom: 12px;">{item.title}</h3>
+            <p style="color: #444444; margin-bottom: 20px;" set:html={md(item.description)}></p>
+            <a href={item.link_target} style="color: #666666; text-decoration: underline; text-underline-offset: 3px; font-size: 14px;">
+              {item.link_label}
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Process />
+  <Pricing />
+  <FAQ />
+
+  <!-- Final CTA -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="prose-width reveal">
+        <h2 class="text-h2" style="margin-bottom: 16px;">{cta.heading}</h2>
+        <p class="text-body-large" style="color: #444444; margin-bottom: 40px;" set:html={md(cta.body)}></p>
+        <a
+          href={cta.cta_link}
+          class="btn-primary"
+        >
+          {cta.cta_label}
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .samples-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+  }
+
+  @media (max-width: 767px) {
+    .samples-grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+  }
+</style>

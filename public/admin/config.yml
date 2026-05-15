@@ -1,0 +1,482 @@
+backend:
+  name: git-gateway
+  repo: bloombooksoffice/MCWebsite
+  branch: main
+  auth_type: pkce
+  base_url: https://auth.decapbridge.com
+  auth_endpoint: /sites/8ec57bb9-402b-4931-836e-6609f24f99d7/pkce
+  auth_token_endpoint: /sites/8ec57bb9-402b-4931-836e-6609f24f99d7/token
+  gateway_url: https://gateway.decapbridge.com
+  commit_messages:
+    create: Create {{collection}} "{{slug}}" - {{author-name}} <{{author-login}}> via DecapBridge
+    update: Update {{collection}} "{{slug}}" - {{author-name}} <{{author-login}}> via DecapBridge
+    delete: Delete {{collection}} "{{slug}}" - {{author-name}} <{{author-login}}> via DecapBridge
+    uploadMedia: Upload "{{path}}" - {{author-name}} <{{author-login}}> via DecapBridge
+    deleteMedia: Delete "{{path}}" - {{author-name}} <{{author-login}}> via DecapBridge
+    openAuthoring: Message {{message}} - {{author-name}} <{{author-login}}> via DecapBridge
+
+auth:
+  email_claim: email
+  first_name_claim: first_name
+  last_name_claim: last_name
+  avatar_url_claim: avatar_url
+
+media_folder: "public/blog"
+public_folder: "/blog"
+
+site_url: "https://mcculloughclark.com"
+display_url: "https://mcculloughclark.com"
+logo_url: "https://decapbridge.com/decapcms-with-bridge.svg"
+
+slug:
+  encoding: "ascii"
+  clean_accents: true
+
+# ─────────────────────────────────────────────────────
+# COLLECTIONS
+# ─────────────────────────────────────────────────────
+
+collections:
+
+  # ═══════════════════════════════════════════════════
+  # HOMEPAGE
+  # ═══════════════════════════════════════════════════
+  - name: "homepage"
+    label: "Homepage"
+    description: "Edit the homepage sections. Changes go live within 2-3 minutes after Save. Refresh the live site to see them."
+    files:
+
+      # ── Hero Section ──
+      - name: "hero"
+        label: "Hero Section"
+        file: "src/data/homepage-hero.json"
+        format: "json"
+        fields:
+          - label: "Eyebrow Text"
+            name: "eyebrow"
+            widget: "string"
+            hint: "Small caps text above the headline (e.g., 'AI Advisory · Bookkeeping')"
+          - label: "Headline"
+            name: "heading"
+            widget: "string"
+            hint: "Main H1 headline"
+          - label: "Body Paragraph"
+            name: "body"
+            widget: "markdown"
+            buttons: ["bold", "italic", "link"]
+            editor_components: []
+            hint: "Introductory paragraph below the headline"
+          - label: "Primary Button Label"
+            name: "cta_label"
+            widget: "string"
+          - label: "Primary Button Link"
+            name: "cta_link"
+            widget: "string"
+            hint: "mailto: link or page URL"
+          - label: "Secondary Link Label"
+            name: "secondary_label"
+            widget: "string"
+          - label: "Secondary Link Target"
+            name: "secondary_link"
+            widget: "string"
+
+      # ── Services Section ──
+      - name: "services"
+        label: "Services Section"
+        file: "src/data/homepage-services.json"
+        format: "json"
+        fields:
+          - label: "Section Heading"
+            name: "heading"
+            widget: "string"
+          - label: "Service Columns"
+            name: "columns"
+            widget: "list"
+            max: 2
+            min: 2
+            fields:
+              - label: "Subheading"
+                name: "subheading"
+                widget: "string"
+              - label: "Body Text"
+                name: "body"
+                widget: "markdown"
+                buttons: ["bold", "italic", "link"]
+                editor_components: []
+              - label: "Link Label"
+                name: "link_label"
+                widget: "string"
+                hint: "Text for the link below the body (include → if desired)"
+              - label: "Link Target"
+                name: "link_target"
+                widget: "string"
+                hint: "Page URL or mailto: link"
+
+      # ── About / Founders Section ──
+      - name: "about"
+        label: "About / Founders"
+        file: "src/data/homepage-about.json"
+        format: "json"
+        fields:
+          - label: "Section Heading"
+            name: "heading"
+            widget: "string"
+          - label: "Lede Paragraph"
+            name: "lede"
+            widget: "markdown"
+            buttons: ["bold", "italic", "link"]
+            editor_components: []
+            hint: "Introductory paragraph about the firm"
+          - label: "Founder 1"
+            name: "founder1"
+            widget: "object"
+            fields:
+              - label: "Name"
+                name: "name"
+                widget: "string"
+              - label: "Title"
+                name: "title"
+                widget: "string"
+                hint: "e.g., 'Founder' or 'Co-founder'"
+              - label: "Bio"
+                name: "bio"
+                widget: "markdown"
+                buttons: ["bold", "italic", "link"]
+                editor_components: []
+              - label: "Photo"
+                name: "photo"
+                widget: "image"
+                required: false
+                media_folder: "/public/photos"
+                public_folder: "/photos"
+                hint: "Upload a headshot. Leave blank to hide the photo slot."
+          - label: "Founder 2"
+            name: "founder2"
+            widget: "object"
+            fields:
+              - label: "Name"
+                name: "name"
+                widget: "string"
+              - label: "Title"
+                name: "title"
+                widget: "string"
+              - label: "Bio"
+                name: "bio"
+                widget: "markdown"
+                buttons: ["bold", "italic", "link"]
+                editor_components: []
+              - label: "Photo"
+                name: "photo"
+                widget: "image"
+                required: false
+                media_folder: "/public/photos"
+                public_folder: "/photos"
+
+      # ── Credentials Strip ──
+      - name: "credentials"
+        label: "Credentials Strip"
+        file: "src/data/homepage-credentials.json"
+        format: "json"
+        fields:
+          - label: "Credentials Line"
+            name: "line"
+            widget: "string"
+            hint: "Single line of credentials shown between About and CTA sections (use · as separator)"
+
+      # ── Call to Action ──
+      - name: "cta"
+        label: "Call to Action"
+        file: "src/data/homepage-cta.json"
+        format: "json"
+        fields:
+          - label: "Heading"
+            name: "heading"
+            widget: "string"
+          - label: "Body Paragraph"
+            name: "body"
+            widget: "markdown"
+            buttons: ["bold", "italic", "link"]
+            editor_components: []
+          - label: "Primary Button Label"
+            name: "cta_label"
+            widget: "string"
+          - label: "Primary Button Link"
+            name: "cta_link"
+            widget: "string"
+          - label: "Secondary Link Label"
+            name: "secondary_label"
+            widget: "string"
+          - label: "Secondary Link Target"
+            name: "secondary_link"
+            widget: "string"
+
+  # ═══════════════════════════════════════════════════
+  # AUDIT PAGE
+  # ═══════════════════════════════════════════════════
+  - name: "audit"
+    label: "Audit Page"
+    description: "Edit the /audit page content. Changes go live within 2-3 minutes after Save."
+    files:
+      - name: "audit_content"
+        label: "Audit Page Content"
+        file: "src/data/audit.json"
+        format: "json"
+        fields:
+          # Hero
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Caption", name: "caption", widget: "string", hint: "Small caps text above the headline" }
+              - { label: "Headline", name: "heading", widget: "string" }
+              - { label: "Body Paragraph", name: "body", widget: "markdown", buttons: ["bold", "italic", "link"], editor_components: [] }
+              - { label: "Button Label", name: "cta_label", widget: "string" }
+              - { label: "Button Link", name: "cta_link", widget: "string" }
+
+          # Who It's For
+          - label: "Who This Is For"
+            name: "whoItsFor"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Intro Text", name: "intro", widget: "markdown", buttons: ["bold", "italic", "link"], editor_components: [] }
+              - label: "Industry Segments"
+                name: "segments"
+                widget: "list"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Description", name: "description", widget: "markdown", buttons: ["bold", "italic", "link"], editor_components: [] }
+
+          # What's Included
+          - label: "What You Receive"
+            name: "whatsIncluded"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Intro Text", name: "intro", widget: "markdown", buttons: ["bold", "italic", "link"], editor_components: [] }
+              - label: "Deliverables"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string", hint: "Include the number prefix (e.g., '1. Operational map.')" }
+                  - { label: "Description", name: "description", widget: "markdown", buttons: ["bold", "italic", "link"], editor_components: [] }
+
+          # Sample Deliverables
+          - label: "Sample Deliverables"
+            name: "samples"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Intro Text", name: "intro", widget: "markdown", buttons: ["bold", "italic", "link"], editor_components: [] }
+              - label: "Samples"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Label", name: "label", widget: "string", hint: "e.g., 'Sample 1'" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "markdown", buttons: ["bold", "italic", "link"], editor_components: [] }
+                  - { label: "Link Label", name: "link_label", widget: "string" }
+                  - { label: "Link Target", name: "link_target", widget: "string", hint: "Path to the PDF file" }
+
+          # Process / Engagement
+          - label: "The Engagement"
+            name: "process"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Subheading", name: "subheading", widget: "string" }
+              - label: "Weeks"
+                name: "weeks"
+                widget: "list"
+                fields:
+                  - { label: "Week Label", name: "label", widget: "string" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "markdown", buttons: ["bold", "italic", "link"], editor_components: [] }
+
+          # Pricing
+          - label: "Pricing"
+            name: "pricing"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - label: "Fixed Fee"
+                name: "fixed_fee"
+                widget: "object"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Amount", name: "amount", widget: "string", hint: "e.g., '$7,500'" }
+                  - { label: "Description", name: "description", widget: "markdown", buttons: ["bold", "italic", "link"], editor_components: [] }
+              - label: "What's Not Included"
+                name: "not_included"
+                widget: "object"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Description", name: "description", widget: "markdown", buttons: ["bold", "italic", "link"], editor_components: [] }
+
+          # FAQ
+          - label: "Common Questions"
+            name: "faq"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - label: "Questions"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Question", name: "question", widget: "string" }
+                  - { label: "Answer", name: "answer", widget: "markdown", buttons: ["bold", "italic", "link"], editor_components: [] }
+
+          # Final CTA
+          - label: "Bottom CTA"
+            name: "cta"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Body Paragraph", name: "body", widget: "markdown", buttons: ["bold", "italic", "link"], editor_components: [] }
+              - { label: "Button Label", name: "cta_label", widget: "string" }
+              - { label: "Button Link", name: "cta_link", widget: "string" }
+
+  # ═══════════════════════════════════════════════════
+  # SITE SETTINGS
+  # ═══════════════════════════════════════════════════
+  - name: "settings"
+    label: "Site Settings"
+    description: "Global settings used across the site (header, footer, contact info). Changes go live within 2-3 minutes after Save."
+    files:
+
+      # ── Site Metadata ──
+      - name: "metadata"
+        label: "Site Metadata"
+        file: "src/data/metadata.json"
+        format: "json"
+        fields:
+          - label: "Phone Number"
+            name: "phone"
+            widget: "string"
+            hint: "Display format, e.g., '(214) 888-6840'"
+          - label: "Phone Link"
+            name: "phone_link"
+            widget: "string"
+            hint: "tel: format, e.g., 'tel:+12148886840'"
+          - label: "Email Address"
+            name: "email"
+            widget: "string"
+          - label: "Email Subject Line"
+            name: "email_subject"
+            widget: "string"
+            hint: "URL-encoded subject for mailto links (e.g., 'Conversation%20request')"
+          - label: "Business Address"
+            name: "address"
+            widget: "string"
+          - label: "Header CTA Button Label"
+            name: "cta_label"
+            widget: "string"
+            hint: "Text for the primary button in the site header"
+          - label: "LinkedIn URL"
+            name: "linkedin"
+            widget: "string"
+            required: false
+          - label: "Facebook URL"
+            name: "facebook"
+            widget: "string"
+            required: false
+          - label: "Instagram URL"
+            name: "instagram"
+            widget: "string"
+            required: false
+
+      # ── Footer ──
+      - name: "footer"
+        label: "Footer"
+        file: "src/data/footer.json"
+        format: "json"
+        fields:
+          - label: "Brand Description"
+            name: "brand_description"
+            widget: "string"
+            hint: "Short tagline shown under the logo in the footer"
+          - label: "Contact Column Heading"
+            name: "contact_heading"
+            widget: "string"
+          - label: "Contact Name"
+            name: "contact_name"
+            widget: "string"
+            hint: "Name and credentials shown in the contact column"
+          - label: "Credentials Column Heading"
+            name: "credentials_heading"
+            widget: "string"
+          - label: "Credentials"
+            name: "credentials_items"
+            widget: "list"
+            fields:
+              - { label: "Text", name: "text", widget: "string" }
+              - { label: "Link URL", name: "url", widget: "string", required: false, hint: "Optional — leave blank for plain text" }
+          - label: "Copyright Line"
+            name: "copyright"
+            widget: "string"
+            hint: "e.g., '© 2026 Sharmac Inc. dba McCullough Clark. All rights reserved.'"
+
+  # ═══════════════════════════════════════════════════
+  # BLOG POSTS
+  # ═══════════════════════════════════════════════════
+  - name: "blog"
+    label: "Blog Posts"
+    label_singular: "Post"
+    description: "Create, edit, and publish blog posts. Only Published posts appear on the live site. Changes go live within 2-3 minutes after Save."
+    folder: "src/content/blog"
+    create: true
+    slug: "{{slug}}"
+    sortable_fields: ["date", "title"]
+    view_filters:
+      - { label: "Published", field: "status", pattern: "Published" }
+      - { label: "Drafts", field: "status", pattern: "Draft" }
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        format: "YYYY-MM-DD"
+      - label: "Author"
+        name: "author"
+        widget: "string"
+        default: "Sharla Clark"
+      - label: "Summary"
+        name: "summary"
+        widget: "text"
+        hint: "1-3 sentences. Used on the blog index page and for meta descriptions."
+      - label: "Featured Image"
+        name: "featured_image"
+        widget: "image"
+        required: false
+        hint: "Optional hero image shown at the top of the post"
+      - label: "Featured Image Alt Text"
+        name: "featured_image_alt"
+        widget: "string"
+        required: false
+        hint: "Describe the image for accessibility (required if image is uploaded)"
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        required: false
+        hint: "e.g., bookkeeping, ai-tools, quickbooks"
+      - label: "Status"
+        name: "status"
+        widget: "select"
+        options: ["Draft", "Published"]
+        default: "Draft"
+        hint: "Only Published posts appear on the live site"
+      - label: "Body"
+        name: "body"
+        widget: "markdown"

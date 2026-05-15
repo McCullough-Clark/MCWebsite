@@ -1,0 +1,16 @@
+{
+  "heading": "Who we are",
+  "lede": "McCullough Clark is a Texas firm built by a credentialed Enrolled Agent and an analyst, both with two decades of experience in the operational realities of professional services. We believe deep expertise and modern AI capability belong in the same firm, not different ones.",
+  "founder1": {
+    "name": "Sharla Clark, EA, MBA",
+    "title": "Founder",
+    "bio": "20+ years in accounting, with the last seven serving small businesses across Texas. IRS Enrolled Agent, QuickBooks Online ProAdvisor, and the builder behind McCullough Clark's AI tools.",
+    "photo": ""
+  },
+  "founder2": {
+    "name": "Whitney McCullough",
+    "title": "Co-founder",
+    "bio": "Business intelligence and analytics. Builds the data infrastructure and reporting layer that turns operational AI into operational insight.",
+    "photo": ""
+  }
+}

@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog');
+const posts = allPosts
+  .filter((post) => post.data.status === 'Published')
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+
+<BaseLayout
+  title="Articles — McCullough Clark"
+  description="Notes on accounting, AI tools, and running professional services firms."
+  ogTitle="Articles — McCullough Clark"
+  ogDescription="Notes on accounting, AI tools, and running professional services firms."
+  ogUrl="https://mcculloughclark.com/blog"
+>
+  <section class="section-padding" style="border-bottom: 1px solid #E5E5E5;">
+    <div class="container">
+      <div class="prose-width reveal">
+        <h1 class="text-display" style="margin-bottom: 16px;">Articles</h1>
+        <p class="text-body-large" style="color: #444444; margin-bottom: 56px;">
+          Notes on accounting, AI tools, and running professional services firms.
+        </p>
+      </div>
+
+      {posts.length === 0 && (
+        <div class="prose-width reveal">
+          <p style="color: #666666;">No articles published yet. Check back soon.</p>
+        </div>
+      )}
+
+      {posts.length > 0 && (
+        <div class="posts-list reveal-stagger">
+          {posts.map((post) => (
+            <article class="post-card" style="border-top: 1px solid #E5E5E5; padding-top: 32px;">
+              {post.data.featured_image && (
+                <img
+                  src={post.data.featured_image}
+                  alt={post.data.featured_image_alt || ''}
+                  style="width: 100%; max-width: 720px; margin-bottom: 20px;"
+                />
+              )}
+              <p class="text-caption" style="color: #666666; margin-bottom: 12px;">
+                {post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                {post.data.author && ` · ${post.data.author}`}
+              </p>
+              <h2 style="margin-bottom: 12px;">
+                <a href={`/blog/${post.id}`} class="text-h3" style="text-decoration: none; color: #1a1a1a;">
+                  {post.data.title}
+                </a>
+              </h2>
+              <p style="color: #444444; margin-bottom: 16px; max-width: 720px;">
+                {post.data.summary}
+              </p>
+              {post.data.tags && post.data.tags.length > 0 && (
+                <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
+                  {post.data.tags.map((tag: string) => (
+                    <span style="font-size: 12px; color: #666666; background: #F0F0F0; padding: 2px 8px; border-radius: 3px;">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
+              <a href={`/blog/${post.id}`} style="color: #1a1a1a; text-decoration: underline; text-underline-offset: 3px; font-size: 15px;">
+                Read article →
+              </a>
+            </article>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+</style>

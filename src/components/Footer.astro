@@ -1,0 +1,67 @@
+---
+import footerData from '../data/footer.json';
+import metadata from '../data/metadata.json';
+---
+
+<footer style="border-top: 1px solid #E5E5E5; padding-top: 64px; padding-bottom: 0;">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <img
+          src="/logos/mc_monogram.svg"
+          alt="McCullough Clark"
+          style="height: 40px; width: auto; margin-bottom: 16px;"
+        />
+        <p style="color: #666666; font-size: 14px; line-height: 1.6;">
+          {footerData.brand_description}
+        </p>
+        <p style="margin-top: 16px;">
+          <a href="/blog" style="color: #666666; font-size: 14px; text-decoration: underline; text-underline-offset: 3px;">Articles</a>
+        </p>
+      </div>
+      <div>
+        <p style="font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #1a1a1a; margin-bottom: 16px;">{footerData.contact_heading}</p>
+        <div style="color: #666666; font-size: 14px; line-height: 2;">
+          <p>{footerData.contact_name}</p>
+          <p><a href={`mailto:${metadata.email}`} style="color: #666666; text-decoration: none;">{metadata.email}</a></p>
+          <p><a href={metadata.phone_link} style="color: #666666; text-decoration: none;">{metadata.phone}</a></p>
+          <p>{metadata.address}</p>
+        </div>
+      </div>
+      <div>
+        <p style="font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #1a1a1a; margin-bottom: 16px;">{footerData.credentials_heading}</p>
+        <div style="color: #666666; font-size: 14px; line-height: 2;">
+          {footerData.credentials_items.map((item: any) => (
+            <p>
+              {item.url ? (
+                <a href={item.url} style="color: #666666; text-decoration: underline; text-underline-offset: 3px;" target="_blank" rel="noopener noreferrer">{item.text}</a>
+              ) : (
+                item.text
+              )}
+            </p>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="border-top: 1px solid #E5E5E5; margin-top: 48px; padding: 24px 0;">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <p style="color: #999999; font-size: 12px;">{footerData.copyright}</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 48px;
+  }
+
+  @media (max-width: 767px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+</style>
