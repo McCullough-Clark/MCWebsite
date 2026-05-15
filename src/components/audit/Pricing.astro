@@ -7,17 +7,43 @@ const data = auditData.pricing;
 <section class="py-16 md:py-24 bg-off-white border-b border-border">
   <div class="max-w-[1200px] mx-auto px-6">
     <h2 class="text-[28px] md:text-[40px] font-medium tracking-[-0.01em] leading-[1.2] reveal mb-12">{data.heading}</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-x-16 md:gap-y-0 reveal-stagger">
-      <div class="md:row-span-3 md:grid md:grid-rows-subgrid">
-        <p class="text-[13px] tracking-[0.1em] uppercase text-gray pb-4">{data.fixed_fee.label}</p>
-        <h3 class="text-[48px] font-medium tracking-[-0.02em] leading-[1.1] pb-5">{data.fixed_fee.amount}</h3>
+    <div class="pricing-grid reveal-stagger">
+      <div>
+        <p class="text-[13px] tracking-[0.1em] uppercase text-gray mb-4">{data.fixed_fee.label}</p>
+        <div class="pricing-amount">
+          <h3 class="text-[48px] font-medium tracking-[-0.02em]">{data.fixed_fee.amount}</h3>
+        </div>
         <p class="text-secondary" set:html={md(data.fixed_fee.description)}></p>
       </div>
-      <div class="md:row-span-3 md:grid md:grid-rows-subgrid">
-        <p class="text-[13px] tracking-[0.1em] uppercase text-gray pb-4">{data.not_included.label}</p>
-        <h3 class="text-[48px] font-medium tracking-[-0.02em] leading-[1.1] pb-5">{data.not_included.amount}</h3>
+      <div>
+        <p class="text-[13px] tracking-[0.1em] uppercase text-gray mb-4">{data.not_included.label}</p>
+        <div class="pricing-amount">
+          <h3 class="text-[48px] font-medium tracking-[-0.02em]">{data.not_included.amount}</h3>
+        </div>
         <p class="text-secondary" set:html={md(data.not_included.description)}></p>
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+  }
+
+  .pricing-amount {
+    height: 64px;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 767px) {
+    .pricing-grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+  }
+</style>
