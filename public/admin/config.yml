@@ -346,6 +346,99 @@ collections:
               - { label: "Button Link", name: "cta_link", widget: "string" }
 
   # ═══════════════════════════════════════════════════
+  # BOOKKEEPING PAGE
+  # ═══════════════════════════════════════════════════
+  - name: "bookkeeping"
+    label: "Bookkeeping Page"
+    description: "Edit the /bookkeeping page content. Changes go live within 2-3 minutes after Save."
+    files:
+      - name: "bookkeeping_content"
+        label: "Bookkeeping Page Content"
+        file: "src/data/bookkeeping.json"
+        format: "json"
+        fields:
+          # Hero
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Caption", name: "caption", widget: "string", hint: "Small caps text above the headline" }
+              - { label: "Headline", name: "heading", widget: "string" }
+              - { label: "Body Paragraph", name: "body", widget: "markdown", buttons: ["bold", "italic", "link"], editor_components: [] }
+              - { label: "Button Label", name: "cta_label", widget: "string" }
+              - { label: "Button Link", name: "cta_link", widget: "string" }
+
+          # Who You're Working With
+          - label: "Who You're Working With"
+            name: "who"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Title", name: "title", widget: "string", hint: "Small caps text under the name" }
+              - label: "Paragraphs"
+                name: "paragraphs"
+                widget: "list"
+                field: { label: "Paragraph", name: "paragraph", widget: "markdown", buttons: ["bold", "italic", "link"], editor_components: [] }
+              - { label: "Link Label", name: "link_label", widget: "string" }
+              - { label: "Link Target", name: "link_target", widget: "string", hint: "URL of the ProAdvisor profile" }
+
+          # What's Included
+          - label: "What's Included"
+            name: "included"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Intro Text", name: "intro", widget: "markdown", buttons: ["bold", "italic", "link"], editor_components: [] }
+              - label: "Services"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "markdown", buttons: ["bold", "italic", "link"], editor_components: [] }
+
+          # Why Books Close Faster Here
+          - label: "Why Books Close Faster Here"
+            name: "faster"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - label: "Paragraphs"
+                name: "paragraphs"
+                widget: "list"
+                field: { label: "Paragraph", name: "paragraph", widget: "markdown", buttons: ["bold", "italic", "link"], editor_components: [] }
+
+          # Remote Works
+          - label: "Remote Works"
+            name: "remote"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Intro Text", name: "intro", widget: "markdown", buttons: ["bold", "italic", "link"], editor_components: [] }
+              - label: "Columns"
+                name: "segments"
+                widget: "list"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Description", name: "description", widget: "markdown", buttons: ["bold", "italic", "link"], editor_components: [] }
+
+          # Final CTA
+          - label: "Bottom CTA"
+            name: "cta"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Body Paragraph", name: "body", widget: "markdown", buttons: ["bold", "italic", "link"], editor_components: [] }
+              - { label: "Button Label", name: "cta_label", widget: "string" }
+              - { label: "Button Link", name: "cta_link", widget: "string" }
+
+  # ═══════════════════════════════════════════════════
   # SITE SETTINGS
   # ═══════════════════════════════════════════════════
   - name: "settings"

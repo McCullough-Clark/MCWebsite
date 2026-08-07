@@ -1,0 +1,85 @@
+{
+  "hero": {
+    "caption": "Bookkeeping",
+    "heading": "Monthly bookkeeping owned by an Enrolled Agent with 25+ years in accounting.",
+    "body": "You work directly with Sharla Clark, EA. QuickBooks Online setup, cleanup, and ongoing books for small businesses.",
+    "cta_label": "Schedule a conversation",
+    "cta_link": "https://calendly.com/mcculloughclark/consult"
+  },
+  "who": {
+    "heading": "Who you're working with.",
+    "name": "Sharla Clark, EA",
+    "title": "Founder",
+    "paragraphs": [
+      "I'm Sharla Clark. I'm an IRS Enrolled Agent with a Master's in Accounting and an MBA, and I've spent more than 25 years in the field. The first stretch was corporate finance leadership. The last seven have been small business clients, working directly with owners on their books. I'm also a QuickBooks Online Advanced ProAdvisor.",
+      "If you hire me, I'm the one doing the work. I take the time to know your business well, so the books reflect how it actually runs. And when something in your numbers needs explaining, you're talking to the person who put them there."
+    ],
+    "link_label": "View my QuickBooks ProAdvisor profile",
+    "link_target": "https://proadvisor.intuit.com/app/accountant/search?searchId=sharla-clark"
+  },
+  "included": {
+    "heading": "What's included.",
+    "intro": "The core of every engagement is the same: books that are complete, current, and reviewed before you see them.",
+    "items": [
+      {
+        "title": "Full-cycle monthly bookkeeping.",
+        "description": "Transactions categorized, accounts reconciled, and the detail behind every number kept in order, month after month."
+      },
+      {
+        "title": "Month-end close and review.",
+        "description": "Each month gets a real close, and I review the statements before they go out. Questions get caught at my desk instead of landing on yours."
+      },
+      {
+        "title": "Financial statement delivery.",
+        "description": "Profit and loss, balance sheet, and whatever else you rely on, delivered on a schedule you can plan around."
+      },
+      {
+        "title": "Cleanups and catch-up projects.",
+        "description": "Books that are months behind, or current but not trustworthy. I sort out what's there, fix what's wrong, and get you to a clean starting point."
+      },
+      {
+        "title": "Multi-entity books.",
+        "description": "Multiple companies, intercompany activity, combined reporting. Each entity stays clean on its own, and the pieces tie together."
+      },
+      {
+        "title": "Payroll and sales tax support.",
+        "description": "Payroll entries that tie to your payroll provider, and sales tax tracked so filings are straightforward."
+      },
+      {
+        "title": "QuickBooks setup and training.",
+        "description": "New QuickBooks Online files set up correctly from the start, and training if you want to understand what you're looking at."
+      }
+    ]
+  },
+  "faster": {
+    "heading": "Why books close faster here.",
+    "paragraphs": [
+      "Your books run on connected systems rather than manual entry. Bank activity, payroll, and the tools you already use flow straight into QuickBooks Online, and I build and maintain the connections that keep that flow accurate.",
+      "What that means for you is simple: transactions post accurately without anyone keying them in, your financials are ready sooner each month, and fewer errors make it into the statements."
+    ]
+  },
+  "remote": {
+    "heading": "Remote works.",
+    "intro": "I support clients in multiple states. Good books do not require someone in the next room. They require structure, and remote work is structured like this:",
+    "segments": [
+      {
+        "label": "Secure access",
+        "description": "You add me to your QuickBooks Online file as an accountant user, and documents move through secure shared folders. No passwords in email, no paper handoffs."
+      },
+      {
+        "label": "Regular cadence",
+        "description": "A set monthly rhythm for close, review, and delivery, so the books never drift and you always know when to expect your financials."
+      },
+      {
+        "label": "Direct communication",
+        "description": "Email for the quick items, a call or video when something needs a conversation. You talk to me, not a support queue."
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Schedule a conversation.",
+    "body": "The fastest way to know whether this is a fit is a short call. Tell me about your business and where the books stand, and I'll give you a straight answer. If I'm not the right fit, I'll say so and point you toward someone who is.",
+    "cta_label": "Schedule a conversation",
+    "cta_link": "https://calendly.com/mcculloughclark/consult"
+  }
+}
