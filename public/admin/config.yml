@@ -520,7 +520,7 @@ collections:
           - label: "Copyright Line"
             name: "copyright"
             widget: "string"
-            hint: "e.g., '© 2026 Sharmac Inc. dba McCullough Clark. All rights reserved.'"
+            hint: "e.g., '© 2026 Bloom Bookkeeping Services, LLC dba McCullough Clark. All rights reserved.'"
 
   # ═══════════════════════════════════════════════════
   # BLOG POSTS
