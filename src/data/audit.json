@@ -117,7 +117,7 @@
       },
       {
         "question": "Do you actually build what you recommend, or is this a hand-off to vendors?",
-        "answer": "We build it. Sharla has shipped production systems including a cold email platform, a quote and booking platform, and integrations that connect practice management, payroll, and corporate expense software to QuickBooks, with reconciliation built in so anything that does not tie out gets flagged instead of quietly landing in the books. If we recommend something, we have either built something similar before or have a clear path to building it for you."
+        "answer": "We build it. Sharla has shipped production AI systems including a cold email platform and a quote and booking platform, plus integrations that connect practice management, payroll, and corporate expense software to QuickBooks, with reconciliation built in so anything that does not tie out gets flagged instead of quietly landing in the books. If we recommend something, we have either built something similar before or have a clear path to building it for you."
       },
       {
         "question": "What if I don't want to engage you for implementation after the audit?",
