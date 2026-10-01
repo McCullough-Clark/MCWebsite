@@ -13,19 +13,19 @@ const builds = [
     label: 'Connect',
     title: 'System integrations',
     body: 'Connect the software your firm already uses so information can move without being repeatedly copied, re-entered, or chased down.',
-    href: '/systems-integration',
+    href: '/systems-integration/',
   },
   {
     label: 'Coordinate',
     title: 'Workflow automation',
     body: 'Turn recurring, rules-based processes into reliable workflows with clear triggers, routing, checks, and human decision points.',
-    href: '/workflow-automation',
+    href: '/workflow-automation/',
   },
   {
     label: 'Prioritize',
     title: 'AI Operations Audits',
     body: 'Separate worthwhile opportunities from the noise and leave with a practical, prioritized implementation roadmap.',
-    href: '/audit',
+    href: '/audit/',
   },
 ]
 ---
@@ -41,7 +41,7 @@ const builds = [
         <p class="text-secondary text-lg mb-7">
           Start with the operational problem. We will help determine whether the answer is an integration, an automated workflow, a focused AI tool, a process change—or no build at all.
         </p>
-        <ul class="grid gap-3 list-none">
+        <ul class="grid gap-3 list-none" role="list">
           {problems.map((problem) => (
             <li class="flex gap-3 text-secondary">
               <span class="text-terracotta font-bold" aria-hidden="true">→</span>
@@ -57,7 +57,7 @@ const builds = [
             <p class="text-[12px] tracking-[0.12em] uppercase font-semibold text-teal mb-2">{item.label}</p>
             <h3 class="text-2xl font-medium mb-2">{item.title}</h3>
             <p class="text-secondary mb-4">{item.body}</p>
-            <a href={item.href} class="text-teal font-medium underline underline-offset-[4px]">Learn more →</a>
+            <a href={item.href} class="text-teal font-medium underline underline-offset-[4px]">Learn about {item.title.toLowerCase()} →</a>
           </article>
         ))}
       </div>
