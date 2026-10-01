@@ -14,9 +14,9 @@
         "Data infrastructure, reporting, and focused internal AI tools"
       ],
       "links": [
-        { "label": "Explore Systems & Automation", "target": "/systems-integration" },
-        { "label": "Workflow Automation", "target": "/workflow-automation" },
-        { "label": "AI Operations Audit", "target": "/audit" }
+        { "label": "Explore Systems & Automation", "target": "/systems-integration/" },
+        { "label": "Workflow Automation", "target": "/workflow-automation/" },
+        { "label": "AI Operations Audit", "target": "/audit/" }
       ]
     },
     {
@@ -31,7 +31,7 @@
         "Direct communication with the person responsible for the work"
       ],
       "links": [
-        { "label": "Explore Bookkeeping", "target": "/bookkeeping" }
+        { "label": "Explore Bookkeeping", "target": "/bookkeeping/" }
       ]
     }
   ],
