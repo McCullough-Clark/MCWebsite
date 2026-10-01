@@ -1,20 +1,35 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getCollection, render } from 'astro:content';
-import metadata from '../../data/metadata.json';
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { getCollection, render } from 'astro:content'
 
 export async function getStaticPaths() {
-  const allPosts = await getCollection('blog');
-  const published = allPosts.filter((post) => post.data.status === 'Published');
+  const allPosts = await getCollection('blog')
+  const published = allPosts.filter((post) => post.data.status === 'Published')
   return published.map((post) => ({
     params: { slug: post.id },
     props: { post },
-  }));
+  }))
 }
 
-const { post } = Astro.props;
-const { Content } = await render(post);
-const ogImage = post.data.featured_image || '/og-image.png';
+const { post } = Astro.props
+const { Content } = await render(post)
+const ogImage = post.data.featured_image || '/og-image.png'
+const pageUrl = `https://mcculloughclark.com/blog/${post.id}/`
+const imageUrl = new URL(ogImage, Astro.site ?? 'https://mcculloughclark.com').toString()
+const articleSchema = {
+  '@type': 'Article',
+  '@id': `${pageUrl}#article`,
+  headline: post.data.title,
+  description: post.data.summary,
+  datePublished: post.data.date.toISOString(),
+  image: imageUrl,
+  mainEntityOfPage: pageUrl,
+  author: {
+    '@type': 'Person',
+    name: post.data.author || 'Sharla Clark',
+  },
+  publisher: { '@id': 'https://mcculloughclark.com/#organization' },
+}
 ---
 
 <BaseLayout
@@ -22,23 +37,23 @@ const ogImage = post.data.featured_image || '/og-image.png';
   description={post.data.summary}
   ogTitle={post.data.title}
   ogDescription={post.data.summary}
-  ogUrl={`https://mcculloughclark.com/blog/${post.id}`}
+  ogUrl={pageUrl}
+  ogImage={ogImage}
+  ogType="article"
+  publishedTime={post.data.date.toISOString()}
+  schema={articleSchema}
 >
   <section class="py-16 md:py-24 border-b border-border">
     <div class="max-w-[1200px] mx-auto px-6">
       <div class="max-w-[720px] reveal">
-        <p class="text-[13px] tracking-[0.1em] uppercase text-gray mb-4">
+        <p class="eyebrow text-[13px] tracking-[0.1em] uppercase mb-4">
           {post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
           {post.data.author && ` · ${post.data.author}`}
         </p>
         <h1 class="text-[40px] md:text-[64px] font-medium tracking-[-0.02em] leading-[1.1] mb-8">{post.data.title}</h1>
 
         {post.data.featured_image && (
-          <img
-            src={post.data.featured_image}
-            alt={post.data.featured_image_alt || ''}
-            class="w-full mb-10"
-          />
+          <img src={post.data.featured_image} alt={post.data.featured_image_alt || ''} class="w-full mb-10" />
         )}
 
         <div class="blog-content">
@@ -46,31 +61,15 @@ const ogImage = post.data.featured_image || '/og-image.png';
         </div>
 
         <div class="border-t border-border mt-14 pt-8">
-          <p class="text-secondary mb-4">
-            Written by Sharla Clark, EA, MBA — founder of McCullough Clark.
-          </p>
+          <p class="text-secondary mb-4">Written by Sharla Clark, EA, MBA — founder of McCullough Clark.</p>
           <div class="flex gap-4 flex-wrap items-center">
-            <a
-              href="https://calendly.com/mcculloughclark/consult"
-              class="btn-primary"
-            >
-              Book a call
-            </a>
-            <a
-              href="https://proadvisor.intuit.com/app/accountant/search?searchId=sharla-clark"
-              class="text-gray underline underline-offset-[3px] text-sm"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              QuickBooks ProAdvisor profile
-            </a>
+            <a href="https://calendly.com/mcculloughclark/consult" class="btn-primary">Book a call</a>
+            <a href="https://proadvisor.intuit.com/app/accountant/search?searchId=sharla-clark" class="text-teal underline underline-offset-[3px] text-sm" target="_blank" rel="noopener noreferrer">QuickBooks ProAdvisor profile</a>
           </div>
         </div>
 
         <p class="mt-10">
-          <a href="/blog" class="text-gray underline underline-offset-[3px] text-sm">
-            ← Back to articles
-          </a>
+          <a href="/blog" class="text-teal underline underline-offset-[3px] text-sm">← Back to articles</a>
         </p>
       </div>
     </div>
