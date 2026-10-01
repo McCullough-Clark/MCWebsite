@@ -1,22 +1,30 @@
 ---
-import heroData from '../data/homepage-hero.json';
-import { md } from '../lib/markdown';
+import heroData from '../data/homepage-hero.json'
+import IntegrationFlow from './IntegrationFlow.astro'
+import { md } from '../lib/markdown'
 ---
 
-<section class="py-16 md:py-24 border-b border-border">
-  <div class="max-w-[1200px] mx-auto px-6">
-    <div class="max-w-[720px] reveal">
-      <p class="text-[13px] tracking-[0.1em] uppercase text-gray mb-6">{heroData.eyebrow}</p>
-      <h1 class="text-[40px] md:text-[64px] font-medium tracking-[-0.02em] leading-[1.1] mb-6">{heroData.heading}</h1>
-      <p class="text-xl leading-[1.5] text-secondary mb-10" set:html={md(heroData.body)}></p>
-      <div>
-        <a
-          href={heroData.cta_link}
-          class="btn-primary"
-        >
-          {heroData.cta_label}
+<section class="hero-surface py-16 md:py-24 border-b border-border">
+  <div class="max-w-[1200px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-[1.08fr_0.92fr] gap-12 lg:gap-16 items-center">
+    <div class="reveal">
+      <p class="eyebrow text-[13px] tracking-[0.1em] uppercase mb-6">{heroData.eyebrow}</p>
+      <h1 class="text-[42px] md:text-[64px] font-medium tracking-[-0.025em] leading-[1.04] mb-7">
+        {heroData.heading}
+      </h1>
+      <div class="text-xl leading-[1.55] text-secondary mb-9 max-w-[720px]" set:html={md(heroData.body)}></div>
+      <div class="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center">
+        <a href={heroData.primary_link} class="btn-primary">
+          {heroData.primary_label}
+        </a>
+        <a href={heroData.secondary_link} class="btn-secondary">
+          {heroData.secondary_label}
         </a>
       </div>
+      <p class="text-sm text-gray mt-5">{heroData.reassurance}</p>
+    </div>
+
+    <div class="reveal">
+      <IntegrationFlow />
     </div>
   </div>
 </section>
