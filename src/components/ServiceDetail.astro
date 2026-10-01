@@ -1,0 +1,132 @@
+---
+interface Item {
+  title: string
+  description: string
+}
+
+interface Props {
+  caption: string
+  heading: string
+  intro: string
+  fitHeading: string
+  fitIntro: string
+  fitItems: string[]
+  workHeading: string
+  workIntro: string
+  workItems: Item[]
+  distinctionHeading: string
+  distinctionBody: string
+  processHeading: string
+  processItems: Item[]
+  independence: string
+  ctaHeading: string
+  ctaBody: string
+  ctaLabel: string
+  ctaLink: string
+}
+
+const {
+  caption,
+  heading,
+  intro,
+  fitHeading,
+  fitIntro,
+  fitItems,
+  workHeading,
+  workIntro,
+  workItems,
+  distinctionHeading,
+  distinctionBody,
+  processHeading,
+  processItems,
+  independence,
+  ctaHeading,
+  ctaBody,
+  ctaLabel,
+  ctaLink,
+} = Astro.props
+---
+
+<section class="hero-surface py-16 md:py-24 border-b border-border">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="max-w-[820px] reveal">
+      <p class="eyebrow text-[13px] tracking-[0.1em] uppercase mb-6">{caption}</p>
+      <h1 class="text-[42px] md:text-[64px] font-medium tracking-[-0.025em] leading-[1.04] mb-7">{heading}</h1>
+      <p class="text-xl md:text-[22px] leading-[1.55] text-secondary mb-9">{intro}</p>
+      <a href={ctaLink} class="btn-primary">{ctaLabel}</a>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 md:py-24 border-b border-border">
+  <div class="max-w-[1200px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-12 lg:gap-20">
+    <div class="reveal">
+      <p class="eyebrow text-[13px] tracking-[0.1em] uppercase mb-4">Fit</p>
+      <h2 class="text-[32px] md:text-[44px] font-medium leading-[1.12] mb-5">{fitHeading}</h2>
+      <p class="text-secondary text-lg">{fitIntro}</p>
+    </div>
+    <ul class="grid gap-3 list-none reveal-stagger">
+      {fitItems.map((item) => (
+        <li class="flex gap-3 bg-sage border border-border rounded-[7px] p-4 text-secondary">
+          <span class="text-teal font-bold" aria-hidden="true">✓</span>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<section class="py-16 md:py-24 bg-pale-blue border-b border-border">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="max-w-[760px] reveal mb-12">
+      <p class="eyebrow text-[13px] tracking-[0.1em] uppercase mb-4">The work</p>
+      <h2 class="text-[32px] md:text-[44px] font-medium leading-[1.12] mb-5">{workHeading}</h2>
+      <p class="text-secondary text-lg">{workIntro}</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 reveal-stagger">
+      {workItems.map((item) => (
+        <article class="bg-white border border-border border-t-4 border-t-teal rounded-[8px] p-6 md:p-7">
+          <h3 class="text-2xl font-medium mb-3">{item.title}</h3>
+          <p class="text-secondary">{item.description}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="py-16 md:py-20 bg-navy text-white border-b border-navy">
+  <div class="max-w-[1200px] mx-auto px-6 grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr] gap-6 md:gap-14 items-start reveal">
+    <h2 class="text-white text-[30px] md:text-[40px] font-medium leading-[1.15]">{distinctionHeading}</h2>
+    <p class="text-sage text-lg leading-[1.7]">{distinctionBody}</p>
+  </div>
+</section>
+
+<section class="py-16 md:py-24 border-b border-border">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="max-w-[720px] reveal mb-12">
+      <p class="eyebrow text-[13px] tracking-[0.1em] uppercase mb-4">How it works</p>
+      <h2 class="text-[32px] md:text-[44px] font-medium leading-[1.12]">{processHeading}</h2>
+    </div>
+    <ol class="grid grid-cols-1 md:grid-cols-3 gap-5 list-none reveal-stagger">
+      {processItems.map((item, index) => (
+        <li class="border border-border rounded-[8px] p-6">
+          <span class="inline-flex w-9 h-9 items-center justify-center rounded-full bg-teal text-white font-semibold mb-5">{index + 1}</span>
+          <h3 class="text-xl font-medium mb-2">{item.title}</h3>
+          <p class="text-secondary">{item.description}</p>
+        </li>
+      ))}
+    </ol>
+
+    <p class="mt-10 p-5 bg-ivory border-l-4 border-terracotta text-secondary reveal">{independence}</p>
+  </div>
+</section>
+
+<section class="py-16 md:py-24 bg-ivory">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="max-w-[760px] reveal">
+      <h2 class="text-[32px] md:text-[44px] font-medium leading-[1.12] mb-4">{ctaHeading}</h2>
+      <p class="text-xl leading-[1.55] text-secondary mb-9">{ctaBody}</p>
+      <a href={ctaLink} class="btn-primary">{ctaLabel}</a>
+    </div>
+  </div>
+</section>
