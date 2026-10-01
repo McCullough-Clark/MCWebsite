@@ -1,32 +1,34 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { getCollection } from 'astro:content'
 
-const allPosts = await getCollection('blog');
+const allPosts = await getCollection('blog')
 const posts = allPosts
   .filter((post) => post.data.status === 'Published')
-  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
 ---
 
 <BaseLayout
   title="Articles — McCullough Clark"
-  description="Notes on accounting, AI tools, and running professional services firms."
+  description="Practical notes on systems, workflow automation, accounting operations, and running professional-service firms."
   ogTitle="Articles — McCullough Clark"
-  ogDescription="Notes on accounting, AI tools, and running professional services firms."
-  ogUrl="https://mcculloughclark.com/blog"
+  ogDescription="Practical notes on systems, workflow automation, accounting operations, and running professional-service firms."
+  ogUrl="https://mcculloughclark.com/blog/"
+  robots={posts.length === 0 ? 'noindex, follow' : undefined}
 >
-  <section class="py-16 md:py-24 border-b border-border">
+  <section class="hero-surface py-16 md:py-24 border-b border-border">
     <div class="max-w-[1200px] mx-auto px-6">
       <div class="max-w-[720px] reveal">
+        <p class="eyebrow text-[13px] tracking-[0.1em] uppercase mb-4">Useful thinking for the back office</p>
         <h1 class="text-[40px] md:text-[64px] font-medium tracking-[-0.02em] leading-[1.1] mb-4">Articles</h1>
         <p class="text-xl leading-[1.5] text-secondary mb-14">
-          Notes on accounting, AI tools, and running professional services firms.
+          Practical notes on systems, workflow automation, accounting operations, and running professional-service firms.
         </p>
       </div>
 
       {posts.length === 0 && (
-        <div class="max-w-[720px] reveal">
-          <p class="text-gray">No articles published yet. Check back soon.</p>
+        <div class="max-w-[720px] reveal bg-white border border-border rounded-[8px] p-6">
+          <p class="text-secondary">We are preparing the first set of articles. In the meantime, explore our pages on <a href="/systems-integration" class="text-teal underline underline-offset-[3px]">system integration</a>, <a href="/workflow-automation" class="text-teal underline underline-offset-[3px]">workflow automation</a>, and <a href="/bookkeeping" class="text-teal underline underline-offset-[3px]">bookkeeping</a>.</p>
         </div>
       )}
 
@@ -35,36 +37,24 @@ const posts = allPosts
           {posts.map((post) => (
             <article class="post-card border-t border-border pt-8">
               {post.data.featured_image && (
-                <img
-                  src={post.data.featured_image}
-                  alt={post.data.featured_image_alt || ''}
-                  class="w-full max-w-[720px] mb-5"
-                />
+                <img src={post.data.featured_image} alt={post.data.featured_image_alt || ''} class="w-full max-w-[720px] mb-5" />
               )}
               <p class="text-[13px] tracking-[0.1em] uppercase text-gray mb-3">
                 {post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
                 {post.data.author && ` · ${post.data.author}`}
               </p>
               <h2 class="mb-3">
-                <a href={`/blog/${post.id}`} class="text-2xl font-medium leading-[1.3] no-underline text-body">
-                  {post.data.title}
-                </a>
+                <a href={`/blog/${post.id}`} class="text-2xl font-medium leading-[1.3] no-underline text-navy">{post.data.title}</a>
               </h2>
-              <p class="text-secondary mb-4 max-w-[720px]">
-                {post.data.summary}
-              </p>
+              <p class="text-secondary mb-4 max-w-[720px]">{post.data.summary}</p>
               {post.data.tags && post.data.tags.length > 0 && (
                 <div class="flex gap-2 flex-wrap mb-3">
                   {post.data.tags.map((tag: string) => (
-                    <span class="text-xs text-gray bg-[#F0F0F0] py-0.5 px-2 rounded-[3px]">
-                      {tag}
-                    </span>
+                    <span class="text-xs text-navy bg-sage py-0.5 px-2 rounded-[3px]">{tag}</span>
                   ))}
                 </div>
               )}
-              <a href={`/blog/${post.id}`} class="text-body underline underline-offset-[3px] text-[15px]">
-                Read article →
-              </a>
+              <a href={`/blog/${post.id}`} class="text-teal underline underline-offset-[3px] text-[15px]">Read article →</a>
             </article>
           ))}
         </div>
