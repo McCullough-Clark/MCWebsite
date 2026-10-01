@@ -21,7 +21,7 @@ import { md } from '../lib/markdown'
           </p>
           <h3 class="text-[28px] md:text-[34px] font-medium leading-[1.15] mb-4">{col.subheading}</h3>
           <div class="text-secondary mb-6" set:html={md(col.body)}></div>
-          <ul class="grid gap-3 mb-8 list-none">
+          <ul class="grid gap-3 mb-8 list-none" role="list">
             {col.bullets.map((bullet: string) => (
               <li class="flex gap-3 text-secondary">
                 <span class:list={['mt-[0.58em] w-2 h-2 rounded-full shrink-0', col.theme === 'books' ? 'bg-terracotta' : 'bg-teal']} aria-hidden="true"></span>
