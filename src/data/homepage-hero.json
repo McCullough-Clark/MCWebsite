@@ -1,7 +1,10 @@
 {
-  "eyebrow": "AI Advisory · Bookkeeping",
-  "heading": "Accounting expertise. AI tools. For firms that win on expertise and need their operations to keep up.",
-  "body": "McCullough Clark is a Texas firm offering AI Operations Audits and monthly bookkeeping. We work with firms whose value is their expertise — and whose back office needs to match it. We identify where automation could meaningfully reduce manual work, then build the tools to do it. Founded by Sharla Clark, EA, MBA, and Whitney McCullough.",
-  "cta_label": "Book a call",
-  "cta_link": "https://calendly.com/mcculloughclark/consult"
+  "eyebrow": "Systems & Automation · Bookkeeping",
+  "heading": "System integrations. Workflow automation. Expert bookkeeping.",
+  "body": "McCullough Clark is an operations firm for businesses built on expertise, with two specialist practices. One designs and builds integrations, automations, reporting, and practical AI tools. The other provides monthly bookkeeping led by an IRS Enrolled Agent. Engage either practice independently—or benefit from both when a need crosses disciplines.",
+  "primary_label": "Explore Systems & Automation",
+  "primary_link": "/systems-integration",
+  "secondary_label": "Explore Bookkeeping",
+  "secondary_link": "/bookkeeping",
+  "reassurance": "No bookkeeping engagement is required for systems work. No automation project is required for bookkeeping."
 }
