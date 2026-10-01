@@ -8,23 +8,38 @@ import Pricing from '../components/audit/Pricing.astro'
 import FAQ from '../components/audit/FAQ.astro'
 import auditData from '../data/audit.json'
 import { md } from '../lib/markdown'
-const samples = auditData.samples;
-const cta = auditData.cta;
+
+const samples = auditData.samples
+const cta = auditData.cta
+const pageUrl = 'https://mcculloughclark.com/audit/'
+const description = 'A structured three-week audit that identifies where system integration, workflow automation, or a focused AI tool could meaningfully reduce manual work.'
+const serviceSchema = {
+  '@type': 'Service',
+  '@id': `${pageUrl}#service`,
+  name: 'AI Operations Audit',
+  serviceType: 'Operations and automation assessment',
+  url: pageUrl,
+  description,
+  provider: { '@id': 'https://mcculloughclark.com/#organization' },
+  audience: {
+    '@type': 'BusinessAudience',
+    audienceType: 'Expertise-led service firms',
+  },
+}
 ---
 
 <BaseLayout
-  title="AI Operations Audit — McCullough Clark"
-  description="A structured three-week audit of where AI saves real time in your service business. Fixed fee. Includes risk and access review."
+  title="AI Operations Audit for Professional Firms | McCullough Clark"
+  description={description}
   ogTitle="AI Operations Audit — McCullough Clark"
-  ogDescription="Three-week assessment. Written deliverable. Fixed fee. Includes risk and access review."
-  ogUrl="https://mcculloughclark.com/audit"
-  robots="noindex, nofollow"
+  ogDescription="Find the manual work worth automating before you invest in building. Three-week assessment, written deliverable, and fixed fee."
+  ogUrl={pageUrl}
+  schema={serviceSchema}
 >
   <AuditHero />
   <WhoItsFor />
   <WhatsIncluded />
 
-  <!-- Section 4: Sample deliverables -->
   <section class="py-16 md:py-24 bg-off-white border-b border-border">
     <div class="max-w-[1200px] mx-auto px-6">
       <div class="max-w-[720px] reveal mb-12">
@@ -34,10 +49,10 @@ const cta = auditData.cta;
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 reveal-stagger">
         {samples.items.map((item: any) => (
           <div>
-            <p class="text-[13px] tracking-[0.1em] uppercase text-gray mb-4">{item.label}</p>
+            <p class="eyebrow text-[13px] tracking-[0.1em] uppercase mb-4">{item.label}</p>
             <h3 class="text-2xl font-medium leading-[1.3] mb-3">{item.title}</h3>
             <p class="text-secondary mb-5" set:html={md(item.description)}></p>
-            <a href={item.link_target} class="text-gray underline underline-offset-[3px] text-sm">
+            <a href={item.link_target} class="text-teal underline underline-offset-[3px] text-sm">
               {item.link_label}
             </a>
           </div>
@@ -50,18 +65,12 @@ const cta = auditData.cta;
   <Pricing />
   <FAQ />
 
-  <!-- Final CTA -->
-  <section class="py-16 md:py-24">
+  <section class="py-16 md:py-24 bg-ivory">
     <div class="max-w-[1200px] mx-auto px-6">
       <div class="max-w-[720px] reveal">
         <h2 class="text-[28px] md:text-[40px] font-medium tracking-[-0.01em] leading-[1.2] mb-4">{cta.heading}</h2>
         <p class="text-xl leading-[1.5] text-secondary mb-10" set:html={md(cta.body)}></p>
-        <a
-          href={cta.cta_link}
-          class="btn-primary"
-        >
-          {cta.cta_label}
-        </a>
+        <a href={cta.cta_link} class="btn-primary">{cta.cta_label}</a>
       </div>
     </div>
   </section>
