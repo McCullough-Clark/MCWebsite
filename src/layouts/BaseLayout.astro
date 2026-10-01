@@ -3,16 +3,90 @@ import '../styles/global.css'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 
+type SchemaItem = Record<string, unknown>
+
 interface Props {
   title: string
   description: string
   ogTitle: string
   ogDescription: string
   ogUrl: string
+  ogImage?: string
+  ogType?: 'website' | 'article'
+  publishedTime?: string
   robots?: string
+  schema?: SchemaItem | SchemaItem[]
 }
 
-const { title, description, ogTitle, ogDescription, ogUrl, robots } = Astro.props
+const {
+  title,
+  description,
+  ogTitle,
+  ogDescription,
+  ogUrl,
+  ogImage = '/og-image.png',
+  ogType = 'website',
+  publishedTime,
+  robots,
+  schema,
+} = Astro.props
+
+const siteUrl = Astro.site ?? new URL('https://mcculloughclark.com')
+const canonical = new URL(ogUrl, siteUrl)
+if (canonical.pathname !== '/' && !canonical.pathname.endsWith('/')) {
+  canonical.pathname = `${canonical.pathname}/`
+}
+const canonicalUrl = canonical.toString()
+const socialImageUrl = new URL(ogImage, siteUrl).toString()
+const gaId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID?.trim()
+const analyticsEnabled = Boolean(
+  gaId && /^G-[A-Z0-9]+$/.test(gaId) && !/^G-X+$/.test(gaId)
+)
+
+const organizationSchema: SchemaItem = {
+  '@type': 'Organization',
+  '@id': `${siteUrl.origin}/#organization`,
+  name: 'McCullough Clark',
+  url: siteUrl.origin,
+  logo: `${siteUrl.origin}/logos/mc_monogram.svg`,
+  description:
+    'An operations firm with two specialist practices: Systems & Automation and Bookkeeping.',
+  email: 'sharla@mcculloughclark.com',
+  telephone: '+1-214-888-6840',
+  areaServed: {
+    '@type': 'AdministrativeArea',
+    name: 'Texas',
+  },
+  founder: [
+    {
+      '@type': 'Person',
+      name: 'Sharla Clark',
+      honorificSuffix: 'EA, MBA',
+    },
+    {
+      '@type': 'Person',
+      name: 'Whitney McCullough',
+    },
+  ],
+}
+
+const additionalSchema = schema ? (Array.isArray(schema) ? schema : [schema]) : []
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    organizationSchema,
+    {
+      '@type': 'WebSite',
+      '@id': `${siteUrl.origin}/#website`,
+      name: 'McCullough Clark',
+      url: siteUrl.origin,
+      publisher: { '@id': `${siteUrl.origin}/#organization` },
+      inLanguage: 'en-US',
+    },
+    ...additionalSchema,
+  ],
+}
+const structuredDataText = JSON.stringify(structuredData).replace(/</g, '\\u003c')
 ---
 
 <!doctype html>
@@ -21,27 +95,46 @@ const { title, description, ogTitle, ogDescription, ogUrl, robots } = Astro.prop
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="sitemap" href="/sitemap.xml" />
     <title>{title}</title>
     <meta name="description" content={description} />
     {robots && <meta name="robots" content={robots} />}
+
     <meta property="og:title" content={ogTitle} />
     <meta property="og:description" content={ogDescription} />
-    <meta property="og:image" content="/og-image.png" />
-    <meta property="og:url" content={ogUrl} />
-    <meta property="og:type" content="website" />
+    <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:image:alt" content="McCullough Clark" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content="McCullough Clark" />
+    {ogType === 'article' && publishedTime && <meta property="article:published_time" content={publishedTime} />}
 
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    </script>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={ogTitle} />
+    <meta name="twitter:description" content={ogDescription} />
+    <meta name="twitter:image" content={socialImageUrl} />
+
+    <script type="application/ld+json" set:html={structuredDataText}></script>
+
+    {
+      analyticsEnabled && (
+        <>
+          <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>
+          <script is:inline define:vars={{ gaId }}>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', gaId);
+          </script>
+        </>
+      )
+    }
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <Header />
-    <main>
+    <main id="main-content" tabindex="-1">
       <slot />
     </main>
     <Footer />
