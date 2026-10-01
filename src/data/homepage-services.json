@@ -1,17 +1,39 @@
 {
-  "heading": "What we do",
+  "heading": "Two practices. Hire the one you need.",
+  "intro": "You do not need to become a bookkeeping client to work with our systems practice, and you do not need an automation project to hire us for bookkeeping.",
   "columns": [
     {
-      "subheading": "AI Advisory & System Integration",
-      "body": "We audit how your firm runs, identify where automation could meaningfully reduce manual hours, and build the tools to do it. System integrations that get your software talking to each other, intake automation, document workflows, internal AI tools. For firms where back-office work has started pulling expertise off its highest-value work.",
-      "link_label": "Schedule a conversation →",
-      "link_target": "https://calendly.com/mcculloughclark/consult"
+      "label": "Practice 01",
+      "theme": "systems",
+      "subheading": "Systems & Automation",
+      "body": "We examine how work moves through your firm, find the handoffs creating unnecessary effort, and build the systems to improve them. The work can stand alone or begin with an AI Operations Audit.",
+      "bullets": [
+        "System integrations that let software exchange information",
+        "Workflow automation for repeatable back-office processes",
+        "Client intake and document workflows",
+        "Data infrastructure, reporting, and focused internal AI tools"
+      ],
+      "links": [
+        { "label": "Explore Systems & Automation", "target": "/systems-integration" },
+        { "label": "Workflow Automation", "target": "/workflow-automation" },
+        { "label": "AI Operations Audit", "target": "/audit" }
+      ]
     },
     {
+      "label": "Practice 02",
+      "theme": "books",
       "subheading": "Bookkeeping",
-      "body": "Monthly bookkeeping owned by an Enrolled Agent with 25+ years in accounting. QuickBooks Online setup, cleanup, and ongoing books. For firms that want their numbers to actually answer the questions owners are asking — not just satisfy the tax filing.",
-      "link_label": "Schedule a conversation →",
-      "link_target": "https://calendly.com/mcculloughclark/consult"
+      "body": "Monthly bookkeeping owned by an Enrolled Agent with more than 25 years in accounting. For firms that want their numbers to answer the questions owners are actually asking—not merely satisfy a tax filing.",
+      "bullets": [
+        "Full-cycle monthly bookkeeping and month-end close",
+        "QuickBooks Online setup, cleanup, and ongoing books",
+        "Multi-entity books and connected financial workflows",
+        "Direct communication with the person responsible for the work"
+      ],
+      "links": [
+        { "label": "Explore Bookkeeping", "target": "/bookkeeping" }
+      ]
     }
-  ]
+  ],
+  "bridge": "Each practice stands on its own. The advantage of having them under one roof appears when a workflow touches both operations and financial information: you do not have to explain the business twice, and the people solving the problem already speak both languages."
 }
