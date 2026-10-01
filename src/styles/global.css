@@ -91,6 +91,16 @@
   transform: translateY(-1px);
 }
 
+.btn-bookkeeping {
+  @apply inline-flex items-center justify-center bg-terracotta text-white py-3.5 px-7 rounded-[4px] text-[15px] font-medium no-underline min-h-11;
+  transition: background-color 0.18s ease, transform 0.18s ease;
+}
+
+.btn-bookkeeping:hover {
+  background-color: var(--color-navy);
+  transform: translateY(-1px);
+}
+
 .btn-secondary {
   @apply inline-flex items-center justify-center bg-white text-navy py-3.5 px-7 rounded-[4px] text-[15px] font-medium no-underline min-h-11 border border-navy;
   transition: background-color 0.18s ease, color 0.18s ease;
@@ -218,6 +228,7 @@ details[open] summary::before {
   }
 
   .btn-primary,
+  .btn-bookkeeping,
   .btn-secondary,
   .hamburger span {
     transition: none;
