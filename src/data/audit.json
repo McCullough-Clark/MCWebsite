@@ -56,21 +56,21 @@
   },
   "samples": {
     "heading": "Sample deliverables.",
-    "intro": "Two sample audits, both built for businesses we own and operate, are available for review.",
+    "intro": "Two sample audits, both built for businesses we own and operate, are available on request.",
     "items": [
       {
         "label": "Sample 1",
         "title": "Bookkeeping Practice Audit",
         "description": "Self-audit of the McCullough Clark Bookkeeping service line. Identifies automation opportunities in client onboarding, month-end close, and document collection workflows.",
-        "link_label": "View sample PDF",
-        "link_target": "/pdfs/bookkeeping-practice-audit.pdf"
+        "link_label": "Sample available on request",
+        "link_target": ""
       },
       {
         "label": "Sample 2",
         "title": "Minerva Platform Audit",
         "description": "Audit of the Minerva quote and booking platform, a real software product we built for a service business. Demonstrates how we approach audits of technology-enabled operations.",
-        "link_label": "View sample PDF",
-        "link_target": "/pdfs/minerva-platform-audit.pdf"
+        "link_label": "Sample available on request",
+        "link_target": ""
       }
     ]
   },
