@@ -28,7 +28,7 @@ const posts = allPosts
 
       {posts.length === 0 && (
         <div class="max-w-[720px] reveal bg-white border border-border rounded-[8px] p-6">
-          <p class="text-secondary">We are preparing the first set of articles. In the meantime, explore our pages on <a href="/systems-integration" class="text-teal underline underline-offset-[3px]">system integration</a>, <a href="/workflow-automation" class="text-teal underline underline-offset-[3px]">workflow automation</a>, and <a href="/bookkeeping" class="text-teal underline underline-offset-[3px]">bookkeeping</a>.</p>
+          <p class="text-secondary">We are preparing the first set of articles. In the meantime, explore our pages on <a href="/systems-integration/" class="text-teal underline underline-offset-[3px]">system integration</a>, <a href="/workflow-automation/" class="text-teal underline underline-offset-[3px]">workflow automation</a>, and <a href="/bookkeeping/" class="text-teal underline underline-offset-[3px]">bookkeeping</a>.</p>
         </div>
       )}
 
@@ -37,14 +37,14 @@ const posts = allPosts
           {posts.map((post) => (
             <article class="post-card border-t border-border pt-8">
               {post.data.featured_image && (
-                <img src={post.data.featured_image} alt={post.data.featured_image_alt || ''} class="w-full max-w-[720px] mb-5" />
+                <img src={post.data.featured_image} alt={post.data.featured_image_alt || post.data.title} loading="lazy" decoding="async" class="w-full max-w-[720px] mb-5" />
               )}
               <p class="text-[13px] tracking-[0.1em] uppercase text-gray mb-3">
-                {post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                {post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}
                 {post.data.author && ` · ${post.data.author}`}
               </p>
               <h2 class="mb-3">
-                <a href={`/blog/${post.id}`} class="text-2xl font-medium leading-[1.3] no-underline text-navy">{post.data.title}</a>
+                <a href={`/blog/${post.id}/`} class="text-2xl font-medium leading-[1.3] no-underline text-navy">{post.data.title}</a>
               </h2>
               <p class="text-secondary mb-4 max-w-[720px]">{post.data.summary}</p>
               {post.data.tags && post.data.tags.length > 0 && (
@@ -54,7 +54,7 @@ const posts = allPosts
                   ))}
                 </div>
               )}
-              <a href={`/blog/${post.id}`} class="text-teal underline underline-offset-[3px] text-[15px]">Read article →</a>
+              <a href={`/blog/${post.id}/`} class="text-teal underline underline-offset-[3px] text-[15px]">Read article →</a>
             </article>
           ))}
         </div>
