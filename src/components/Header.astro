@@ -2,11 +2,17 @@
 import metadata from '../data/metadata.json'
 
 const navItems = [
-  { label: 'Systems & Automation', href: '/systems-integration' },
-  { label: 'Bookkeeping', href: '/bookkeeping' },
-  { label: 'AI Audit', href: '/audit' },
-  { label: 'Articles', href: '/blog' },
+  { label: 'Systems & Automation', href: '/systems-integration/' },
+  { label: 'Bookkeeping', href: '/bookkeeping/' },
+  { label: 'AI Audit', href: '/audit/' },
+  { label: 'Articles', href: '/blog/' },
 ]
+
+const currentPath = Astro.url.pathname.replace(/\/+$/, '') || '/'
+const isCurrent = (href: string) => {
+  const targetPath = href.replace(/\/+$/, '') || '/'
+  return currentPath === targetPath || (targetPath === '/systems-integration' && currentPath === '/workflow-automation')
+}
 ---
 
 <header class="sticky top-0 z-50 border-b border-border bg-white/95 backdrop-blur-md">
@@ -24,7 +30,7 @@ const navItems = [
 
     <nav class="hidden lg:flex items-center gap-6" aria-label="Primary navigation">
       {navItems.map((item) => (
-        <a href={item.href} class="text-sm text-gray no-underline transition-colors duration-150 hover:text-teal">
+        <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined} class="text-sm text-gray no-underline transition-colors duration-150 hover:text-teal">
           {item.label}
         </a>
       ))}
@@ -52,7 +58,7 @@ const navItems = [
   <div class="mobile-menu lg:hidden border-t border-border bg-white" id="mobile-menu" hidden>
     <nav class="flex flex-col p-6 gap-5" aria-label="Mobile navigation">
       {navItems.map((item) => (
-        <a href={item.href} class="text-base text-gray no-underline hover:text-teal">{item.label}</a>
+        <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined} class="text-base text-gray no-underline hover:text-teal">{item.label}</a>
       ))}
       <a href={metadata.phone_link} class="text-base text-body no-underline">{metadata.phone}</a>
       <a href={metadata.cta_link} class="btn-primary text-center">{metadata.cta_label}</a>
@@ -87,6 +93,13 @@ const navItems = [
         btn.focus();
       }
     });
+
+    var desktop = window.matchMedia('(min-width: 64rem)');
+    function closeAtDesktop(event) {
+      if (event.matches) setOpen(false);
+    }
+    if (desktop.addEventListener) desktop.addEventListener('change', closeAtDesktop);
+    else desktop.addListener(closeAtDesktop);
   });
 </script>
 
