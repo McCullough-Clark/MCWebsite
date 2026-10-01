@@ -1,6 +1,8 @@
 {
-  "heading": "Book a call.",
-  "body": "Most engagements start with a thirty-minute conversation. We will tell you whether we are the right fit. If not, we will tell you who is.",
-  "cta_label": "Book a call",
-  "cta_link": "https://calendly.com/mcculloughclark/consult"
+  "heading": "Start with the problem—not a technology.",
+  "body": "Tell us where work is getting stuck. If the answer belongs with Systems & Automation, Bookkeeping, both practices, or neither, we will give you a straight answer.",
+  "primary_label": "Discuss a systems problem",
+  "primary_link": "https://calendly.com/mcculloughclark/consult",
+  "secondary_label": "Ask about bookkeeping",
+  "secondary_link": "/bookkeeping"
 }
