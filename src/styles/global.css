@@ -11,7 +11,7 @@
   --color-muted: #727C82;
   --color-navy: #17324D;
   --color-teal: #0A6E68;
-  --color-terracotta: #B6543C;
+  --color-terracotta: #A94432;
   --color-ivory: #F7F2E8;
   --color-sage: #E1ECE7;
   --color-pale-blue: #E8F0F4;
@@ -60,7 +60,8 @@
 
   :focus-visible {
     outline: 3px solid var(--color-terracotta);
-    outline-offset: 3px;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 6px var(--color-white);
   }
 }
 
@@ -179,32 +180,32 @@ details[open] summary::before {
   content: "\2212";
 }
 
-.reveal {
+.reveal-ready .reveal {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.reveal.visible {
+.reveal-ready .reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.reveal-stagger > * {
+.reveal-ready .reveal-stagger > * {
   opacity: 0;
   transform: translateY(16px);
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.reveal-stagger.visible > * {
+.reveal-ready .reveal-stagger.visible > * {
   opacity: 1;
   transform: translateY(0);
 }
 
-.reveal-stagger.visible > *:nth-child(1) { transition-delay: 0ms; }
-.reveal-stagger.visible > *:nth-child(2) { transition-delay: 80ms; }
-.reveal-stagger.visible > *:nth-child(3) { transition-delay: 160ms; }
-.reveal-stagger.visible > *:nth-child(4) { transition-delay: 240ms; }
+.reveal-ready .reveal-stagger.visible > *:nth-child(1) { transition-delay: 0ms; }
+.reveal-ready .reveal-stagger.visible > *:nth-child(2) { transition-delay: 80ms; }
+.reveal-ready .reveal-stagger.visible > *:nth-child(3) { transition-delay: 160ms; }
+.reveal-ready .reveal-stagger.visible > *:nth-child(4) { transition-delay: 240ms; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -217,7 +218,8 @@ details[open] summary::before {
   }
 
   .btn-primary,
-  .btn-secondary {
+  .btn-secondary,
+  .hamburger span {
     transition: none;
   }
 }
