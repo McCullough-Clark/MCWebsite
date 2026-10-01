@@ -16,6 +16,8 @@ const { Content } = await render(post)
 const ogImage = post.data.featured_image || '/og-image.png'
 const pageUrl = `https://mcculloughclark.com/blog/${post.id}/`
 const imageUrl = new URL(ogImage, Astro.site ?? 'https://mcculloughclark.com').toString()
+const authorName = post.data.author || 'Sharla Clark'
+const isSharla = /Sharla Clark/i.test(authorName)
 const articleSchema = {
   '@type': 'Article',
   '@id': `${pageUrl}#article`,
@@ -26,7 +28,7 @@ const articleSchema = {
   mainEntityOfPage: pageUrl,
   author: {
     '@type': 'Person',
-    name: post.data.author || 'Sharla Clark',
+    name: authorName,
   },
   publisher: { '@id': 'https://mcculloughclark.com/#organization' },
 }
@@ -47,13 +49,13 @@ const articleSchema = {
     <div class="max-w-[1200px] mx-auto px-6">
       <div class="max-w-[720px] reveal">
         <p class="eyebrow text-[13px] tracking-[0.1em] uppercase mb-4">
-          {post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-          {post.data.author && ` · ${post.data.author}`}
+          {post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}
+          {` · ${authorName}`}
         </p>
         <h1 class="text-[40px] md:text-[64px] font-medium tracking-[-0.02em] leading-[1.1] mb-8">{post.data.title}</h1>
 
         {post.data.featured_image && (
-          <img src={post.data.featured_image} alt={post.data.featured_image_alt || ''} class="w-full mb-10" />
+          <img src={post.data.featured_image} alt={post.data.featured_image_alt || post.data.title} decoding="async" class="w-full mb-10" />
         )}
 
         <div class="blog-content">
@@ -61,15 +63,15 @@ const articleSchema = {
         </div>
 
         <div class="border-t border-border mt-14 pt-8">
-          <p class="text-secondary mb-4">Written by Sharla Clark, EA, MBA — founder of McCullough Clark.</p>
+          <p class="text-secondary mb-4">Written by {authorName} — McCullough Clark.</p>
           <div class="flex gap-4 flex-wrap items-center">
             <a href="https://calendly.com/mcculloughclark/consult" class="btn-primary">Book a call</a>
-            <a href="https://proadvisor.intuit.com/app/accountant/search?searchId=sharla-clark" class="text-teal underline underline-offset-[3px] text-sm" target="_blank" rel="noopener noreferrer">QuickBooks ProAdvisor profile</a>
+            {isSharla && <a href="https://proadvisor.intuit.com/app/accountant/search?searchId=sharla-clark" class="text-teal underline underline-offset-[3px] text-sm" target="_blank" rel="noopener noreferrer">QuickBooks ProAdvisor profile</a>}
           </div>
         </div>
 
         <p class="mt-10">
-          <a href="/blog" class="text-teal underline underline-offset-[3px] text-sm">← Back to articles</a>
+          <a href="/blog/" class="text-teal underline underline-offset-[3px] text-sm">← Back to articles</a>
         </p>
       </div>
     </div>
