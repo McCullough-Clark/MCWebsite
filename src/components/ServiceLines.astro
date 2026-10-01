@@ -15,7 +15,7 @@ import { md } from '../lib/markdown'
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 reveal-stagger">
       {servicesData.columns.map((col: any) => (
-        <article class:list={['practice-card p-7 md:p-10', { 'practice-card--books': col.theme === 'books' }]}>
+        <article class:list={['practice-card p-7 md:p-10 flex h-full flex-col', { 'practice-card--books': col.theme === 'books' }]}> 
           <p class:list={['text-[12px] tracking-[0.12em] uppercase font-semibold mb-4', col.theme === 'books' ? 'text-terracotta' : 'text-teal']}>
             {col.label}
           </p>
@@ -29,11 +29,11 @@ import { md } from '../lib/markdown'
               </li>
             ))}
           </ul>
-          <div class="flex gap-x-5 gap-y-3 flex-wrap">
+          <div class="flex gap-x-5 gap-y-3 flex-wrap mt-auto">
             {col.links.map((link: any, index: number) => (
               <a
                 href={link.target}
-                class={index === 0 ? 'btn-primary' : 'text-teal underline underline-offset-[4px] text-[15px] font-medium self-center'}
+                class={index === 0 ? (col.theme === 'books' ? 'btn-bookkeeping' : 'btn-primary') : 'text-teal underline underline-offset-[4px] text-[15px] font-medium self-center'}
               >
                 {link.label}
               </a>
