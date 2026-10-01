@@ -65,7 +65,7 @@ const {
       <h2 class="text-[32px] md:text-[44px] font-medium leading-[1.12] mb-5">{fitHeading}</h2>
       <p class="text-secondary text-lg">{fitIntro}</p>
     </div>
-    <ul class="grid gap-3 list-none reveal-stagger">
+    <ul class="grid gap-3 list-none reveal-stagger" role="list">
       {fitItems.map((item) => (
         <li class="flex gap-3 bg-sage border border-border rounded-[7px] p-4 text-secondary">
           <span class="text-teal font-bold" aria-hidden="true">✓</span>
@@ -107,7 +107,7 @@ const {
       <p class="eyebrow text-[13px] tracking-[0.1em] uppercase mb-4">How it works</p>
       <h2 class="text-[32px] md:text-[44px] font-medium leading-[1.12]">{processHeading}</h2>
     </div>
-    <ol class="grid grid-cols-1 md:grid-cols-3 gap-5 list-none reveal-stagger">
+    <ol class="grid grid-cols-1 md:grid-cols-3 gap-5 list-none reveal-stagger" role="list">
       {processItems.map((item, index) => (
         <li class="border border-border rounded-[8px] p-6">
           <span class="inline-flex w-9 h-9 items-center justify-center rounded-full bg-teal text-white font-semibold mb-5">{index + 1}</span>
