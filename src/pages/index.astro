@@ -1,22 +1,24 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
 import Hero from '../components/Hero.astro'
-import ServiceLines from '../components/ServiceLines.astro'
-import Founders from '../components/Founders.astro'
 import Credentials from '../components/Credentials.astro'
+import ServiceLines from '../components/ServiceLines.astro'
+import WhatWeSolve from '../components/WhatWeSolve.astro'
+import Founders from '../components/Founders.astro'
 import CTA from '../components/CTA.astro'
 ---
 
 <BaseLayout
-  title="McCullough Clark — AI Advisory, System Integration & Bookkeeping"
-  description="A Texas firm offering AI Operations Audits, system integrations, and monthly bookkeeping for service businesses. Founded by Sharla Clark, EA, MBA, and Whitney McCullough."
-  ogTitle="McCullough Clark"
-  ogDescription="AI advisory, system integration, and bookkeeping for service businesses. Based in the DFW metroplex."
-  ogUrl="https://mcculloughclark.com"
+  title="McCullough Clark | Systems, Automation & Bookkeeping"
+  description="An operations firm with two specialist practices: system integration and workflow automation, plus expert monthly bookkeeping for professional-service firms."
+  ogTitle="McCullough Clark — Systems & Automation + Bookkeeping"
+  ogDescription="Hire either specialist practice independently—or bring us an operational problem that crosses systems and financial information."
+  ogUrl="https://mcculloughclark.com/"
 >
   <Hero />
-  <ServiceLines />
-  <Founders />
   <Credentials />
+  <ServiceLines />
+  <WhatWeSolve />
+  <Founders />
   <CTA />
 </BaseLayout>
