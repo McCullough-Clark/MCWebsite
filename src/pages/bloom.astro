@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import bloomData from '../data/bloom.json'
+import { md } from '../lib/markdown'
+// Links with an empty URL stay hidden until one is filled in (e.g. through /admin).
+const links = bloomData.links.filter((link: any) => link.url)
+---
+
+<BaseLayout
+  title="Bloom Bookkeeping is now McCullough Clark"
+  description="Bloom Bookkeeping Services is now McCullough Clark. Same company, new name, and Sharla Clark, EA is still the person behind your books."
+  ogTitle="Bloom Bookkeeping is now McCullough Clark"
+  ogDescription="Same company, new name. Sharla Clark, EA is still the person behind your books."
+  ogUrl="https://mcculloughclark.com/bloom"
+  robots="noindex, follow"
+>
+  <section class="py-16 md:py-24">
+    <div class="max-w-[1200px] mx-auto px-6">
+      <div class="max-w-[720px] reveal">
+        <p class="text-[13px] tracking-[0.1em] uppercase text-gray mb-6">{bloomData.caption}</p>
+        <h1 class="text-[40px] md:text-[64px] font-medium tracking-[-0.02em] leading-[1.1] mb-6">{bloomData.heading}</h1>
+        {bloomData.paragraphs.map((paragraph: string) => (
+          <p class="text-xl leading-[1.5] text-secondary mb-5" set:html={md(paragraph)}></p>
+        ))}
+        <div class="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-8 mt-10">
+          <a href={bloomData.cta_link} class="btn-primary self-start">{bloomData.cta_label}</a>
+          <a href={bloomData.secondary_link} class="text-gray underline underline-offset-[3px] text-sm">
+            {bloomData.secondary_label}
+          </a>
+        </div>
+
+        {links.length > 0 && (
+          <div class="border-t border-border mt-16 pt-8">
+            <p class="text-[13px] tracking-[0.1em] uppercase text-gray mb-4">{bloomData.links_heading}</p>
+            <ul class="flex flex-col sm:flex-row gap-3 sm:gap-8">
+              {links.map((link: any) => (
+                <li>
+                  <a href={link.url} class="text-secondary underline underline-offset-[3px]" target="_blank" rel="noopener noreferrer">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
