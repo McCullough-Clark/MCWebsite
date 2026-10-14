@@ -1,0 +1,17 @@
+{
+  "caption": "You tried to reach bloombooks.net",
+  "heading": "Bloom Bookkeeping is now McCullough Clark.",
+  "paragraphs": [
+    "Same company, new name. Bloom Bookkeeping Services now goes by McCullough Clark, and Sharla Clark, EA is still the person behind your books.",
+    "If you're a Bloom client, your work continues just as it has. Have a question, or just want to say hello? Email Sharla anytime."
+  ],
+  "cta_label": "Email Sharla",
+  "cta_link": "mailto:sharla@mcculloughclark.com?subject=Bloom%20Bookkeeping",
+  "secondary_label": "Visit the McCullough Clark homepage",
+  "secondary_link": "/",
+  "links_heading": "Find Sharla online",
+  "links": [
+    { "label": "QuickBooks ProAdvisor profile", "url": "https://proadvisor.intuit.com/app/accountant/search?searchId=sharla-clark" },
+    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/sharlaclark" }
+  ]
+}
