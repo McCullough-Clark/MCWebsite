@@ -397,7 +397,6 @@ collections:
           - { label: "Button Link", name: "cta_link", widget: "string", hint: "mailto:, https://, or a page path like /bookkeeping" }
           - { label: "Secondary Link Label", name: "secondary_label", widget: "string" }
           - { label: "Secondary Link Target", name: "secondary_link", widget: "string" }
-          - { label: "Profile Links Heading", name: "links_heading", widget: "string" }
           - label: "Profile Links"
             name: "links"
             widget: "list"
