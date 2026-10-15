@@ -1,0 +1,29 @@
+---
+import solveData from '../data/homepage-solve.json'
+import { md } from '../lib/markdown'
+---
+
+<section class="py-16 md:py-24 border-b border-border">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-20 items-start">
+      <div class="reveal">
+        <p class="eyebrow text-[13px] tracking-[0.1em] uppercase mb-4">{solveData.eyebrow}</p>
+        <h2 class="text-[32px] md:text-[44px] font-medium tracking-[-0.015em] leading-[1.12] mb-5">
+          {solveData.heading}
+        </h2>
+        <p class="text-secondary text-lg" set:html={md(solveData.body)}></p>
+      </div>
+
+      <div class="p-6 md:p-8 bg-sage border border-border rounded-[8px] reveal">
+        <ul class="grid gap-4 list-none" role="list">
+          {solveData.problems.map((problem) => (
+            <li class="flex gap-3 text-secondary">
+              <span class="text-teal font-bold" aria-hidden="true">→</span>
+              <span>{problem}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

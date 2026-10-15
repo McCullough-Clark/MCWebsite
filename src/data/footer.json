@@ -1,12 +1,21 @@
 {
-  "brand_description": "A Texas firm. AI Advisory + Bookkeeping for service businesses.",
+  "brand_description": "A Texas firm. Bookkeeping, system integration, workflow automation, and AI operations audits.",
   "contact_heading": "Contact",
   "contact_name": "Sharla Clark, EA · MBA",
   "credentials_heading": "Credentials",
   "credentials_items": [
-    { "text": "IRS Enrolled Agent", "url": "" },
-    { "text": "QuickBooks Online ProAdvisor", "url": "https://proadvisor.intuit.com/app/accountant/search?searchId=sharla-clark" },
-    { "text": "Master's in Accounting + MBA", "url": "" }
+    {
+      "text": "IRS Enrolled Agent",
+      "url": ""
+    },
+    {
+      "text": "QuickBooks Online ProAdvisor",
+      "url": "https://proadvisor.intuit.com/app/accountant/search?searchId=sharla-clark"
+    },
+    {
+      "text": "Master's in Accounting + MBA",
+      "url": ""
+    }
   ],
   "copyright": "© 2026 Bloom Bookkeeping Services, LLC dba McCullough Clark. All rights reserved."
 }

@@ -1,59 +1,67 @@
 ---
-import metadata from '../data/metadata.json';
+import metadata from '../data/metadata.json'
+
+const navItems = [
+  { label: 'Bookkeeping', href: '/bookkeeping/' },
+  { label: 'Integrations', href: '/systems-integration/' },
+  { label: 'Automation', href: '/workflow-automation/' },
+  { label: 'Articles', href: '/blog/' },
+]
+
+const currentPath = Astro.url.pathname.replace(/\/+$/, '') || '/'
+const isCurrent = (href: string) => {
+  const targetPath = href.replace(/\/+$/, '') || '/'
+  return currentPath === targetPath
+}
 ---
 
-<header class="border-b border-border">
-  <div class="max-w-[1200px] mx-auto px-6 flex items-center justify-between py-5 gap-8">
-    <a href="/" aria-label="McCullough Clark home">
+<header class="sticky top-0 z-50 border-b border-border bg-white/95 backdrop-blur-md">
+  <div class="max-w-[1200px] mx-auto px-6 flex items-center justify-between py-4 gap-6">
+    <a href="/" aria-label="McCullough Clark home" class="shrink-0">
       <img
         src="/logos/mc_logo_header_light.png"
         srcset="/logos/mc_logo_header_light.png 1x, /logos/mc_logo_header_light_2x.png 2x"
         alt="McCullough Clark"
-        class="h-14 max-md:h-11 w-auto block"
+        width="251"
+        height="56"
+        class="h-12 max-md:h-10 w-auto block"
       />
     </a>
 
-    <nav class="hidden md:flex items-center gap-8" id="header-nav">
-      <a href="/#services" class="text-sm text-gray no-underline transition-colors duration-150 hover:text-black">Services</a>
-      <a href="/blog" class="text-sm text-gray no-underline transition-colors duration-150 hover:text-black">Articles</a>
-      <a href="/#about" class="text-sm text-gray no-underline transition-colors duration-150 hover:text-black">About</a>
+    <nav class="hidden lg:flex items-center gap-6" aria-label="Primary navigation">
+      {navItems.map((item) => (
+        <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined} class="text-sm text-gray no-underline transition-colors duration-150 hover:text-teal">
+          {item.label}
+        </a>
+      ))}
     </nav>
 
-    <div class="hidden md:flex items-center gap-6">
+    <div class="hidden lg:flex items-center gap-5">
       <a href={metadata.phone_link} class="text-sm text-body no-underline whitespace-nowrap">{metadata.phone}</a>
-      <a
-        href={metadata.cta_link}
-        class="btn-primary"
-      >
-        {metadata.cta_label}
-      </a>
+      <a href={metadata.cta_link} class="btn-primary">{metadata.cta_label}</a>
     </div>
 
     <button
-      class="hamburger flex md:hidden flex-col justify-center gap-[5px] bg-transparent border-none cursor-pointer p-2 min-w-11 min-h-11"
+      class="hamburger flex lg:hidden flex-col justify-center gap-[5px] bg-transparent border-none cursor-pointer p-2 min-w-11 min-h-11"
       id="hamburger"
       aria-label="Open menu"
+      aria-controls="mobile-menu"
       aria-expanded="false"
       type="button"
     >
-      <span class="block w-[22px] h-0.5 bg-body transition-[transform,opacity] duration-200"></span>
-      <span class="block w-[22px] h-0.5 bg-body transition-[transform,opacity] duration-200"></span>
-      <span class="block w-[22px] h-0.5 bg-body transition-[transform,opacity] duration-200"></span>
+      <span class="block w-[22px] h-0.5 bg-navy transition-[transform,opacity] duration-200"></span>
+      <span class="block w-[22px] h-0.5 bg-navy transition-[transform,opacity] duration-200"></span>
+      <span class="block w-[22px] h-0.5 bg-navy transition-[transform,opacity] duration-200"></span>
     </button>
   </div>
 
-  <div class="mobile-menu block md:hidden overflow-hidden max-h-0 transition-[max-height] duration-300 border-t border-border" id="mobile-menu">
-    <nav class="flex flex-col p-6 gap-5">
-      <a href="/#services" class="text-base text-gray no-underline hover:text-black">Services</a>
-      <a href="/blog" class="text-base text-gray no-underline hover:text-black">Articles</a>
-      <a href="/#about" class="text-base text-gray no-underline hover:text-black">About</a>
+  <div class="mobile-menu lg:hidden border-t border-border bg-white" id="mobile-menu" hidden>
+    <nav class="flex flex-col p-6 gap-5" aria-label="Mobile navigation">
+      {navItems.map((item) => (
+        <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined} class="text-base text-gray no-underline hover:text-teal">{item.label}</a>
+      ))}
       <a href={metadata.phone_link} class="text-base text-body no-underline">{metadata.phone}</a>
-      <a
-        href={metadata.cta_link}
-        class="btn-primary text-center"
-      >
-        {metadata.cta_label}
-      </a>
+      <a href={metadata.cta_link} class="btn-primary text-center">{metadata.cta_label}</a>
     </nav>
   </div>
 </header>
@@ -63,24 +71,39 @@ import metadata from '../data/metadata.json';
     var btn = document.getElementById('hamburger');
     var menu = document.getElementById('mobile-menu');
     if (!btn || !menu) return;
-    btn.addEventListener('click', function () {
-      var open = menu.classList.toggle('open');
+
+    function setOpen(open) {
+      menu.hidden = !open;
       btn.classList.toggle('open', open);
       btn.setAttribute('aria-expanded', String(open));
+      btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    }
+
+    btn.addEventListener('click', function () {
+      setOpen(btn.getAttribute('aria-expanded') !== 'true');
     });
-    // Close menu when a link is clicked
+
     menu.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        menu.classList.remove('open');
-        btn.classList.remove('open');
-        btn.setAttribute('aria-expanded', 'false');
-      });
+      link.addEventListener('click', function () { setOpen(false); });
     });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') {
+        setOpen(false);
+        btn.focus();
+      }
+    });
+
+    var desktop = window.matchMedia('(min-width: 64rem)');
+    function closeAtDesktop(event) {
+      if (event.matches) setOpen(false);
+    }
+    if (desktop.addEventListener) desktop.addEventListener('change', closeAtDesktop);
+    else desktop.addListener(closeAtDesktop);
   });
 </script>
 
 <style>
-  /* Hamburger open/close animation — JS-toggled state */
   .hamburger.open span:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
   }
@@ -91,10 +114,5 @@ import metadata from '../data/metadata.json';
 
   .hamburger.open span:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
-  }
-
-  /* Mobile menu slide — JS-toggled state */
-  .mobile-menu.open {
-    max-height: 400px;
   }
 </style>

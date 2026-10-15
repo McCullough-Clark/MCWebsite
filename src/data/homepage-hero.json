@@ -1,7 +1,34 @@
 {
-  "eyebrow": "AI Advisory · Bookkeeping",
-  "heading": "Accounting expertise. AI tools. For firms that win on expertise and need their operations to keep up.",
-  "body": "McCullough Clark is a Texas firm offering AI Operations Audits and monthly bookkeeping. We work with firms whose value is their expertise — and whose back office needs to match it. We identify where automation could meaningfully reduce manual work, then build the tools to do it. Founded by Sharla Clark, EA, MBA, and Whitney McCullough.",
-  "cta_label": "Book a call",
-  "cta_link": "https://calendly.com/mcculloughclark/consult"
+  "eyebrow": "Bookkeeping · Integrations · Automation · AI Audits",
+  "heading": "System integrations. Workflow automation. Expert bookkeeping.",
+  "body": "McCullough Clark is an operations firm for businesses built on expertise. We keep the books, connect the software you already use, automate the repetitive work around your team, and help you find where AI is genuinely useful.",
+  "primary_label": "Explore our services",
+  "primary_link": "/#services",
+  "secondary_label": "Book a call",
+  "secondary_link": "https://calendly.com/mcculloughclark/consult",
+  "reassurance": "Use one service or several. Nothing is bundled.",
+  "panel": {
+    "eyebrow": "Connections that reconcile",
+    "heading": "Most software comes with a built-in QuickBooks sync. When the built-in one makes a mess of the books, we build our own.",
+    "connections": [
+      {
+        "source": "Paycor",
+        "detail": "payroll"
+      },
+      {
+        "source": "Jane",
+        "detail": "appointments and payments"
+      },
+      {
+        "source": "Concur",
+        "detail": "expense reports"
+      },
+      {
+        "source": "Square",
+        "detail": "sales and deposits"
+      }
+    ],
+    "destination": "QuickBooks Online",
+    "result": "Every connection checks that the numbers tie out. Anything that does not is flagged for review instead of landing in the books."
+  }
 }

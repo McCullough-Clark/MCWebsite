@@ -1,0 +1,56 @@
+{
+  "caption": "Workflow Automation",
+  "heading": "Take repetitive work out of your team’s hands.",
+  "intro": "Professional expertise should not be consumed by predictable back-office steps. We design and build workflow automations around the way your firm already works, from intake and document handling to recurring internal handoffs.",
+  "fitHeading": "What workflow automation can address.",
+  "fitIntro": "The goal is not to automate expert judgment. It is to remove the repeatable work surrounding that judgment.",
+  "fitItems": [
+    "Intake follows the same steps for every new client or matter.",
+    "Information or documents must be routed to the right person.",
+    "A recurring process currently depends on someone remembering each step.",
+    "People spend time checking status and sending routine follow-ups.",
+    "The same information is repeatedly moved, renamed, or re-entered."
+  ],
+  "workHeading": "Automation with clear boundaries.",
+  "workIntro": "We define the trigger, rules, result, and human decision points before selecting tools or writing a build plan.",
+  "workItems": [
+    {
+      "title": "Client intake",
+      "description": "Create a consistent path for collecting information, checking completeness, and getting it to the right place."
+    },
+    {
+      "title": "Document workflows",
+      "description": "Collect, organize, name, route, and follow up on documents through a repeatable process."
+    },
+    {
+      "title": "Approvals and handoffs",
+      "description": "Move work to the next person when defined conditions are met while preserving the steps that require judgment."
+    },
+    {
+      "title": "Focused internal AI tools",
+      "description": "Apply AI to a specific operational task with a defined source, output, and review step, not as a vague all-purpose assistant."
+    }
+  ],
+  "distinctionHeading": "“Automation” should describe a process, not a promise.",
+  "distinctionBody": "We use the word to mean a defined workflow with a clear trigger, clear rules, and a clear result. If the real problem is disconnected software, the solution may require system integration. If the process itself is unclear, the right first step may be redesign rather than technology.",
+  "processHeading": "Build around the work, not the tool.",
+  "processItems": [
+    {
+      "title": "Observe the process",
+      "description": "We document the current steps, variations, ownership, inputs, exceptions, and decisions that should remain human."
+    },
+    {
+      "title": "Define the workflow",
+      "description": "We agree on the trigger, rules, routing, checks, and outcome before implementation begins."
+    },
+    {
+      "title": "Build and prove it",
+      "description": "We implement, test ordinary and exception cases, document the result, and refine the handoff with your team."
+    }
+  ],
+  "independence": "Workflow automation is available on its own, with or without any of our other services.",
+  "ctaHeading": "What process does your team repeat every week?",
+  "ctaBody": "Walk us through it. We will help determine what can be simplified, connected, or automated, and what should stay in expert hands.",
+  "ctaLabel": "Talk through a workflow",
+  "ctaLink": "https://calendly.com/mcculloughclark/consult"
+}

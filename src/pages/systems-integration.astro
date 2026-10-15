@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import ServiceDetail from '../components/ServiceDetail.astro'
+import content from '../data/systems-integration.json'
+
+const description = 'McCullough Clark designs and builds system integrations that connect the software professional-service firms already use and reduce duplicate entry and manual handoffs.'
+const pageUrl = 'https://mcculloughclark.com/systems-integration/'
+
+const serviceSchema = {
+  '@type': 'Service',
+  '@id': `${pageUrl}#service`,
+  name: 'System Integration Services',
+  serviceType: 'System integration',
+  url: pageUrl,
+  description,
+  provider: { '@id': 'https://mcculloughclark.com/#organization' },
+  audience: {
+    '@type': 'BusinessAudience',
+    audienceType: 'Professional-service firms',
+  },
+}
+
+---
+
+<BaseLayout
+  title="System Integration for Professional Services | McCullough Clark"
+  description={description}
+  ogTitle="System Integration Services | McCullough Clark"
+  ogDescription={description}
+  ogUrl={pageUrl}
+  schema={serviceSchema}
+>
+  <ServiceDetail {...content} />
+</BaseLayout>

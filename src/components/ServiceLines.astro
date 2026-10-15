@@ -1,23 +1,41 @@
 ---
-import servicesData from '../data/homepage-services.json';
-import { md } from '../lib/markdown';
+import servicesData from '../data/homepage-services.json'
+import { md } from '../lib/markdown'
 ---
 
-<section id="services" class="py-16 md:py-24 bg-off-white border-b border-border">
+<section id="services" class="py-16 md:py-24 bg-pale-blue border-b border-border">
   <div class="max-w-[1200px] mx-auto px-6">
-    <div class="max-w-[720px] reveal mb-14">
-      <h2 class="text-[28px] md:text-[40px] font-medium tracking-[-0.01em] leading-[1.2] mb-4">{servicesData.heading}</h2>
+    <div class="max-w-[760px] reveal mb-12">
+      <p class="eyebrow text-[13px] tracking-[0.1em] uppercase mb-4">{servicesData.eyebrow}</p>
+      <h2 class="text-[32px] md:text-[46px] font-medium tracking-[-0.015em] leading-[1.12] mb-5">
+        {servicesData.heading}
+      </h2>
+      <p class="text-xl leading-[1.55] text-secondary" set:html={md(servicesData.intro)}></p>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 reveal-stagger">
-      {servicesData.columns.map((col: any) => (
-        <div>
-          <h3 class="text-2xl font-medium leading-[1.3] mb-4">{col.subheading}</h3>
-          <p class="text-secondary mb-5" set:html={md(col.body)}></p>
-          <a href={col.link_target} class="text-body underline underline-offset-[3px] text-[15px]">
-            {col.link_label}
-          </a>
-        </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal-stagger">
+      {servicesData.cards.map((card: any) => (
+        <article class="service-card p-7 md:p-9 flex h-full flex-col">
+          <p class="text-[12px] tracking-[0.12em] uppercase font-semibold mb-3 text-teal">{card.label}</p>
+          <h3 class="text-[26px] md:text-[30px] font-medium leading-[1.15] mb-4">{card.title}</h3>
+          <div class="text-secondary mb-6" set:html={md(card.body)}></div>
+          <ul class="grid gap-3 mb-8 list-none" role="list">
+            {card.bullets.map((bullet: string) => (
+              <li class="flex gap-3 text-secondary">
+                <span class="mt-[0.58em] w-2 h-2 rounded-full shrink-0 bg-teal" aria-hidden="true"></span>
+                <span>{bullet}</span>
+              </li>
+            ))}
+          </ul>
+          <a href={card.link_target} class="btn-secondary self-start mt-auto">{card.link_label}</a>
+        </article>
       ))}
+    </div>
+
+    <div class="mt-10 p-6 md:p-8 bg-white border border-border rounded-[8px] reveal">
+      <div class="accent-rule mb-5"></div>
+      <h3 class="text-2xl font-medium mb-3">{servicesData.bridge_heading}</h3>
+      <p class="text-secondary max-w-[860px]" set:html={md(servicesData.bridge)}></p>
     </div>
   </div>
 </section>

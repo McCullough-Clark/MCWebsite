@@ -1,16 +1,23 @@
 @import "tailwindcss";
 
 @theme {
-  --color-black: #000000;
-  --color-gray: #666666;
+  --color-black: #17324D;
+  --color-gray: #59666D;
   --color-white: #FFFFFF;
-  --color-off-white: #FAFAFA;
-  --color-body: #1a1a1a;
-  --color-border: #E5E5E5;
-  --color-secondary: #444444;
-  --color-muted: #999999;
+  --color-off-white: #F7F2E8;
+  --color-body: #20252B;
+  --color-border: #D8D7D0;
+  --color-secondary: #3F4C54;
+  --color-muted: #727C82;
+  --color-navy: #17324D;
+  --color-teal: #0A6E68;
+  --color-terracotta: #A94432;
+  --color-ivory: #F7F2E8;
+  --color-sage: #E1ECE7;
+  --color-pale-blue: #E8F0F4;
 
   --font-sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-display: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
 }
 
 @layer base {
@@ -18,6 +25,8 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
+    /* Anchor jumps (e.g. /#services) land below the sticky header */
+    scroll-padding-top: 96px;
   }
 
   *,
@@ -25,6 +34,7 @@
   *::after {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
   }
 
   body {
@@ -36,21 +46,94 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
+    color: var(--color-navy);
     text-decoration: none;
+  }
+
+  h1,
+  h2 {
+    font-family: var(--font-display);
+  }
+
+  ::selection {
+    background: var(--color-sage);
+    color: var(--color-navy);
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-terracotta);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 6px var(--color-white);
   }
 }
 
-/* Button component — reused across many pages */
+.skip-link {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1000;
+  transform: translateY(-200%);
+  padding: 0.75rem 1rem;
+  color: var(--color-white);
+  background: var(--color-navy);
+  border-radius: 0.25rem;
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
 .btn-primary {
-  @apply inline-block bg-black text-white py-3.5 px-7 rounded-[4px] text-[15px] font-medium no-underline min-h-11;
-  transition: opacity 0.15s ease;
+  @apply inline-flex items-center justify-center bg-navy text-white py-3.5 px-7 rounded-[4px] text-[15px] font-medium no-underline min-h-11;
+  transition: background-color 0.18s ease, transform 0.18s ease;
 }
 
 .btn-primary:hover {
-  opacity: 0.85;
+  background-color: var(--color-teal);
+  transform: translateY(-1px);
 }
 
-/* Details/FAQ — pseudo-elements require CSS */
+
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center bg-white text-navy py-3.5 px-7 rounded-[4px] text-[15px] font-medium no-underline min-h-11 border border-navy;
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-navy);
+  color: var(--color-white);
+}
+
+.eyebrow {
+  color: var(--color-teal);
+  font-weight: 650;
+}
+
+.hero-surface {
+  background:
+    radial-gradient(circle at 82% 22%, rgba(10, 110, 104, 0.13), transparent 31%),
+    radial-gradient(circle at 13% 92%, rgba(182, 84, 60, 0.10), transparent 25%),
+    var(--color-ivory);
+}
+
+.service-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-top: 5px solid var(--color-teal);
+  border-radius: 8px;
+  box-shadow: 0 18px 45px rgba(23, 50, 77, 0.07);
+}
+
+
+
+.accent-rule {
+  width: 54px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--color-terracotta);
+}
+
 details summary {
   cursor: pointer;
   list-style: none;
@@ -65,7 +148,7 @@ details summary::before {
   display: inline-block;
   width: 20px;
   font-weight: 400;
-  color: var(--color-gray);
+  color: var(--color-teal);
   transition: transform 0.15s ease;
 }
 
@@ -73,46 +156,54 @@ details[open] summary::before {
   content: "\2212";
 }
 
-/* Scroll reveal — JS-toggled state */
-.reveal {
+/* Scroll reveal. Content only starts hidden once the inline script in BaseLayout
+   has added the "js" class, so visits without JavaScript always see everything. */
+.js .reveal {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.reveal.visible {
+.js .reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.reveal-stagger > * {
+.js .reveal-stagger > * {
   opacity: 0;
   transform: translateY(16px);
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.reveal-stagger.visible > * {
+.js .reveal-stagger.visible > * {
   opacity: 1;
   transform: translateY(0);
 }
 
-.reveal-stagger.visible > *:nth-child(1) { transition-delay: 0ms; }
-.reveal-stagger.visible > *:nth-child(2) { transition-delay: 80ms; }
-.reveal-stagger.visible > *:nth-child(3) { transition-delay: 160ms; }
+.js .reveal-stagger.visible > *:nth-child(2) { transition-delay: 80ms; }
+.js .reveal-stagger.visible > *:nth-child(3) { transition-delay: 160ms; }
+.js .reveal-stagger.visible > *:nth-child(n+4) { transition-delay: 240ms; }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal,
-  .reveal-stagger > * {
+  html { scroll-behavior: auto; }
+
+  .btn-primary,
+  .btn-secondary,
+  .hamburger span {
+    transition: none;
+  }
+
+  .js .reveal,
+  .js .reveal-stagger > * {
     opacity: 1;
     transform: none;
     transition: none;
   }
 }
 
-/* Blog content — nested selectors for markdown-generated HTML */
 .blog-content p {
   margin-bottom: 1.5em;
-  color: #444444;
+  color: var(--color-secondary);
   line-height: 1.7;
 }
 
@@ -122,7 +213,7 @@ details[open] summary::before {
   letter-spacing: -0.01em;
   margin-top: 2em;
   margin-bottom: 0.75em;
-  color: var(--color-body);
+  color: var(--color-navy);
 }
 
 .blog-content h3 {
@@ -130,11 +221,11 @@ details[open] summary::before {
   font-weight: 500;
   margin-top: 1.5em;
   margin-bottom: 0.5em;
-  color: var(--color-body);
+  color: var(--color-navy);
 }
 
 .blog-content a {
-  color: #1a1a1a;
+  color: var(--color-teal);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -143,7 +234,7 @@ details[open] summary::before {
 .blog-content ol {
   margin-bottom: 1.5em;
   padding-left: 1.5em;
-  color: #444444;
+  color: var(--color-secondary);
 }
 
 .blog-content li {
@@ -152,9 +243,9 @@ details[open] summary::before {
 }
 
 .blog-content blockquote {
-  border-left: 3px solid #E5E5E5;
+  border-left: 3px solid var(--color-teal);
   padding-left: 1em;
-  color: #666666;
+  color: var(--color-gray);
   margin-bottom: 1.5em;
   font-style: italic;
 }
@@ -166,18 +257,18 @@ details[open] summary::before {
 }
 
 .blog-content strong {
-  font-weight: 600;
+  font-weight: 650;
 }
 
 .blog-content code {
   font-size: 0.9em;
-  background: #F5F5F5;
+  background: var(--color-sage);
   padding: 2px 6px;
   border-radius: 3px;
 }
 
 .blog-content pre {
-  background: #F5F5F5;
+  background: var(--color-pale-blue);
   padding: 16px;
   border-radius: 4px;
   overflow-x: auto;

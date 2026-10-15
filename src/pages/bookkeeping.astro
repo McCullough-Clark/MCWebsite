@@ -2,79 +2,92 @@
 import BaseLayout from '../layouts/BaseLayout.astro'
 import bookkeepingData from '../data/bookkeeping.json'
 import { md } from '../lib/markdown'
-const hero = bookkeepingData.hero;
-const who = bookkeepingData.who;
-const included = bookkeepingData.included;
-const faster = bookkeepingData.faster;
-const remote = bookkeepingData.remote;
-const cta = bookkeepingData.cta;
+
+const hero = bookkeepingData.hero
+const who = bookkeepingData.who
+const included = bookkeepingData.included
+const faster = bookkeepingData.faster
+const remote = bookkeepingData.remote
+const cta = bookkeepingData.cta
+const pageUrl = 'https://mcculloughclark.com/bookkeeping/'
+const description = 'Monthly bookkeeping, QuickBooks Online setup, and cleanup led by Sharla Clark, an IRS Enrolled Agent with more than 25 years in accounting.'
+const serviceSchema = {
+  '@type': 'Service',
+  '@id': `${pageUrl}#service`,
+  name: 'Monthly Bookkeeping Services',
+  serviceType: 'Bookkeeping',
+  url: pageUrl,
+  description,
+  provider: { '@id': 'https://mcculloughclark.com/#organization' },
+  audience: {
+    '@type': 'BusinessAudience',
+    audienceType: 'Small and professional-service businesses',
+  },
+}
 ---
 
 <BaseLayout
-  title="Bookkeeping with Sharla Clark, EA | McCullough Clark"
-  description="Monthly bookkeeping owned by Sharla Clark, EA. QuickBooks Online setup, cleanup, and ongoing books for small businesses in multiple states."
+  title="Monthly Bookkeeping with an Enrolled Agent | McCullough Clark"
+  description={description}
   ogTitle="Bookkeeping with Sharla Clark, EA | McCullough Clark"
-  ogDescription="Monthly bookkeeping owned by an Enrolled Agent with 25+ years in accounting. QuickBooks Online setup, cleanup, and ongoing books."
-  ogUrl="https://mcculloughclark.com/bookkeeping"
+  ogDescription="Monthly bookkeeping owned by an Enrolled Agent with more than 25 years in accounting. QuickBooks Online setup, cleanup, and ongoing books."
+  ogUrl={pageUrl}
+  schema={serviceSchema}
 >
-  <!-- Hero -->
-  <section class="py-16 md:py-24 border-b border-border">
+  <section class="py-16 md:py-24 bg-ivory border-b border-border">
     <div class="max-w-[1200px] mx-auto px-6">
-      <div class="max-w-[720px] reveal">
-        <p class="text-[13px] tracking-[0.1em] uppercase text-gray mb-6">{hero.caption}</p>
-        <h1 class="text-[40px] md:text-[64px] font-medium tracking-[-0.02em] leading-[1.1] mb-6">{hero.heading}</h1>
-        <p class="text-xl leading-[1.5] text-secondary mb-10" set:html={md(hero.body)}></p>
-        <a
-          href={hero.cta_link}
-          class="btn-primary"
-        >
-          {hero.cta_label}
-        </a>
+      <div class="max-w-[780px] reveal">
+        <p class="text-[13px] tracking-[0.1em] uppercase text-terracotta font-semibold mb-6">{hero.caption}</p>
+        <h1 class="text-[42px] md:text-[64px] font-medium tracking-[-0.025em] leading-[1.04] mb-7">{hero.heading}</h1>
+        <p class="text-xl leading-[1.55] text-secondary mb-9" set:html={md(hero.body)}></p>
+        <a href={hero.cta_link} class="btn-primary">{hero.cta_label}</a>
       </div>
     </div>
   </section>
 
-  <!-- Who you're working with -->
-  <section class="py-16 md:py-24 bg-off-white border-b border-border">
+  <section class="py-16 md:py-24 border-b border-border">
     <div class="max-w-[1200px] mx-auto px-6">
-      <div class="max-w-[720px] reveal">
-        <h2 class="text-[28px] md:text-[40px] font-medium tracking-[-0.01em] leading-[1.2] mb-10">{who.heading}</h2>
+      <div class="max-w-[760px] reveal">
+        <p class="text-[13px] tracking-[0.1em] uppercase text-terracotta font-semibold mb-4">Your bookkeeper</p>
+        <h2 class="text-[32px] md:text-[44px] font-medium leading-[1.12] mb-9">{who.heading}</h2>
         <h3 class="text-2xl font-medium leading-[1.3] mb-2">{who.name}</h3>
         <p class="text-[13px] tracking-[0.1em] uppercase text-gray mb-5">{who.title}</p>
         {who.paragraphs.map((paragraph: string) => (
           <p class="text-secondary mb-5" set:html={md(paragraph)}></p>
         ))}
-        <a href={who.link_target} class="text-gray underline underline-offset-[3px] text-sm">
-          {who.link_label}
-        </a>
+        <a href={who.link_target} class="text-teal underline underline-offset-[3px] text-sm">{who.link_label}</a>
       </div>
     </div>
   </section>
 
-  <!-- What's included -->
-  <section class="py-16 md:py-24 border-b border-border">
-    <div class="max-w-[1200px] mx-auto px-6">
-      <div class="max-w-[720px] reveal">
-        <h2 class="text-[28px] md:text-[40px] font-medium tracking-[-0.01em] leading-[1.2] mb-4">{included.heading}</h2>
-        <p class="text-secondary mb-12" set:html={md(included.intro)}></p>
+  <section class="py-12 bg-navy text-white border-b border-navy">
+    <div class="max-w-[1200px] mx-auto px-6 grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr] gap-5 md:gap-12 reveal">
+      <h2 class="text-white text-[28px] md:text-[38px] font-medium leading-[1.15]">{bookkeepingData.standalone.heading}</h2>
+      <p class="text-sage text-lg leading-[1.7]" set:html={md(bookkeepingData.standalone.body)}></p>
+    </div>
+  </section>
 
-        <div class="flex flex-col gap-11">
+  <section class="py-16 md:py-24 bg-ivory border-b border-border">
+    <div class="max-w-[1200px] mx-auto px-6">
+      <div class="max-w-[760px] reveal">
+        <h2 class="text-[32px] md:text-[44px] font-medium leading-[1.12] mb-4">{included.heading}</h2>
+        <p class="text-secondary mb-12" set:html={md(included.intro)}></p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
           {included.items.map((item: any) => (
-            <div>
-              <h3 class="text-2xl font-medium leading-[1.3] mb-3">{item.title}</h3>
+            <article class="bg-white border border-border border-t-4 border-t-terracotta rounded-[8px] p-6">
+              <h3 class="text-xl font-medium leading-[1.3] mb-3">{item.title}</h3>
               <p class="text-secondary" set:html={md(item.description)}></p>
-            </div>
+            </article>
           ))}
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Why books close faster here -->
-  <section class="py-16 md:py-24 bg-off-white border-b border-border">
+  <section class="py-16 md:py-24 border-b border-border">
     <div class="max-w-[1200px] mx-auto px-6">
       <div class="max-w-[720px] reveal">
-        <h2 class="text-[28px] md:text-[40px] font-medium tracking-[-0.01em] leading-[1.2] mb-4">{faster.heading}</h2>
+        <h2 class="text-[32px] md:text-[44px] font-medium leading-[1.12] mb-4">{faster.heading}</h2>
         {faster.paragraphs.map((paragraph: string) => (
           <p class="text-secondary mb-5" set:html={md(paragraph)}></p>
         ))}
@@ -82,36 +95,29 @@ const cta = bookkeepingData.cta;
     </div>
   </section>
 
-  <!-- Remote works -->
-  <section class="py-16 md:py-24 border-b border-border">
+  <section class="py-16 md:py-24 bg-pale-blue border-b border-border">
     <div class="max-w-[1200px] mx-auto px-6">
       <div class="max-w-[720px] reveal mb-12">
-        <h2 class="text-[28px] md:text-[40px] font-medium tracking-[-0.01em] leading-[1.2] mb-4">{remote.heading}</h2>
+        <h2 class="text-[32px] md:text-[44px] font-medium leading-[1.12] mb-4">{remote.heading}</h2>
         <p class="text-xl leading-[1.5] text-secondary" set:html={md(remote.intro)}></p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 reveal-stagger">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 reveal-stagger">
         {remote.segments.map((seg: any) => (
-          <div>
-            <p class="text-[13px] tracking-[0.1em] uppercase text-gray mb-4">{seg.label}</p>
+          <article class="bg-white border border-border rounded-[8px] p-6">
+            <p class="text-[13px] tracking-[0.1em] uppercase text-teal font-semibold mb-4">{seg.label}</p>
             <p class="text-secondary" set:html={md(seg.description)}></p>
-          </div>
+          </article>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Final CTA -->
-  <section class="py-16 md:py-24">
+  <section class="py-16 md:py-24 bg-ivory">
     <div class="max-w-[1200px] mx-auto px-6">
       <div class="max-w-[720px] reveal">
-        <h2 class="text-[28px] md:text-[40px] font-medium tracking-[-0.01em] leading-[1.2] mb-4">{cta.heading}</h2>
+        <h2 class="text-[32px] md:text-[44px] font-medium leading-[1.12] mb-4">{cta.heading}</h2>
         <p class="text-xl leading-[1.5] text-secondary mb-10" set:html={md(cta.body)}></p>
-        <a
-          href={cta.cta_link}
-          class="btn-primary"
-        >
-          {cta.cta_label}
-        </a>
+        <a href={cta.cta_link} class="btn-primary">{cta.cta_label}</a>
       </div>
     </div>
   </section>

@@ -1,8 +1,8 @@
 {
   "hero": {
-    "caption": "AI Advisory · Workflows & System Integration",
-    "heading": "A structured assessment of where AI & Automation save real time in your business.",
-    "body": "The McCullough Clark AI Operations Audit produces a documented analysis of your operational workflows, the highest-leverage automation candidates, security and compliance considerations, and an implementation plan with cost and time estimates. Three weeks. Fixed fee. No standing retainer required.",
+    "caption": "AI Operations Audit",
+    "heading": "Find the manual work worth automating before you invest in building.",
+    "body": "The McCullough Clark AI Operations Audit documents your operational workflows, identifies the highest-leverage automation and integration candidates, reviews security and compliance considerations, and produces an implementation plan with cost and time estimates. Three weeks. Fixed fee. No standing retainer required.",
     "cta_label": "Book a call",
     "cta_link": "https://calendly.com/mcculloughclark/consult"
   },
@@ -38,7 +38,7 @@
       },
       {
         "title": "3. Risk and access review.",
-        "description": "For any candidate involving customer data, document handling, or regulated workflows, we document data flow, storage, retention, and access control as part of the analysis. This baseline review is included in every audit.\n\nFormal compliance work — SOC 2 readiness, HIPAA assessment, penetration testing — falls outside our scope. When the audit identifies a need, we help you find qualified specialists. That work is scoped and billed by them directly."
+        "description": "For any candidate involving customer data, document handling, or regulated workflows, we document data flow, storage, retention, and access control as part of the analysis. This baseline review is included in every audit.\n\nFormal compliance work, SOC 2 readiness, HIPAA assessment, penetration testing, falls outside our scope. When the audit identifies a need, we help you find qualified specialists. That work is scoped and billed by them directly."
       },
       {
         "title": "4. Implementation roadmap.",
@@ -56,21 +56,21 @@
   },
   "samples": {
     "heading": "Sample deliverables.",
-    "intro": "Two sample audits, both built for businesses we own and operate, are available for review.",
+    "intro": "Two sample audits, both built for businesses we own and operate, are available on request.",
     "items": [
       {
         "label": "Sample 1",
         "title": "Bookkeeping Practice Audit",
         "description": "Self-audit of the McCullough Clark Bookkeeping service line. Identifies automation opportunities in client onboarding, month-end close, and document collection workflows.",
-        "link_label": "View sample PDF",
-        "link_target": "/pdfs/bookkeeping-practice-audit.pdf"
+        "link_label": "Sample available on request",
+        "link_target": ""
       },
       {
         "label": "Sample 2",
         "title": "Minerva Platform Audit",
         "description": "Audit of the Minerva quote and booking platform, a real software product we built for a service business. Demonstrates how we approach audits of technology-enabled operations.",
-        "link_label": "View sample PDF",
-        "link_target": "/pdfs/minerva-platform-audit.pdf"
+        "link_label": "Sample available on request",
+        "link_target": ""
       }
     ]
   },
@@ -117,7 +117,11 @@
       },
       {
         "question": "Do you actually build what you recommend, or is this a hand-off to vendors?",
-        "answer": "We build it. Sharla has shipped production AI systems including a cold email platform and a quote and booking platform, plus integrations that connect practice management, payroll, and corporate expense software to QuickBooks, with reconciliation built in so anything that does not tie out gets flagged instead of quietly landing in the books. If we recommend something, we have either built something similar before or have a clear path to building it for you."
+        "answer": "We can carry the work from assessment through implementation. We have shipped production AI systems including a cold email platform and a quote and booking platform, plus integrations that connect practice management, payroll, and corporate expense software to QuickBooks, with reconciliation built in so anything that does not tie out gets flagged instead of quietly landing in the books. If we recommend something, we have either built something similar before or have a clear path to building it."
+      },
+      {
+        "question": "Do I need to be a bookkeeping client to hire you for an audit or implementation?",
+        "answer": "No. Each of our services can be hired on its own. Having the same team on both helps when a workflow touches operations and financial information, but it is never required."
       },
       {
         "question": "What if I don't want to engage you for implementation after the audit?",
@@ -129,7 +133,7 @@
       },
       {
         "question": "How do you handle data during the audit?",
-        "answer": "We sign mutual NDAs before kickoff. Data we collect during interviews and documentation review is stored in encrypted folders accessible only to Sharla. Data is retained for the duration of the engagement plus ninety days, then deleted."
+        "answer": "We sign mutual NDAs before kickoff. Data we collect during interviews and documentation review is stored in encrypted folders accessible only to McCullough Clark. Data is retained for the duration of the engagement plus ninety days, then deleted."
       },
       {
         "question": "Can we start with a smaller engagement to see if we work well together?",

@@ -1,40 +1,51 @@
 ---
-import footerData from '../data/footer.json';
-import metadata from '../data/metadata.json';
+import footerData from '../data/footer.json'
+import metadata from '../data/metadata.json'
+
+const serviceLinks = [
+  { label: 'System Integration', href: '/systems-integration/' },
+  { label: 'Workflow Automation', href: '/workflow-automation/' },
+  { label: 'Bookkeeping', href: '/bookkeeping/' },
+]
 ---
 
-<footer class="border-t border-border pt-16 pb-0">
+<footer class="bg-navy text-white pt-16 pb-0">
   <div class="max-w-[1200px] mx-auto px-6">
-    <div class="grid grid-cols-1 md:grid-cols-[1.2fr_1fr_1fr] gap-10 md:gap-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.25fr_1fr_1fr_1fr] gap-10 lg:gap-12">
       <div>
-        <img
-          src="/logos/mc_monogram.svg"
-          alt="McCullough Clark"
-          class="h-10 w-auto mb-4"
-        />
-        <p class="text-gray text-sm">
-          {footerData.brand_description}
-        </p>
-        <p class="mt-4">
-          <a href="/blog" class="text-gray text-sm underline underline-offset-[3px]">Articles</a>
-        </p>
+        <span class="inline-flex bg-ivory rounded-[5px] p-2 mb-4">
+          <img src="/logos/mc_monogram.svg" alt="McCullough Clark" class="h-10 w-auto" />
+        </span>
+        <p class="text-sage text-sm max-w-[280px]">{footerData.brand_description}</p>
       </div>
+
       <div>
-        <p class="text-[13px] font-medium tracking-[0.1em] uppercase text-body mb-4">{footerData.contact_heading}</p>
-        <div class="text-gray text-sm leading-[2]">
+        <p class="text-[13px] font-semibold tracking-[0.1em] uppercase text-white mb-4">Services</p>
+        <div class="flex flex-col gap-3 text-sm">
+          {serviceLinks.map((link) => (
+            <a href={link.href} class="text-sage no-underline hover:text-white">{link.label}</a>
+          ))}
+          <a href="/blog/" class="text-sage no-underline hover:text-white">Articles</a>
+        </div>
+      </div>
+
+      <div>
+        <p class="text-[13px] font-semibold tracking-[0.1em] uppercase text-white mb-4">{footerData.contact_heading}</p>
+        <div class="text-sage text-sm leading-[2]">
           <p>{footerData.contact_name}</p>
-          <p><a href={`mailto:${metadata.email}`} class="text-gray no-underline">{metadata.email}</a></p>
-          <p><a href={metadata.phone_link} class="text-gray no-underline">{metadata.phone}</a></p>
+          <p><a href={`mailto:${metadata.email}`} class="text-sage no-underline hover:text-white">{metadata.email}</a></p>
+          <p><a href={metadata.phone_link} class="text-sage no-underline hover:text-white">{metadata.phone}</a></p>
           <p>{metadata.address}</p>
         </div>
       </div>
+
       <div>
-        <p class="text-[13px] font-medium tracking-[0.1em] uppercase text-body mb-4">{footerData.credentials_heading}</p>
-        <div class="text-gray text-sm leading-[2]">
+        <p class="text-[13px] font-semibold tracking-[0.1em] uppercase text-white mb-4">{footerData.credentials_heading}</p>
+        <div class="text-sage text-sm leading-[2]">
           {footerData.credentials_items.map((item: any) => (
             <p>
               {item.url ? (
-                <a href={item.url} class="text-gray underline underline-offset-[3px]" target="_blank" rel="noopener noreferrer">{item.text}</a>
+                <a href={item.url} class="text-sage underline underline-offset-[3px] hover:text-white" target="_blank" rel="noopener noreferrer">{item.text}</a>
               ) : (
                 item.text
               )}
@@ -44,13 +55,14 @@ import metadata from '../data/metadata.json';
       </div>
     </div>
   </div>
-  <div class="border-t border-border mt-12 py-6">
-    <div class="max-w-[1200px] mx-auto px-6 flex justify-between items-center">
-      <p class="text-muted text-xs">{footerData.copyright}</p>
-      <p class="text-muted text-xs">
-        <a href="/privacy" class="text-muted no-underline hover:underline underline-offset-[3px]">Privacy</a>
+
+  <div class="border-t border-white/20 mt-12 py-6">
+    <div class="max-w-[1200px] mx-auto px-6 flex flex-col sm:flex-row gap-3 justify-between items-start sm:items-center">
+      <p class="text-sage text-xs">{footerData.copyright}</p>
+      <p class="text-sage text-xs">
+        <a href="/privacy/" class="text-sage no-underline hover:text-white hover:underline underline-offset-[3px]">Privacy</a>
         <span class="mx-2">·</span>
-        <a href="/terms" class="text-muted no-underline hover:underline underline-offset-[3px]">Terms</a>
+        <a href="/terms/" class="text-sage no-underline hover:text-white hover:underline underline-offset-[3px]">Terms</a>
       </p>
     </div>
   </div>

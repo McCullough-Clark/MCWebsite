@@ -1,17 +1,61 @@
 {
-  "heading": "What we do",
-  "columns": [
+  "eyebrow": "Services",
+  "heading": "What we do.",
+  "intro": "Hire us for one service or several. Each stands on its own, and they work together when a problem crosses your systems and your books.",
+  "cards": [
     {
-      "subheading": "AI Advisory & System Integration",
-      "body": "We audit how your firm runs, identify where automation could meaningfully reduce manual hours, and build the tools to do it. System integrations that get your software talking to each other, intake automation, document workflows, internal AI tools. For firms where back-office work has started pulling expertise off its highest-value work.",
-      "link_label": "Schedule a conversation →",
-      "link_target": "https://calendly.com/mcculloughclark/consult"
+      "label": "Keep",
+      "title": "Bookkeeping",
+      "body": "Monthly bookkeeping owned by an IRS Enrolled Agent with more than 25 years in accounting, so your numbers answer the questions you are actually asking.",
+      "bullets": [
+        "Full-cycle monthly bookkeeping and month-end close",
+        "QuickBooks Online setup, cleanup, and ongoing books",
+        "Multi-entity books and connected financial workflows",
+        "Direct communication with the person responsible for the work"
+      ],
+      "link_label": "Explore bookkeeping",
+      "link_target": "/bookkeeping/"
     },
     {
-      "subheading": "Bookkeeping",
-      "body": "Monthly bookkeeping owned by an Enrolled Agent with 25+ years in accounting. QuickBooks Online setup, cleanup, and ongoing books. For firms that want their numbers to actually answer the questions owners are asking — not just satisfy the tax filing.",
-      "link_label": "Schedule a conversation →",
-      "link_target": "https://calendly.com/mcculloughclark/consult"
+      "label": "Connect",
+      "title": "System Integration",
+      "body": "Connect the software you already use so information moves between systems without being copied, re-entered, or chased down.",
+      "bullets": [
+        "System-to-system data flows with validation",
+        "Connected intake that collects information once",
+        "Reconciliation and exception checks",
+        "Data and reporting layers"
+      ],
+      "link_label": "Explore system integration",
+      "link_target": "/systems-integration/"
+    },
+    {
+      "label": "Automate",
+      "title": "Workflow Automation",
+      "body": "Take predictable back-office steps out of your team’s hands, with clear rules and the judgment calls kept with people.",
+      "bullets": [
+        "Client intake",
+        "Document collection, naming, and routing",
+        "Approvals and handoffs",
+        "Focused internal AI tools"
+      ],
+      "link_label": "Explore workflow automation",
+      "link_target": "/workflow-automation/"
+    },
+    {
+      "label": "Prioritize",
+      "title": "AI Operations Audit",
+      "body": "A three-week, fixed-fee assessment of where automation and AI would genuinely help, before you invest in building.",
+      "bullets": [
+        "Documented operational workflows",
+        "Ranked automation and integration candidates",
+        "Security and compliance review",
+        "Implementation plan with cost and time estimates"
+      ],
+      "link_label": "Explore the AI audit",
+      "link_target": "/audit/"
     }
-  ]
+  ],
+  "bridge_heading": "One team, start to finish.",
+  "bridge": "The same team works across all of it, so when a workflow touches both operations and your books, you do not have to explain the business twice."
 }

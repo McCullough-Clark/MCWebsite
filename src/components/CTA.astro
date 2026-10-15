@@ -1,19 +1,22 @@
 ---
-import ctaData from '../data/homepage-cta.json';
-import { md } from '../lib/markdown';
+import ctaData from '../data/homepage-cta.json'
+import { md } from '../lib/markdown'
 ---
 
-<section class="py-16 md:py-24">
+<section class="py-16 md:py-24 bg-navy text-white">
   <div class="max-w-[1200px] mx-auto px-6">
-    <div class="max-w-[720px] reveal">
-      <h2 class="text-[28px] md:text-[40px] font-medium tracking-[-0.01em] leading-[1.2] mb-4">{ctaData.heading}</h2>
-      <p class="text-xl leading-[1.5] text-secondary mb-10" set:html={md(ctaData.body)}></p>
-      <a
-        href={ctaData.cta_link}
-        class="btn-primary mb-5"
-      >
-        {ctaData.cta_label}
-      </a>
+    <div class="max-w-[800px] reveal">
+      <p class="text-sage text-[13px] tracking-[0.1em] uppercase font-semibold mb-4">{ctaData.eyebrow}</p>
+      <h2 class="text-white text-[34px] md:text-[48px] font-medium tracking-[-0.015em] leading-[1.12] mb-5">{ctaData.heading}</h2>
+      <div class="text-xl leading-[1.5] text-sage mb-9" set:html={md(ctaData.body)}></div>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a href={ctaData.primary_link} class="inline-flex items-center justify-center bg-white text-navy py-3.5 px-7 rounded-[4px] text-[15px] font-semibold no-underline min-h-11 hover:bg-sage">
+          {ctaData.primary_label}
+        </a>
+        <a href={ctaData.secondary_link} class="inline-flex items-center justify-center border border-sage text-white py-3.5 px-7 rounded-[4px] text-[15px] font-semibold no-underline min-h-11 hover:bg-white/10">
+          {ctaData.secondary_label}
+        </a>
+      </div>
     </div>
   </div>
 </section>

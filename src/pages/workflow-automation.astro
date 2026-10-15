@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import ServiceDetail from '../components/ServiceDetail.astro'
+import content from '../data/workflow-automation.json'
+
+const description = 'McCullough Clark designs and builds workflow automations that reduce repetitive back-office work for professional-service and expertise-led firms.'
+const pageUrl = 'https://mcculloughclark.com/workflow-automation/'
+
+const serviceSchema = {
+  '@type': 'Service',
+  '@id': `${pageUrl}#service`,
+  name: 'Workflow Automation Services',
+  serviceType: 'Workflow automation',
+  url: pageUrl,
+  description,
+  provider: { '@id': 'https://mcculloughclark.com/#organization' },
+  audience: {
+    '@type': 'BusinessAudience',
+    audienceType: 'Professional-service firms',
+  },
+}
+
+---
+
+<BaseLayout
+  title="Workflow Automation for Professional Firms | McCullough Clark"
+  description={description}
+  ogTitle="Workflow Automation Services | McCullough Clark"
+  ogDescription={description}
+  ogUrl={pageUrl}
+  schema={serviceSchema}
+>
+  <ServiceDetail {...content} />
+</BaseLayout>
