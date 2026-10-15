@@ -56,38 +56,31 @@ collections:
           - { label: "Headline", name: "heading", widget: "string", hint: "Main H1 headline" }
           - { label: "Body Paragraph", name: "body", widget: "markdown", buttons: ["bold", "italic", "link"], editor_components: [], hint: "Introductory paragraph below the headline" }
           - { label: "Primary Button Label", name: "primary_label", widget: "string" }
-          - { label: "Primary Button Link", name: "primary_link", widget: "string", hint: "Page path (e.g. /systems-integration/) or full URL" }
+          - { label: "Primary Button Link", name: "primary_link", widget: "string", hint: "Page path (e.g. /#services) or full URL" }
           - { label: "Secondary Button Label", name: "secondary_label", widget: "string" }
           - { label: "Secondary Button Link", name: "secondary_link", widget: "string" }
           - { label: "Small Note Under the Buttons", name: "reassurance", widget: "string" }
 
-      # ── Practices Section (two cards) ──
+      # ── Services Section ──
       - name: "services"
-        label: "Practices Section"
+        label: "Services Section"
         file: "src/data/homepage-services.json"
         format: "json"
         fields:
           - { label: "Eyebrow Text", name: "eyebrow", widget: "string", hint: "Small caps text above the heading" }
           - { label: "Section Heading", name: "heading", widget: "string" }
           - { label: "Intro Paragraph", name: "intro", widget: "markdown", buttons: ["bold", "italic", "link"], editor_components: [] }
-          - label: "Practice Cards"
-            name: "columns"
+          - label: "Service Cards"
+            name: "cards"
             widget: "list"
-            max: 2
-            min: 2
+            hint: "One card per service, shown two per row"
             fields:
-              - { label: "Card Label", name: "label", widget: "string", hint: "Small caps text, e.g. 'Practice 01'" }
-              - { label: "Color", name: "theme", widget: "select", options: [{ label: "Teal (Systems & Automation)", value: "systems" }, { label: "Terracotta (Bookkeeping)", value: "books" }] }
-              - { label: "Card Heading", name: "subheading", widget: "string" }
+              - { label: "Label", name: "label", widget: "string", hint: "Small caps word above the title, e.g. 'Connect'" }
+              - { label: "Title", name: "title", widget: "string" }
               - { label: "Body Text", name: "body", widget: "markdown", buttons: ["bold", "italic", "link"], editor_components: [] }
               - { label: "Bullet Points", name: "bullets", widget: "list", field: { label: "Bullet", name: "bullet", widget: "string" } }
-              - label: "Links"
-                name: "links"
-                widget: "list"
-                hint: "The first link shows as a button, the rest as text links"
-                fields:
-                  - { label: "Label", name: "label", widget: "string" }
-                  - { label: "Link", name: "target", widget: "string", hint: "Page path (e.g. /bookkeeping/) or full URL" }
+              - { label: "Button Label", name: "link_label", widget: "string" }
+              - { label: "Button Link", name: "link_target", widget: "string", hint: "Page path, e.g. /bookkeeping/" }
           - { label: "Bottom Box Heading", name: "bridge_heading", widget: "string" }
           - { label: "Bottom Box Text", name: "bridge", widget: "markdown", buttons: ["bold", "italic", "link"], editor_components: [] }
 
@@ -101,14 +94,6 @@ collections:
           - { label: "Heading", name: "heading", widget: "string" }
           - { label: "Paragraph", name: "body", widget: "markdown", buttons: ["bold", "italic", "link"], editor_components: [] }
           - { label: "Problem List", name: "problems", widget: "list", field: { label: "Problem", name: "problem", widget: "string" } }
-          - label: "Service Boxes"
-            name: "builds"
-            widget: "list"
-            fields:
-              - { label: "Label", name: "label", widget: "string", hint: "Small caps text, e.g. 'Connect'" }
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Text", name: "body", widget: "text" }
-              - { label: "Link", name: "href", widget: "string", hint: "Page path, e.g. /workflow-automation/" }
 
       # ── About / Founders Section ──
       - name: "about"
@@ -444,6 +429,15 @@ collections:
                 field: { label: "Paragraph", name: "paragraph", widget: "markdown", buttons: ["bold", "italic", "link"], editor_components: [] }
               - { label: "Link Label", name: "link_label", widget: "string" }
               - { label: "Link Target", name: "link_target", widget: "string", hint: "URL of the ProAdvisor profile" }
+
+          # On Its Own (dark band)
+          - label: "On Its Own (dark band)"
+            name: "standalone"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Text", name: "body", widget: "markdown", buttons: ["bold", "italic", "link"], editor_components: [] }
 
           # What's Included
           - label: "What's Included"

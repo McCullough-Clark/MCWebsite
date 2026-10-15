@@ -1,5 +1,5 @@
 {
-  "caption": "Systems & Automation Practice",
+  "caption": "Workflow Automation",
   "heading": "Take repetitive work out of your team’s hands.",
   "intro": "Professional expertise should not be consumed by predictable back-office steps. We design and build workflow automations around the way your firm already works, from intake and document handling to recurring internal handoffs.",
   "fitHeading": "What workflow automation can address.",
@@ -48,7 +48,7 @@
       "description": "We implement, test ordinary and exception cases, document the result, and refine the handoff with your team."
     }
   ],
-  "independence": "Workflow automation is a standalone service within our Systems & Automation practice. It does not require a bookkeeping engagement.",
+  "independence": "Workflow automation is available on its own, with or without any of our other services.",
   "ctaHeading": "What process does your team repeat every week?",
   "ctaBody": "Walk us through it. We will help determine what can be simplified, connected, or automated, and what should stay in expert hands.",
   "ctaLabel": "Talk through a workflow",

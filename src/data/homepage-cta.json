@@ -1,9 +1,9 @@
 {
   "eyebrow": "A useful first conversation",
   "heading": "Start with the problem, not a technology.",
-  "body": "Tell us where work is getting stuck. If the answer belongs with Systems & Automation, Bookkeeping, both practices, or neither, we will give you a straight answer.",
-  "primary_label": "Discuss a systems problem",
+  "body": "Tell us where work is getting stuck. Whether the answer is bookkeeping, an integration, an automation, or something simpler, we will give you a straight answer.",
+  "primary_label": "Book a call",
   "primary_link": "https://calendly.com/mcculloughclark/consult",
-  "secondary_label": "Ask about bookkeeping",
-  "secondary_link": "/bookkeeping/"
+  "secondary_label": "Send us an email",
+  "secondary_link": "mailto:sharla@mcculloughclark.com"
 }

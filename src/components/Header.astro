@@ -2,8 +2,9 @@
 import metadata from '../data/metadata.json'
 
 const navItems = [
-  { label: 'Systems & Automation', href: '/systems-integration/' },
   { label: 'Bookkeeping', href: '/bookkeeping/' },
+  { label: 'Integrations', href: '/systems-integration/' },
+  { label: 'Automation', href: '/workflow-automation/' },
   { label: 'AI Audit', href: '/audit/' },
   { label: 'Articles', href: '/blog/' },
 ]
@@ -11,7 +12,7 @@ const navItems = [
 const currentPath = Astro.url.pathname.replace(/\/+$/, '') || '/'
 const isCurrent = (href: string) => {
   const targetPath = href.replace(/\/+$/, '') || '/'
-  return currentPath === targetPath || (targetPath === '/systems-integration' && currentPath === '/workflow-automation')
+  return currentPath === targetPath
 }
 ---
 

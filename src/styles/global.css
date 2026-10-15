@@ -25,6 +25,8 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
+    /* Anchor jumps (e.g. /#services) land below the sticky header */
+    scroll-padding-top: 96px;
   }
 
   *,
@@ -91,15 +93,7 @@
   transform: translateY(-1px);
 }
 
-.btn-bookkeeping {
-  @apply inline-flex items-center justify-center bg-terracotta text-white py-3.5 px-7 rounded-[4px] text-[15px] font-medium no-underline min-h-11;
-  transition: background-color 0.18s ease, transform 0.18s ease;
-}
 
-.btn-bookkeeping:hover {
-  background-color: var(--color-navy);
-  transform: translateY(-1px);
-}
 
 .btn-secondary {
   @apply inline-flex items-center justify-center bg-white text-navy py-3.5 px-7 rounded-[4px] text-[15px] font-medium no-underline min-h-11 border border-navy;
@@ -123,7 +117,7 @@
     var(--color-ivory);
 }
 
-.practice-card {
+.service-card {
   background: var(--color-white);
   border: 1px solid var(--color-border);
   border-top: 5px solid var(--color-teal);
@@ -131,9 +125,6 @@
   box-shadow: 0 18px 45px rgba(23, 50, 77, 0.07);
 }
 
-.practice-card--books {
-  border-top-color: var(--color-terracotta);
-}
 
 .flow-panel {
   background: rgba(255, 255, 255, 0.82);
@@ -222,7 +213,6 @@ details[open] summary::before {
   html { scroll-behavior: auto; }
 
   .btn-primary,
-  .btn-bookkeeping,
   .btn-secondary,
   .hamburger span {
     transition: none;

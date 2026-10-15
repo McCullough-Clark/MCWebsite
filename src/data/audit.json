@@ -1,6 +1,6 @@
 {
   "hero": {
-    "caption": "Systems & Automation · AI Operations Audit",
+    "caption": "AI Operations Audit",
     "heading": "Find the manual work worth automating before you invest in building.",
     "body": "The McCullough Clark AI Operations Audit documents your operational workflows, identifies the highest-leverage automation and integration candidates, reviews security and compliance considerations, and produces an implementation plan with cost and time estimates. Three weeks. Fixed fee. No standing retainer required.",
     "cta_label": "Book a call",
@@ -117,11 +117,11 @@
       },
       {
         "question": "Do you actually build what you recommend, or is this a hand-off to vendors?",
-        "answer": "The Systems & Automation practice can carry work from assessment through implementation. We have shipped production AI systems including a cold email platform and a quote and booking platform, plus integrations that connect practice management, payroll, and corporate expense software to QuickBooks, with reconciliation built in so anything that does not tie out gets flagged instead of quietly landing in the books. If we recommend something, we have either built something similar before or have a clear path to building it. A bookkeeping engagement is not required."
+        "answer": "We can carry the work from assessment through implementation. We have shipped production AI systems including a cold email platform and a quote and booking platform, plus integrations that connect practice management, payroll, and corporate expense software to QuickBooks, with reconciliation built in so anything that does not tie out gets flagged instead of quietly landing in the books. If we recommend something, we have either built something similar before or have a clear path to building it."
       },
       {
         "question": "Do I need to be a bookkeeping client to hire you for an audit or implementation?",
-        "answer": "No. The Systems & Automation and Bookkeeping practices can be engaged independently. The shared context becomes useful only when a workflow touches both operational systems and financial information."
+        "answer": "No. Each of our services can be hired on its own. Having the same team on both helps when a workflow touches operations and financial information, but it is never required."
       },
       {
         "question": "What if I don't want to engage you for implementation after the audit?",

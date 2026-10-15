@@ -62,8 +62,8 @@ const serviceSchema = {
 
   <section class="py-12 bg-navy text-white border-b border-navy">
     <div class="max-w-[1200px] mx-auto px-6 grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr] gap-5 md:gap-12 reveal">
-      <h2 class="text-white text-[28px] md:text-[38px] font-medium leading-[1.15]">A bookkeeping practice in its own right.</h2>
-      <p class="text-sage text-lg leading-[1.7]">You can engage McCullough Clark solely for bookkeeping. An integration, automation, or AI project is never required. Systems expertise becomes useful only when an operational problem crosses into financial information or reporting.</p>
+      <h2 class="text-white text-[28px] md:text-[38px] font-medium leading-[1.15]">{bookkeepingData.standalone.heading}</h2>
+      <p class="text-sage text-lg leading-[1.7]" set:html={md(bookkeepingData.standalone.body)}></p>
     </div>
   </section>
 

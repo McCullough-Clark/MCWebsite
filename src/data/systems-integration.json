@@ -1,5 +1,5 @@
 {
-  "caption": "Systems & Automation Practice",
+  "caption": "System Integration",
   "heading": "Make the software you already use work together.",
   "intro": "Your firm should not need a person to carry information from one system to another. We design and build connections around the way your team actually operates, then add checks so failures are visible instead of quietly becoming bad data.",
   "fitHeading": "When integration is the right answer.",
@@ -48,7 +48,7 @@
       "description": "We test expected and exception cases, document the workflow, and make responsibility for monitoring clear."
     }
   ],
-  "independence": "You can hire McCullough Clark solely for a system integration. Bookkeeping is a separate practice and is not a prerequisite.",
+  "independence": "You can hire McCullough Clark for an integration on its own. If it touches your books, the same team can take that on too, but it is never required.",
   "ctaHeading": "Where is your team moving information by hand?",
   "ctaBody": "Show us the systems and the handoff. We will help determine whether an integration, an automated workflow, or a simpler process change is the right answer.",
   "ctaLabel": "Talk through an integration",

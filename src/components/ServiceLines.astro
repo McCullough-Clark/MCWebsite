@@ -13,32 +13,21 @@ import { md } from '../lib/markdown'
       <p class="text-xl leading-[1.55] text-secondary" set:html={md(servicesData.intro)}></p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 reveal-stagger">
-      {servicesData.columns.map((col: any) => (
-        <article class:list={['practice-card p-7 md:p-10 flex h-full flex-col', { 'practice-card--books': col.theme === 'books' }]}> 
-          <p class:list={['text-[12px] tracking-[0.12em] uppercase font-semibold mb-4', col.theme === 'books' ? 'text-terracotta' : 'text-teal']}>
-            {col.label}
-          </p>
-          <h3 class="text-[28px] md:text-[34px] font-medium leading-[1.15] mb-4">{col.subheading}</h3>
-          <div class="text-secondary mb-6" set:html={md(col.body)}></div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal-stagger">
+      {servicesData.cards.map((card: any) => (
+        <article class="service-card p-7 md:p-9 flex h-full flex-col">
+          <p class="text-[12px] tracking-[0.12em] uppercase font-semibold mb-3 text-teal">{card.label}</p>
+          <h3 class="text-[26px] md:text-[30px] font-medium leading-[1.15] mb-4">{card.title}</h3>
+          <div class="text-secondary mb-6" set:html={md(card.body)}></div>
           <ul class="grid gap-3 mb-8 list-none" role="list">
-            {col.bullets.map((bullet: string) => (
+            {card.bullets.map((bullet: string) => (
               <li class="flex gap-3 text-secondary">
-                <span class:list={['mt-[0.58em] w-2 h-2 rounded-full shrink-0', col.theme === 'books' ? 'bg-terracotta' : 'bg-teal']} aria-hidden="true"></span>
+                <span class="mt-[0.58em] w-2 h-2 rounded-full shrink-0 bg-teal" aria-hidden="true"></span>
                 <span>{bullet}</span>
               </li>
             ))}
           </ul>
-          <div class="flex gap-x-5 gap-y-3 flex-wrap mt-auto">
-            {col.links.map((link: any, index: number) => (
-              <a
-                href={link.target}
-                class={index === 0 ? (col.theme === 'books' ? 'btn-bookkeeping' : 'btn-primary') : 'text-teal underline underline-offset-[4px] text-[15px] font-medium self-center'}
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
+          <a href={card.link_target} class="btn-secondary self-start mt-auto">{card.link_label}</a>
         </article>
       ))}
     </div>
