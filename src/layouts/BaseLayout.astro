@@ -38,7 +38,11 @@ if (canonical.pathname !== '/' && !canonical.pathname.endsWith('/')) {
 }
 const canonicalUrl = canonical.toString()
 const socialImageUrl = new URL(ogImage, siteUrl).toString()
-const gaId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID?.trim()
+// Google Analytics 4 property "mcculloughclark.com" (account McCullough Clark,
+// owned by sharla@mccullough-clark.com). A PUBLIC_GA_MEASUREMENT_ID env var
+// overrides it; set it to "off" to disable analytics on a deploy.
+const defaultGaId = 'G-NV9FEYCRZF'
+const gaId = (import.meta.env.PUBLIC_GA_MEASUREMENT_ID?.trim() || defaultGaId)
 const analyticsEnabled = Boolean(
   gaId && /^G-[A-Z0-9]+$/.test(gaId) && !/^G-X+$/.test(gaId)
 )
