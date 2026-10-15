@@ -7,7 +7,6 @@ const staticPaths = [
   '/',
   '/systems-integration/',
   '/workflow-automation/',
-  '/audit/',
   '/bookkeeping/',
   '/privacy/',
   '/terms/',
