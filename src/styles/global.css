@@ -126,31 +126,6 @@
 }
 
 
-.flow-panel {
-  background: rgba(255, 255, 255, 0.82);
-  border: 1px solid rgba(23, 50, 77, 0.16);
-  border-radius: 12px;
-  box-shadow: 0 24px 60px rgba(23, 50, 77, 0.12);
-}
-
-.flow-node {
-  background: var(--color-white);
-  border: 1px solid var(--color-border);
-  border-radius: 6px;
-}
-
-.flow-node--active {
-  color: var(--color-white);
-  background: var(--color-navy);
-  border-color: var(--color-navy);
-}
-
-.flow-connector {
-  width: 2px;
-  height: 24px;
-  margin: 0 auto;
-  background: var(--color-teal);
-}
 
 .accent-rule {
   width: 54px;

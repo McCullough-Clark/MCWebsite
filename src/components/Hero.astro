@@ -1,6 +1,6 @@
 ---
 import heroData from '../data/homepage-hero.json'
-import IntegrationFlow from './IntegrationFlow.astro'
+import ConnectionsPanel from './ConnectionsPanel.astro'
 import { md } from '../lib/markdown'
 ---
 
@@ -24,7 +24,7 @@ import { md } from '../lib/markdown'
     </div>
 
     <div class="reveal">
-      <IntegrationFlow />
+      <ConnectionsPanel panel={heroData.panel} />
     </div>
   </div>
 </section>

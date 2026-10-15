@@ -6,5 +6,29 @@
   "primary_link": "/#services",
   "secondary_label": "Book a call",
   "secondary_link": "https://calendly.com/mcculloughclark/consult",
-  "reassurance": "Use one service or several. Nothing is bundled."
+  "reassurance": "Use one service or several. Nothing is bundled.",
+  "panel": {
+    "eyebrow": "Connections that reconcile",
+    "heading": "Most software comes with a built-in QuickBooks sync. When the built-in one makes a mess of the books, we build our own.",
+    "connections": [
+      {
+        "source": "Paycor",
+        "detail": "payroll"
+      },
+      {
+        "source": "Jane",
+        "detail": "appointments and payments"
+      },
+      {
+        "source": "Concur",
+        "detail": "expense reports"
+      },
+      {
+        "source": "Square",
+        "detail": "sales and deposits"
+      }
+    ],
+    "destination": "QuickBooks Online",
+    "result": "Every connection checks that the numbers tie out. Anything that does not is flagged for review instead of landing in the books."
+  }
 }

@@ -60,6 +60,22 @@ collections:
           - { label: "Secondary Button Label", name: "secondary_label", widget: "string" }
           - { label: "Secondary Button Link", name: "secondary_link", widget: "string" }
           - { label: "Small Note Under the Buttons", name: "reassurance", widget: "string" }
+          - label: "Side Panel (dark card)"
+            name: "panel"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Eyebrow Text", name: "eyebrow", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "text" }
+              - label: "Connections"
+                name: "connections"
+                widget: "list"
+                hint: "Each row shows as 'Source · detail → Destination'"
+                fields:
+                  - { label: "Source System", name: "source", widget: "string", hint: "e.g. Paycor" }
+                  - { label: "What Flows", name: "detail", widget: "string", hint: "e.g. payroll" }
+              - { label: "Destination", name: "destination", widget: "string", hint: "e.g. QuickBooks Online" }
+              - { label: "Closing Line", name: "result", widget: "text" }
 
       # ── Services Section ──
       - name: "services"
