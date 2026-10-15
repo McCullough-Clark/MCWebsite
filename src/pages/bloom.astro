@@ -22,27 +22,17 @@ const links = bloomData.links.filter((link: any) => link.url)
         {bloomData.paragraphs.map((paragraph: string) => (
           <p class="text-xl leading-[1.5] text-secondary mb-5" set:html={md(paragraph)}></p>
         ))}
-        <div class="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-8 mt-10">
-          <a href={bloomData.cta_link} class="btn-primary self-start">{bloomData.cta_label}</a>
+        <div class="flex flex-wrap gap-3 mt-10">
+          <a href={bloomData.cta_link} class="btn-primary">{bloomData.cta_label}</a>
+          {links.map((link: any) => (
+            <a href={link.url} class="btn-secondary" target="_blank" rel="noopener noreferrer">{link.label}</a>
+          ))}
+        </div>
+        <p class="mt-6">
           <a href={bloomData.secondary_link} class="text-gray underline underline-offset-[3px] text-sm">
             {bloomData.secondary_label}
           </a>
-        </div>
-
-        {links.length > 0 && (
-          <div class="border-t border-border mt-16 pt-8">
-            <p class="text-[13px] tracking-[0.1em] uppercase text-gray mb-4">{bloomData.links_heading}</p>
-            <ul class="flex flex-col sm:flex-row gap-3 sm:gap-8">
-              {links.map((link: any) => (
-                <li>
-                  <a href={link.url} class="text-secondary underline underline-offset-[3px]" target="_blank" rel="noopener noreferrer">
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+        </p>
       </div>
     </div>
   </section>
