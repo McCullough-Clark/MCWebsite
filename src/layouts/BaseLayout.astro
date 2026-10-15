@@ -95,6 +95,7 @@ const structuredDataText = JSON.stringify(structuredData).replace(/</g, '\\u003c
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script is:inline>document.documentElement.classList.add('js')</script>
     <link rel="canonical" href={canonicalUrl} />
     <link rel="sitemap" href="/sitemap.xml" />
     <title>{title}</title>
@@ -138,5 +139,31 @@ const structuredDataText = JSON.stringify(structuredData).replace(/</g, '\\u003c
       <slot />
     </main>
     <Footer />
+    <script is:inline>
+      (function () {
+        var targets = Array.prototype.slice.call(document.querySelectorAll('.reveal, .reveal-stagger'));
+        if (!targets.length) return;
+        var show = function (el) { el.classList.add('visible'); };
+        if (!('IntersectionObserver' in window)) { targets.forEach(show); return; }
+
+        // Reveal everything on screen or already scrolled past, so anchor jumps,
+        // fast scrolling, and mid-page reloads never leave content hidden above.
+        var observer;
+        var revealPassed = function () {
+          targets = targets.filter(function (el) {
+            if (el.getBoundingClientRect().top < window.innerHeight) {
+              show(el);
+              observer.unobserve(el);
+              return false;
+            }
+            return true;
+          });
+        };
+        observer = new IntersectionObserver(function (entries) {
+          if (entries.some(function (entry) { return entry.isIntersecting; })) revealPassed();
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+        targets.forEach(function (el) { observer.observe(el); });
+      })();
+    </script>
   </body>
 </html>
