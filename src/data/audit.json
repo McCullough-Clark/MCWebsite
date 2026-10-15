@@ -38,7 +38,7 @@
       },
       {
         "title": "3. Risk and access review.",
-        "description": "For any candidate involving customer data, document handling, or regulated workflows, we document data flow, storage, retention, and access control as part of the analysis. This baseline review is included in every audit.\n\nFormal compliance work — SOC 2 readiness, HIPAA assessment, penetration testing — falls outside our scope. When the audit identifies a need, we help you find qualified specialists. That work is scoped and billed by them directly."
+        "description": "For any candidate involving customer data, document handling, or regulated workflows, we document data flow, storage, retention, and access control as part of the analysis. This baseline review is included in every audit.\n\nFormal compliance work, SOC 2 readiness, HIPAA assessment, penetration testing, falls outside our scope. When the audit identifies a need, we help you find qualified specialists. That work is scoped and billed by them directly."
       },
       {
         "title": "4. Implementation roadmap.",

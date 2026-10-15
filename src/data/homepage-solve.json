@@ -1,0 +1,33 @@
+{
+  "eyebrow": "When to call us",
+  "heading": "When the back office stops keeping up with the expertise out front.",
+  "body": "Start with the operational problem. We will help determine whether the answer is an integration, an automated workflow, a focused AI tool, a process change, or no build at all.",
+  "problems": [
+    "The same information is entered into more than one system.",
+    "Software that should work together does not.",
+    "Recurring processes depend on memory and manual handoffs.",
+    "Intake or document handling consumes too much expert time.",
+    "Reporting requires gathering information from disconnected places.",
+    "You believe AI could help but do not know where it would be genuinely useful."
+  ],
+  "builds": [
+    {
+      "label": "Connect",
+      "title": "System integrations",
+      "body": "Connect the software your firm already uses so information can move without being repeatedly copied, re-entered, or chased down.",
+      "href": "/systems-integration/"
+    },
+    {
+      "label": "Coordinate",
+      "title": "Workflow automation",
+      "body": "Turn recurring, rules-based processes into reliable workflows with clear triggers, routing, checks, and human decision points.",
+      "href": "/workflow-automation/"
+    },
+    {
+      "label": "Prioritize",
+      "title": "AI Operations Audits",
+      "body": "Separate worthwhile opportunities from the noise and leave with a practical, prioritized implementation roadmap.",
+      "href": "/audit/"
+    }
+  ]
+}

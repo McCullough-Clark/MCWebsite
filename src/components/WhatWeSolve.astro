@@ -1,48 +1,20 @@
 ---
-const problems = [
-  'The same information is entered into more than one system.',
-  'Software that should work together does not.',
-  'Recurring processes depend on memory and manual handoffs.',
-  'Intake or document handling consumes too much expert time.',
-  'Reporting requires gathering information from disconnected places.',
-  'You believe AI could help but do not know where it would be genuinely useful.',
-]
-
-const builds = [
-  {
-    label: 'Connect',
-    title: 'System integrations',
-    body: 'Connect the software your firm already uses so information can move without being repeatedly copied, re-entered, or chased down.',
-    href: '/systems-integration/',
-  },
-  {
-    label: 'Coordinate',
-    title: 'Workflow automation',
-    body: 'Turn recurring, rules-based processes into reliable workflows with clear triggers, routing, checks, and human decision points.',
-    href: '/workflow-automation/',
-  },
-  {
-    label: 'Prioritize',
-    title: 'AI Operations Audits',
-    body: 'Separate worthwhile opportunities from the noise and leave with a practical, prioritized implementation roadmap.',
-    href: '/audit/',
-  },
-]
+import solveData from '../data/homepage-solve.json'
+import { md } from '../lib/markdown'
 ---
+
 
 <section class="py-16 md:py-24 border-b border-border">
   <div class="max-w-[1200px] mx-auto px-6">
     <div class="grid grid-cols-1 lg:grid-cols-[0.82fr_1.18fr] gap-12 lg:gap-20">
       <div class="reveal">
-        <p class="eyebrow text-[13px] tracking-[0.1em] uppercase mb-4">When to call us</p>
+        <p class="eyebrow text-[13px] tracking-[0.1em] uppercase mb-4">{solveData.eyebrow}</p>
         <h2 class="text-[32px] md:text-[44px] font-medium tracking-[-0.015em] leading-[1.12] mb-5">
-          When the back office stops keeping up with the expertise out front.
+          {solveData.heading}
         </h2>
-        <p class="text-secondary text-lg mb-7">
-          Start with the operational problem. We will help determine whether the answer is an integration, an automated workflow, a focused AI tool, a process change—or no build at all.
-        </p>
+        <p class="text-secondary text-lg mb-7" set:html={md(solveData.body)}></p>
         <ul class="grid gap-3 list-none" role="list">
-          {problems.map((problem) => (
+          {solveData.problems.map((problem) => (
             <li class="flex gap-3 text-secondary">
               <span class="text-teal font-bold" aria-hidden="true">→</span>
               <span>{problem}</span>
@@ -52,7 +24,7 @@ const builds = [
       </div>
 
       <div class="grid gap-4 reveal-stagger">
-        {builds.map((item) => (
+        {solveData.builds.map((item) => (
           <article class="p-6 md:p-7 bg-sage border border-border rounded-[8px]">
             <p class="text-[12px] tracking-[0.12em] uppercase font-semibold text-teal mb-2">{item.label}</p>
             <h3 class="text-2xl font-medium mb-2">{item.title}</h3>

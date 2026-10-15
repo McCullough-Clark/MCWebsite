@@ -8,7 +8,7 @@ export async function GET(context) {
     .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
   return rss({
-    title: 'McCullough Clark — Articles',
+    title: 'McCullough Clark | Articles',
     description: 'Notes on accounting, AI tools, and running professional services firms.',
     site: context.site,
     items: posts.map((post) => ({

@@ -6,7 +6,7 @@ import { md } from '../lib/markdown'
 <section id="services" class="py-16 md:py-24 bg-pale-blue border-b border-border">
   <div class="max-w-[1200px] mx-auto px-6">
     <div class="max-w-[760px] reveal mb-12">
-      <p class="eyebrow text-[13px] tracking-[0.1em] uppercase mb-4">Choose the practice you need</p>
+      <p class="eyebrow text-[13px] tracking-[0.1em] uppercase mb-4">{servicesData.eyebrow}</p>
       <h2 class="text-[32px] md:text-[46px] font-medium tracking-[-0.015em] leading-[1.12] mb-5">
         {servicesData.heading}
       </h2>
@@ -45,7 +45,7 @@ import { md } from '../lib/markdown'
 
     <div class="mt-10 p-6 md:p-8 bg-white border border-border rounded-[8px] reveal">
       <div class="accent-rule mb-5"></div>
-      <h3 class="text-2xl font-medium mb-3">Separate specialties. Shared operational context.</h3>
+      <h3 class="text-2xl font-medium mb-3">{servicesData.bridge_heading}</h3>
       <p class="text-secondary max-w-[860px]" set:html={md(servicesData.bridge)}></p>
     </div>
   </div>

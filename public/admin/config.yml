@@ -52,65 +52,63 @@ collections:
         file: "src/data/homepage-hero.json"
         format: "json"
         fields:
-          - label: "Eyebrow Text"
-            name: "eyebrow"
-            widget: "string"
-            hint: "Small caps text above the headline (e.g., 'AI Advisory · Bookkeeping')"
-          - label: "Headline"
-            name: "heading"
-            widget: "string"
-            hint: "Main H1 headline"
-          - label: "Body Paragraph"
-            name: "body"
-            widget: "markdown"
-            buttons: ["bold", "italic", "link"]
-            editor_components: []
-            hint: "Introductory paragraph below the headline"
-          - label: "Primary Button Label"
-            name: "cta_label"
-            widget: "string"
-          - label: "Primary Button Link"
-            name: "cta_link"
-            widget: "string"
-            hint: "mailto: link or page URL"
-          - label: "Secondary Link Label"
-            name: "secondary_label"
-            widget: "string"
-          - label: "Secondary Link Target"
-            name: "secondary_link"
-            widget: "string"
+          - { label: "Eyebrow Text", name: "eyebrow", widget: "string", hint: "Small caps text above the headline" }
+          - { label: "Headline", name: "heading", widget: "string", hint: "Main H1 headline" }
+          - { label: "Body Paragraph", name: "body", widget: "markdown", buttons: ["bold", "italic", "link"], editor_components: [], hint: "Introductory paragraph below the headline" }
+          - { label: "Primary Button Label", name: "primary_label", widget: "string" }
+          - { label: "Primary Button Link", name: "primary_link", widget: "string", hint: "Page path (e.g. /systems-integration/) or full URL" }
+          - { label: "Secondary Button Label", name: "secondary_label", widget: "string" }
+          - { label: "Secondary Button Link", name: "secondary_link", widget: "string" }
+          - { label: "Small Note Under the Buttons", name: "reassurance", widget: "string" }
 
-      # ── Services Section ──
+      # ── Practices Section (two cards) ──
       - name: "services"
-        label: "Services Section"
+        label: "Practices Section"
         file: "src/data/homepage-services.json"
         format: "json"
         fields:
-          - label: "Section Heading"
-            name: "heading"
-            widget: "string"
-          - label: "Service Columns"
+          - { label: "Eyebrow Text", name: "eyebrow", widget: "string", hint: "Small caps text above the heading" }
+          - { label: "Section Heading", name: "heading", widget: "string" }
+          - { label: "Intro Paragraph", name: "intro", widget: "markdown", buttons: ["bold", "italic", "link"], editor_components: [] }
+          - label: "Practice Cards"
             name: "columns"
             widget: "list"
             max: 2
             min: 2
             fields:
-              - label: "Subheading"
-                name: "subheading"
-                widget: "string"
-              - label: "Body Text"
-                name: "body"
-                widget: "markdown"
-                buttons: ["bold", "italic", "link"]
-                editor_components: []
-              - label: "Link Label"
-                name: "link_label"
-                widget: "string"
-                hint: "Text for the link below the body (include → if desired)"
-              - label: "Link Target"
-                name: "link_target"
-                widget: "string"
-                hint: "Page URL or mailto: link"
+              - { label: "Card Label", name: "label", widget: "string", hint: "Small caps text, e.g. 'Practice 01'" }
+              - { label: "Color", name: "theme", widget: "select", options: [{ label: "Teal (Systems & Automation)", value: "systems" }, { label: "Terracotta (Bookkeeping)", value: "books" }] }
+              - { label: "Card Heading", name: "subheading", widget: "string" }
+              - { label: "Body Text", name: "body", widget: "markdown", buttons: ["bold", "italic", "link"], editor_components: [] }
+              - { label: "Bullet Points", name: "bullets", widget: "list", field: { label: "Bullet", name: "bullet", widget: "string" } }
+              - label: "Links"
+                name: "links"
+                widget: "list"
+                hint: "The first link shows as a button, the rest as text links"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Link", name: "target", widget: "string", hint: "Page path (e.g. /bookkeeping/) or full URL" }
+          - { label: "Bottom Box Heading", name: "bridge_heading", widget: "string" }
+          - { label: "Bottom Box Text", name: "bridge", widget: "markdown", buttons: ["bold", "italic", "link"], editor_components: [] }
+
+      # ── When to Call Us Section ──
+      - name: "solve"
+        label: "When to Call Us Section"
+        file: "src/data/homepage-solve.json"
+        format: "json"
+        fields:
+          - { label: "Eyebrow Text", name: "eyebrow", widget: "string" }
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Paragraph", name: "body", widget: "markdown", buttons: ["bold", "italic", "link"], editor_components: [] }
+          - { label: "Problem List", name: "problems", widget: "list", field: { label: "Problem", name: "problem", widget: "string" } }
+          - label: "Service Boxes"
+            name: "builds"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string", hint: "Small caps text, e.g. 'Connect'" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Text", name: "body", widget: "text" }
+              - { label: "Link", name: "href", widget: "string", hint: "Page path, e.g. /workflow-automation/" }
 
       # ── About / Founders Section ──
       - name: "about"
@@ -118,59 +116,25 @@ collections:
         file: "src/data/homepage-about.json"
         format: "json"
         fields:
-          - label: "Section Heading"
-            name: "heading"
-            widget: "string"
-          - label: "Lede Paragraph"
-            name: "lede"
-            widget: "markdown"
-            buttons: ["bold", "italic", "link"]
-            editor_components: []
-            hint: "Introductory paragraph about the firm"
+          - { label: "Eyebrow Text", name: "eyebrow", widget: "string" }
+          - { label: "Section Heading", name: "heading", widget: "string" }
+          - { label: "Lede Paragraph", name: "lede", widget: "markdown", buttons: ["bold", "italic", "link"], editor_components: [], hint: "Introductory paragraph about the firm" }
           - label: "Founder 1"
             name: "founder1"
             widget: "object"
             fields:
-              - label: "Name"
-                name: "name"
-                widget: "string"
-              - label: "Title"
-                name: "title"
-                widget: "string"
-                hint: "e.g., 'Founder' or 'Co-founder'"
-              - label: "Bio"
-                name: "bio"
-                widget: "markdown"
-                buttons: ["bold", "italic", "link"]
-                editor_components: []
-              - label: "Photo"
-                name: "photo"
-                widget: "image"
-                required: false
-                media_folder: "/public/photos"
-                public_folder: "/photos"
-                hint: "Upload a headshot. Leave blank to hide the photo slot."
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Title", name: "title", widget: "string", hint: "e.g., 'Founder' or 'Co-founder'" }
+              - { label: "Bio", name: "bio", widget: "markdown", buttons: ["bold", "italic", "link"], editor_components: [] }
+              - { label: "Photo", name: "photo", widget: "image", required: false, media_folder: "/public/photos", public_folder: "/photos", hint: "Upload a headshot. Leave blank to hide the photo slot." }
           - label: "Founder 2"
             name: "founder2"
             widget: "object"
             fields:
-              - label: "Name"
-                name: "name"
-                widget: "string"
-              - label: "Title"
-                name: "title"
-                widget: "string"
-              - label: "Bio"
-                name: "bio"
-                widget: "markdown"
-                buttons: ["bold", "italic", "link"]
-                editor_components: []
-              - label: "Photo"
-                name: "photo"
-                widget: "image"
-                required: false
-                media_folder: "/public/photos"
-                public_folder: "/photos"
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Bio", name: "bio", widget: "markdown", buttons: ["bold", "italic", "link"], editor_components: [] }
+              - { label: "Photo", name: "photo", widget: "image", required: false, media_folder: "/public/photos", public_folder: "/photos" }
 
       # ── Credentials Strip ──
       - name: "credentials"
@@ -178,10 +142,13 @@ collections:
         file: "src/data/homepage-credentials.json"
         format: "json"
         fields:
-          - label: "Credentials Line"
-            name: "line"
-            widget: "string"
-            hint: "Single line of credentials shown between About and CTA sections (use · as separator)"
+          - label: "Credentials"
+            name: "items"
+            widget: "list"
+            hint: "Each one shows as a small rounded badge below the top section"
+            fields:
+              - { label: "Text", name: "label", widget: "string" }
+              - { label: "Color", name: "theme", widget: "select", options: [{ label: "Ivory", value: "books" }, { label: "Sage", value: "systems" }, { label: "Pale blue", value: "neutral" }] }
 
       # ── Call to Action ──
       - name: "cta"
@@ -189,26 +156,88 @@ collections:
         file: "src/data/homepage-cta.json"
         format: "json"
         fields:
-          - label: "Heading"
-            name: "heading"
-            widget: "string"
-          - label: "Body Paragraph"
-            name: "body"
-            widget: "markdown"
-            buttons: ["bold", "italic", "link"]
-            editor_components: []
-          - label: "Primary Button Label"
-            name: "cta_label"
-            widget: "string"
-          - label: "Primary Button Link"
-            name: "cta_link"
-            widget: "string"
-          - label: "Secondary Link Label"
-            name: "secondary_label"
-            widget: "string"
-          - label: "Secondary Link Target"
-            name: "secondary_link"
-            widget: "string"
+          - { label: "Eyebrow Text", name: "eyebrow", widget: "string" }
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Body Paragraph", name: "body", widget: "markdown", buttons: ["bold", "italic", "link"], editor_components: [] }
+          - { label: "Primary Button Label", name: "primary_label", widget: "string" }
+          - { label: "Primary Button Link", name: "primary_link", widget: "string" }
+          - { label: "Secondary Button Label", name: "secondary_label", widget: "string" }
+          - { label: "Secondary Button Link", name: "secondary_link", widget: "string" }
+
+  # ═══════════════════════════════════════════════════
+  # SERVICE PAGES (/systems-integration/, /workflow-automation/)
+  # ═══════════════════════════════════════════════════
+  - name: "service_pages"
+    label: "Service Pages"
+    description: "Edit the System Integration and Workflow Automation pages. Changes go live within 2-3 minutes after Save."
+    files:
+      - name: "systems_integration"
+        label: "System Integration Page"
+        file: "src/data/systems-integration.json"
+        format: "json"
+        fields:
+          - { label: "Caption", name: "caption", widget: "string", hint: "Small caps text above the headline" }
+          - { label: "Headline", name: "heading", widget: "string" }
+          - { label: "Intro", name: "intro", widget: "text" }
+          - { label: "Button Label", name: "ctaLabel", widget: "string", hint: "Used for the top and bottom buttons" }
+          - { label: "Button Link", name: "ctaLink", widget: "string" }
+          - { label: "Fit Section Heading", name: "fitHeading", widget: "string" }
+          - { label: "Fit Section Intro", name: "fitIntro", widget: "text" }
+          - { label: "Fit Checklist", name: "fitItems", widget: "list", field: { label: "Item", name: "item", widget: "string" } }
+          - { label: "Work Section Heading", name: "workHeading", widget: "string" }
+          - { label: "Work Section Intro", name: "workIntro", widget: "text" }
+          - label: "Work Examples"
+            name: "workItems"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          - { label: "Dark Box Heading", name: "distinctionHeading", widget: "string" }
+          - { label: "Dark Box Text", name: "distinctionBody", widget: "text" }
+          - { label: "Process Heading", name: "processHeading", widget: "string" }
+          - label: "Process Steps"
+            name: "processItems"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          - { label: "Standalone Note", name: "independence", widget: "text", hint: "The highlighted note below the process steps" }
+          - { label: "Closing Heading", name: "ctaHeading", widget: "string" }
+          - { label: "Closing Text", name: "ctaBody", widget: "text" }
+
+      - name: "workflow_automation"
+        label: "Workflow Automation Page"
+        file: "src/data/workflow-automation.json"
+        format: "json"
+        fields:
+          - { label: "Caption", name: "caption", widget: "string", hint: "Small caps text above the headline" }
+          - { label: "Headline", name: "heading", widget: "string" }
+          - { label: "Intro", name: "intro", widget: "text" }
+          - { label: "Button Label", name: "ctaLabel", widget: "string", hint: "Used for the top and bottom buttons" }
+          - { label: "Button Link", name: "ctaLink", widget: "string" }
+          - { label: "Fit Section Heading", name: "fitHeading", widget: "string" }
+          - { label: "Fit Section Intro", name: "fitIntro", widget: "text" }
+          - { label: "Fit Checklist", name: "fitItems", widget: "list", field: { label: "Item", name: "item", widget: "string" } }
+          - { label: "Work Section Heading", name: "workHeading", widget: "string" }
+          - { label: "Work Section Intro", name: "workIntro", widget: "text" }
+          - label: "Work Examples"
+            name: "workItems"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          - { label: "Dark Box Heading", name: "distinctionHeading", widget: "string" }
+          - { label: "Dark Box Text", name: "distinctionBody", widget: "text" }
+          - { label: "Process Heading", name: "processHeading", widget: "string" }
+          - label: "Process Steps"
+            name: "processItems"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          - { label: "Standalone Note", name: "independence", widget: "text", hint: "The highlighted note below the process steps" }
+          - { label: "Closing Heading", name: "ctaHeading", widget: "string" }
+          - { label: "Closing Text", name: "ctaBody", widget: "text" }
 
   # ═══════════════════════════════════════════════════
   # AUDIT PAGE
@@ -547,7 +576,7 @@ collections:
             widget: "list"
             fields:
               - { label: "Text", name: "text", widget: "string" }
-              - { label: "Link URL", name: "url", widget: "string", required: false, hint: "Optional — leave blank for plain text" }
+              - { label: "Link URL", name: "url", widget: "string", required: false, hint: "Optional. Leave blank for plain text" }
           - label: "Copyright Line"
             name: "copyright"
             widget: "string"

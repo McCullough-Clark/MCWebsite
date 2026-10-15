@@ -6,7 +6,7 @@ import { md } from '../lib/markdown'
 <section class="py-16 md:py-24 bg-navy text-white">
   <div class="max-w-[1200px] mx-auto px-6">
     <div class="max-w-[800px] reveal">
-      <p class="text-sage text-[13px] tracking-[0.1em] uppercase font-semibold mb-4">A useful first conversation</p>
+      <p class="text-sage text-[13px] tracking-[0.1em] uppercase font-semibold mb-4">{ctaData.eyebrow}</p>
       <h2 class="text-white text-[34px] md:text-[48px] font-medium tracking-[-0.015em] leading-[1.12] mb-5">{ctaData.heading}</h2>
       <div class="text-xl leading-[1.5] text-sage mb-9" set:html={md(ctaData.body)}></div>
       <div class="flex flex-col sm:flex-row gap-3">

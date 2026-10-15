@@ -1,15 +1,16 @@
 {
-  "heading": "Specialists in the work—not generalists selling a bundle.",
-  "lede": "McCullough Clark brings deep accounting experience and modern systems capability into the same firm while keeping responsibility for each practice clear.",
+  "eyebrow": "Who does the work",
+  "heading": "Specialists in the work, not generalists selling a bundle.",
+  "lede": "McCullough Clark brings deep accounting experience and modern systems capability into one firm, and we work on client projects together.",
   "founder1": {
     "name": "Sharla Clark, EA, MBA",
-    "title": "Bookkeeping & Accounting Operations",
-    "bio": "More than 25 years in accounting, with the last seven serving small businesses across Texas. IRS Enrolled Agent, QuickBooks Online ProAdvisor, and the process specialist behind McCullough Clark's bookkeeping practice.",
+    "title": "Founder",
+    "bio": "More than 25 years in accounting, with the last seven serving small businesses across Texas. An IRS Enrolled Agent and QuickBooks Online ProAdvisor who also designs and builds integrations, workflow automations, and AI tools, including connections that bring payroll, practice management, and expense data into QuickBooks with reconciliation built in.",
     "photo": ""
   },
   "founder2": {
     "name": "Whitney McCullough",
-    "title": "Systems, Integration & Analytics",
+    "title": "Co-founder",
     "bio": "More than 20 years in business intelligence, analytics, and automations. Builds the data infrastructure, integrations, and reporting layer that turn operational activity into usable insight.",
     "photo": ""
   }

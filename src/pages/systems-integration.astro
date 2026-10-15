@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
 import ServiceDetail from '../components/ServiceDetail.astro'
+import content from '../data/systems-integration.json'
 
 const description = 'McCullough Clark designs and builds system integrations that connect the software professional-service firms already use and reduce duplicate entry and manual handoffs.'
 const pageUrl = 'https://mcculloughclark.com/systems-integration/'
@@ -19,68 +20,12 @@ const serviceSchema = {
   },
 }
 
-const content = {
-  caption: 'Systems & Automation Practice',
-  heading: 'Make the software you already use work together.',
-  intro: 'Your firm should not need a person to carry information from one system to another. We design and build connections around the way your team actually operates—then add checks so failures are visible instead of quietly becoming bad data.',
-  fitHeading: 'When integration is the right answer.',
-  fitIntro: 'Integration work starts with a repeated handoff between systems, not with a preferred technology.',
-  fitItems: [
-    'Your team enters the same information in multiple systems.',
-    'Someone manually moves data or documents between tools.',
-    'Staff must check several places to understand the status of work.',
-    'A handoff regularly causes delays, missing information, or rework.',
-    'Reporting requires assembling information from disconnected sources.',
-  ],
-  workHeading: 'Connections built around the real workflow.',
-  workIntro: 'The exact architecture depends on your systems, data, volume, and controls. Common projects include:',
-  workItems: [
-    {
-      title: 'System-to-system data flows',
-      description: 'Move defined information between the software you already use, with mapping and validation around the handoff.',
-    },
-    {
-      title: 'Connected intake',
-      description: 'Collect information once and route it into the records, workspaces, or follow-up steps that need it.',
-    },
-    {
-      title: 'Reconciliation and exceptions',
-      description: 'Add checks that flag missing, duplicated, or out-of-balance information for human review.',
-    },
-    {
-      title: 'Data and reporting layers',
-      description: 'Bring information from multiple systems into a dependable operational view instead of another manual spreadsheet.',
-    },
-  ],
-  distinctionHeading: 'Integration and automation are related—but different.',
-  distinctionBody: 'An integration allows systems to exchange information. Workflow automation coordinates the steps in a recurring process across people, rules, and systems. Some projects need one; others need both. We recommend the structure that fits the work instead of treating every problem as the same kind of build.',
-  processHeading: 'From handoff to dependable connection.',
-  processItems: [
-    {
-      title: 'Map the handoff',
-      description: 'We document what moves today, who uses it, where errors appear, and which system should own each piece of information.',
-    },
-    {
-      title: 'Design and build',
-      description: 'We define the trigger, mapping, permissions, checks, and failure path before implementing the connection.',
-    },
-    {
-      title: 'Validate and hand off',
-      description: 'We test expected and exception cases, document the workflow, and make responsibility for monitoring clear.',
-    },
-  ],
-  independence: 'You can hire McCullough Clark solely for a system integration. Bookkeeping is a separate practice and is not a prerequisite.',
-  ctaHeading: 'Where is your team moving information by hand?',
-  ctaBody: 'Show us the systems and the handoff. We will help determine whether an integration, an automated workflow, or a simpler process change is the right answer.',
-  ctaLabel: 'Talk through an integration',
-  ctaLink: 'https://calendly.com/mcculloughclark/consult',
-}
 ---
 
 <BaseLayout
   title="System Integration for Professional Services | McCullough Clark"
   description={description}
-  ogTitle="System Integration Services — McCullough Clark"
+  ogTitle="System Integration Services | McCullough Clark"
   ogDescription={description}
   ogUrl={pageUrl}
   schema={serviceSchema}
