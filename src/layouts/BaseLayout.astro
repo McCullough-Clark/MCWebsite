@@ -105,6 +105,8 @@ const structuredDataText = JSON.stringify(structuredData).replace(/</g, '\\u003c
     <title>{title}</title>
     <meta name="description" content={description} />
     {robots && <meta name="robots" content={robots} />}
+    <!-- Google Search Console ownership (property https://mcculloughclark.com/, sharla@mccullough-clark.com) -->
+    <meta name="google-site-verification" content="z82_N-5IgH0fF_fykU0l0FW4XKU1WlN9kiVmYza9qYQ" />
 
     <meta property="og:title" content={ogTitle} />
     <meta property="og:description" content={ogDescription} />
@@ -126,12 +128,7 @@ const structuredDataText = JSON.stringify(structuredData).replace(/</g, '\\u003c
       analyticsEnabled && (
         <>
           <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>
-          <script is:inline define:vars={{ gaId }}>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){window.dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', gaId);
-          </script>
+          <script is:inline set:html={`window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', '${gaId}');`}></script>
         </>
       )
     }
