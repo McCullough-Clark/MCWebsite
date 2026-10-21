@@ -92,7 +92,7 @@ We built our own Square to QuickBooks connection after cleaning up a client's bo
 
 **Every payout split into its real pieces.** Processing fees, instant transfer fees, and loan repayments each go to their own account, and the payout to the bank is recorded as a transfer so the bank feed matches it instead of creating income a second time.
 
-**There is no review queue. It reconciles itself.** After month end, the tool rebuilds the month from Square's own reports, gross to net, and compares it line by line with what is about to post into QuickBooks. If every figure ties, it posts. If the difference is not zero, nothing posts and you get a list of the exceptions instead. Nobody clicks through transactions. The only things a person looks at are the ones the reconciliation could not explain, and most months that is nothing.
+**There is no review queue. It reconciles itself.** After month end, the tool rebuilds the month from Square's own reports, gross to net, and compares it line by line with what is about to post into QuickBooks. If every figure ties, it posts. If the difference is not zero, nothing posts and you get a list of the exceptions instead. Nobody clicks through transactions. The only things a person looks at are the ones the reconciliation could not explain, and most months that is a thing or two, usually a timing item at the month edge, not a queue of hundreds.
 
 **Every batch is tracked and reversible.** If a month needs to be redone, it is voided as a batch and rerun, not deleted one transaction at a time.
 
