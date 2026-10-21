@@ -22,7 +22,7 @@ On paper that is a reasonable design. The trouble is what people have run into u
 
 ## Why the Square integration is not working for people in 2026
 
-These are not old complaints about an old app. They come from the QuickBooks and Square community forums and the bookkeeping subreddits, dated December 2025 through August 2026, and each one is attributed to the person who reported it.
+These are not old complaints about an old app. They come from the QuickBooks and Square community forums, dated December 2025 through August 2026, plus one from Intuit's own listing, and each one is attributed to its source.
 
 ### The migration re-imported history
 
@@ -44,9 +44,9 @@ In [a Square community thread from December 2025 to February 2026](https://commu
 
 The documentation says transactions appear for review within about two hours and that you cannot trigger an update yourself. Users in the 2026 thread report card transactions taking over a week to show up.
 
-### What Reddit says
+### If you use Square Checking, Intuit says do not connect it
 
-Reddit over the past year says about the same. In an r/quickbooksonline discussion about using Square Checking with QuickBooks, [one commenter described the connector](https://www.reddit.com/r/quickbooksonline/comments/1txxy0m/comment/oq0s7uz/) as "extremely limited." In r/QuickBooks, [another wrote that it](https://www.reddit.com/r/QuickBooks/comments/1sqf6f0/comment/ohb9pmg/) "messed up months of imports and now it won't connect at all," and that support told them it was affecting a lot of customers.
+This one is not a forum complaint. It is on [Intuit's own listing for the connector](https://quickbooks.intuit.com/app/apps/appdetails/squareconnector/en-us/): the app cannot import the details of purchases made from a Square Checking account, and if you use Square Checking, Intuit recommends you do not connect the app at all. Square Checking is where Square keeps your money if you let it, and plenty of businesses pay bills and run the debit card from it. For them the connector covers the sales side and leaves the spending side out, so the Square Checking balance will never reconcile from the connector alone. It has to be reconciled like any other bank account, to its own statement, every month.
 
 ## Why this is more than an inconvenience
 
