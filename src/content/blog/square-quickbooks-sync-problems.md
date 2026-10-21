@@ -56,7 +56,13 @@ Underneath all of it is the thing the documentation does not describe, which is 
 
 The structure is not complicated, even if the exceptions take some skill. A Square payout is the customer money in that settlement after fees, refunds, loan deductions, and any other adjustments. The customer money itself is more than sales, because it includes sales tax, tips, and gift cards. Complete books record each piece where it belongs.
 
-Sales go to income by category, net of refunds, with each refund reversing whatever it refunds, including tax. Sales tax collected goes to the sales tax liability, tips owed to employees go to a tips liability, and gift cards sold go to a gift card liability with redemptions coming back out of it. Processing fees and instant transfer fees are expense. Square loan repayments go to the loan, with the loan's fixed fee recognized in a way that fits the reporting basis and the loan terms. And each payout is matched to the bank deposit, never added on top of sales already recorded.
+- Sales go to income by category, net of refunds, with each refund reversing whatever it refunds, including tax.
+- Sales tax collected goes to the sales tax liability.
+- Tips owed to employees go to a tips liability.
+- Gift cards sold go to a gift card liability, with redemptions coming back out of it.
+- Processing fees and instant transfer fees are expense.
+- Square loan repayments go to the loan, with the loan's fixed fee recognized in a way that fits the reporting basis and the loan terms.
+- Each payout is matched to the bank deposit, never added on top of sales already recorded.
 
 Then the month-end checks. Whatever Square has not paid out yet should equal the balance you are carrying for it, whether that is a clearing account or, if you keep money in Square Checking, that account reconciled to its own statement. A balance that ties tells you the money moved where it should. It does not by itself prove the classifications, so sales, tax, fees, and the loan balance also get checked against Square's reports, on the same basis and the same cutoff.
 
@@ -64,16 +70,19 @@ Then the month-end checks. Whatever Square has not paid out yet should equal the
 
 We built our own tool after cleaning up a client's books by hand once too often. It connects to Square through Square's API, imports transactions into QuickBooks as sales receipts, posts the month-end journal entries for fees, loan activity, and transfers, and reconciles the month to Square automatically. Transactions can be imported daily, weekly, or monthly, whichever the books call for. Each import is checked against Square's records before it posts, and the closing entries are checked against the Square statement after month end.
 
+There is no review queue to work through. The account mappings and accounting decisions are set during setup, and guards built into the process hold anything unexplained for our review. Routine transactions do not need individual approval. We review the exceptions the tool cannot resolve itself, such as a new item in Square that needs to be set up in QuickBooks.
+
 It starts from Square's transfer records. Every payment Square processed is traced to the payout that includes it, and every payout is matched to the bank deposit. Cash and check payments recorded in Square do not pass through those payouts, so they are recorded and reconciled separately. Anything not yet paid out at month end is carried as in transit, with the amount checked against what Square shows as pending.
 
 Each payment Square processed becomes one sales receipt at its gross amount. Income goes to the categories set up with you, tax, tips, and gift cards go to their liability accounts, and refunds are reversed in the period they were refunded. Each payout is split into its real pieces, with processing fees, instant transfer fees, and loan repayments each going to their own account. The payout to the bank is recorded as a transfer so the bank feed matches it instead of creating income a second time.
-There is no review queue to work through. The account mappings and accounting decisions are set during setup, and guards built into the process hold anything unexplained for our review.
 
-Every import batch is checked before it posts: the sales receipts have to net exactly to what Square's transfer details say was collected, or the batch waits. After month end, the tool rebuilds the whole month from Square's own reports, gross to net, and proves it against the Square statement before the closing entries post. Known timing balances, like sales Square has not paid out yet at month end, are expected and shown. If an unexplained difference remains, the closing entries do not post and you get the list of exceptions instead. After posting, it checks QuickBooks again to confirm the balances landed where they should.
+Every import batch is checked before it posts: the sales receipts have to net exactly to what Square's transfer details say was collected, or the batch waits.
 
-Routine transactions do not get individual approval. The only things a person looks at are what the reconciliation could not explain or resolve itself. For example, a new item added in Square that needs to be added in QuickBooks.
+After month end, the tool rebuilds the whole month from Square's own reports, gross to net, and proves it against the Square statement before the closing entries post. Known timing balances, like sales Square has not paid out yet at month end, are expected and shown. If an unexplained difference remains, the closing entries do not post and you get the list of exceptions instead. After posting, it checks QuickBooks again to confirm the balances landed where they should.
 
-Every receipt and journal entry the tool creates is recorded as a batch. If a month needs to be redone, the batch is reversed and rerun rather than deleted one transaction at a time. And every month you get a summary of what posted, what is in transit, how it compares to Square, and anything flagged for review, with the completed reconciliation and its supporting detail attached.
+Every receipt and journal entry the tool creates is recorded as a batch. If a month needs to be redone, the batch is reversed and rerun rather than deleted one transaction at a time.
+
+And every month you get a summary of what posted, what is in transit, how it compares to Square, and anything flagged for review, with the completed reconciliation and its supporting detail attached.
 
 ## Should you keep the built-in connector?
 
