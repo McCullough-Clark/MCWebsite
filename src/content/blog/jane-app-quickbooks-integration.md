@@ -28,7 +28,13 @@ Everything below starts from Jane's reports. The question is how much of the det
 
 ### 1. Categorize the bank deposits
 
-Jane Payments deposits land in the bank, you categorize them as income, and that is the bookkeeping. It is fast. It is also wrong in a few predictable ways. Revenue is understated by the processing fees, which came out before the money arrived. Cash, Zelle, and Venmo payments that patients made outside Jane Payments show up as separate deposits with nothing tying them to a visit. There is no accounts receivable, so QuickBooks cannot tell you who owes you anything. And because a payout combines transactions and can cover more than one day, the deposits alone do not give you enough detail to reconcile revenue, fees, and patient payments back to Jane.
+Jane Payments deposits land in the bank, you categorize them as income, and that is the bookkeeping. It is fast, and how wrong it is depends on your accounting basis.
+
+On a cash basis it is close, but not right. Revenue is understated by the processing fees that came out before the money arrived, so gross receipts are low and the fee expense never appears. The payout lands two business days after the visits, so income from the last days of the month falls into the next one.
+
+On an accrual basis it is further off. Revenue belongs in the month the patient was seen, not the month the payout arrived. There is no accounts receivable, so QuickBooks cannot tell you who owes you anything. And a prepaid package is counted as income the day the money lands instead of as the visits are used.
+
+On either basis, cash, Zelle, and Venmo payments that patients made outside Jane Payments show up as separate deposits with nothing tying them to a visit. And because a payout combines transactions and can cover more than one day, the deposits alone do not give you enough detail to reconcile revenue, fees, and patient payments back to Jane.
 
 ### 2. Post a monthly summary
 
