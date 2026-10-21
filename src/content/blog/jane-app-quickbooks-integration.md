@@ -58,6 +58,8 @@ Edits after the month is done cause trouble no matter which method you use. A pa
 
 And practices that moved to Jane from another system usually carry open balances from the old one. Those sit in QuickBooks, never clear, and get in the way of every month's reconciliation until someone traces them.
 
+If you bill insurance, all of this gets bigger. A visit is split between what the patient paid at the desk and what the insurer pays weeks later. The insurer's payment arrives as one deposit covering many patients and many dates of service, and the gap between what was billed and what was allowed has to be written off against the right invoices. Jane tracks all of that by claim. A bank feed sees one deposit, and a summary entry sees one number, so neither can tell you which claims are still open or which ones were paid short. The more of your revenue comes through insurance, the more the month-end reconciliation matters.
+
 ## How we do it instead
 
 We built our own connection between Jane and QuickBooks for practices that wanted the patient detail in QuickBooks without the fragility of the manual import. It runs monthly from Jane's own exports: the Sales Report, the Applied and Unapplied Payments report, the Accounts Receivable report, the Jane Payments payout report, and the Adjustments report. The whole thing is built around one check: at month end, Jane's receivable by patient and the QuickBooks receivable by patient agree, the net payments agree, or the exceptions are listed for a person to look at.
