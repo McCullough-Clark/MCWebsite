@@ -12,8 +12,6 @@ status: "Published"
 
 If you run sales through Square and keep your books in QuickBooks Online, you are probably in one of a few spots. Maybe someone suggested the built-in Square connection and you are wondering whether to turn it on. Maybe you turned it on, it looked fine for a while, and now the bank does not reconcile and there are adjustments nobody can explain. Or maybe you gave up on it, or never trusted it, and someone keys Square sales into QuickBooks by hand every month.
 
-This article is for all of those, and it is specifically about what has happened since the connector changed.
-
 ## What changed
 
 Intuit introduced Square Connector by QuickBooks in 2025 to replace the old "Connect to Square" app, and through 2026 it has been moving the people still on the old app over to it. It is free with a QuickBooks subscription. According to [Intuit's own documentation](https://quickbooks.intuit.com/learn-support/en-us/help-article/manage-integrations/connect-manage-square-transactions-quickbooks/L0mBsyBTP_US_en_US), updated in August 2026, it does more than the old app did. Sales come in as sales receipts, with Square fees posted to a Square Fees expense account. Each Square payout comes in as a bank deposit linked to the sales and fees inside it, with holds, disputes, adjustments, and Square Capital loan payments listed in the same deposit. You can pull in up to two years of history at setup, and there is an auto-add setting that posts transactions it is confident about without review.
