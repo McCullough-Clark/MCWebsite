@@ -32,13 +32,13 @@ Jane Payments deposits land in the bank, you categorize them as income, and that
 
 On a cash basis it is close, but not right. Revenue is understated by the processing fees that came out before the money arrived, so gross receipts are low and the fee expense never appears. The payout lands two business days after the visits, so income from the last days of the month falls into the next one.
 
-On an accrual basis it is further off. Revenue belongs in the month the patient was seen, not the month the payout arrived. There is no accounts receivable, so QuickBooks cannot tell you who owes you anything. And a prepaid package is counted as income the day the money lands instead of as the visits are used.
+On an accrual basis it is further off. Revenue belongs in the month the patient was seen, not the month the payout arrived. There is no accounts receivable in the books. Jane can still tell you who owes you, but QuickBooks cannot. And a prepaid package is counted as income the day the money lands instead of as the visits are used.
 
 On either basis, cash, Zelle, and Venmo payments that patients made outside Jane Payments show up as separate deposits with nothing tying them to a visit. And because a payout combines transactions and can cover more than one day, the deposits alone do not give you enough detail to reconcile revenue, fees, and patient payments back to Jane.
 
 ### 2. Post a monthly summary
 
-Once a month someone takes the Billing Summary and the Daily Transactions report and posts one journal entry: revenue, the change in receivables, tax collected, fees, and cash by method. Done carefully, the totals come out right, and the patient-level detail stays in Jane, where you can still look up who owes you. Jane's own guide describes this approach as an alternative to importing invoices. What QuickBooks has is one receivable number, so the two systems can only be compared in total. The catch is in the words "done carefully." The entry depends on whoever builds it remembering that gift card sales are not revenue yet, that a credit memo is not cash, and that a refund has to account for any sales tax on it while Jane does not return the original processing fee.
+Once a month someone takes the Billing Summary and the Daily Transactions report and posts one journal entry: revenue, the change in receivables, tax collected, fees, and cash by method. Done carefully, the totals come out right, and as with the first option, the patient-level detail stays in Jane, where you can still look up who owes you. Jane's own guide describes this approach as an alternative to importing invoices. What QuickBooks has is one receivable number, so the two systems can only be compared in total. The catch is in the words "done carefully." The entry depends on whoever builds it remembering that gift card sales are not revenue yet, that a credit memo is not cash, and that a refund has to account for any sales tax on it while Jane does not return the original processing fee.
 
 ### 3. Import the invoices
 
@@ -48,7 +48,7 @@ Importing the Sales Report creates individual invoices in QuickBooks under each 
 
 These are the things we have actually had to clean up in Jane practices, whichever method they were using.
 
-Payouts are batches, net of fees. A Jane Payments deposit combines several patients, sometimes more than one day, with the fees already taken out. Record the deposit as income and the fees vanish and revenue comes up short. Record the invoices at full value and then also categorize the bank deposit as new income, and income is counted twice.
+Payouts are batches, net of fees. A Jane Payments deposit combines several patients, sometimes more than one day, with the fees already taken out. Record the deposit as income and the fees are buried in the net amount, so there is no fee expense and revenue comes up short. Record the invoices at full value and then also categorize the bank deposit as new income, and income is counted twice.
 
 Then there is the money that does not go through Jane Payments at all. Cash, Zelle, Venmo, and checks are recorded in Jane as payments, but they arrive in the bank on their own, and each one has to be matched to the patient and the visit it paid for. In one practice, months of Zelle deposits sat in a clearing account because two patients with the same first name had been paying for different family members, and the deposits had been matched to the wrong one.
 
