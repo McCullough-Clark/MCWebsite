@@ -68,7 +68,7 @@ Then the month-end checks. Whatever Square has not paid out yet should equal the
 
 We built our own Square to QuickBooks process after cleaning up a client's books by hand once too often. It connects to Square's records directly, but it is not a live sync. It runs once a month, after month end, and it is built around the reconciliation rather than the import.
 
-It starts from Square's transfer records. Every payment Square processed is traced to the payout that funded it, and every payout is matched to the bank deposit. Anything not yet paid out at month end is carried as in transit, with the amount checked against what Square shows as pending.
+It starts from Square's transfer records. Every payment Square processed is traced to the payout that includes it, and every payout is matched to the bank deposit. Cash and check payments recorded in Square do not pass through those payouts, so they are recorded and reconciled separately. Anything not yet paid out at month end is carried as in transit, with the amount checked against what Square shows as pending.
 
 Each payment Square processed becomes one sales receipt at its gross amount. Income goes to the categories set up with you, tax, tips, and gift cards go to their liability accounts, and refunds are reversed in the period they were refunded. Each payout is split into its real pieces, with processing fees, instant transfer fees, and loan repayments each going to their own account. The payout to the bank is recorded as a transfer so the bank feed matches it instead of creating income a second time.
 
