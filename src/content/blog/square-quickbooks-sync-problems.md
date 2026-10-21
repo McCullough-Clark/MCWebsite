@@ -34,7 +34,7 @@ These are not old complaints about an old app. They are from the QuickBooks and 
 
 **The migration re-imported history.** In [a QuickBooks community thread that runs from March to August 2026](https://quickbooks.intuit.com/community/other-questions-9/square-connector-upgrade-broke-everything-93370), bookkeepers describe the forced update switching auto-sync on and back-dating it two years. People who had been entering Square by hand, or had sync switched off on purpose, found their bank feed full of transactions they had already recorded. One reported 57 pages of deposits totaling over $150,000, posted on a Sunday evening by a "System Administrator" profile. Live support opened tickets and could not fix it.
 
-**Approvals, one at a time.** The same thread reports cash sales now arriving as individual transactions that each need manual approval, and that batch accept no longer works. Intuit's documentation confirms the limits: bulk confirm fails if any selected transaction still needs review, and payments and payouts cannot be confirmed together.
+**It is a review queue, and you are the reviewer.** This one is by design, not a bug. Intuit's documentation describes it: every imported sale and every payout lands in a list to be reviewed. Transactions with every field filled in can be confirmed in one click. Anything else has to be opened and completed first. Bulk confirm fails if any selected item still needs review, and payments and payouts cannot be confirmed in the same batch, so it is payments first, then payouts, every time. The 2026 thread adds that cash sales now arrive as individual transactions that each need manual approval, and that batch accept stopped working for some users after the update. The only way to skip the queue is the auto-add setting, which posts whatever the connector is confident about without asking. That is the setting the migration switched on, and it is how two years of duplicates got in. So the choice is to click through every transaction, or trust the setting that caused the mess.
 
 **Sales tax missing or off by pennies.** Users report transactions arriving without sales tax, and others where the tax is a few cents different from Square because Square calculates it per item and QuickBooks calculates it on the total. Either way the sales tax liability in QuickBooks stops agreeing with Square's tax report.
 
@@ -48,7 +48,7 @@ These are not old complaints about an old app. They are from the QuickBooks and 
 
 Each of those is a support headache. Together they are an accounting problem.
 
-Re-imported history means sales counted twice unless every duplicate is found and removed. Transactions stuck in review mean months that are not actually posted. Tax that does not match means a liability that will not reconcile to the return. And a connection that quietly stops means a gap you discover at year end.
+Re-imported history means sales counted twice unless every duplicate is found and removed. A review queue that nobody has time for means months that are not actually posted, because a transaction sitting in For Review is not in the books. Tax that does not match means a liability that will not reconcile to the return. And a connection that quietly stops means a gap you discover at year end.
 
 Underneath all of it is the thing the documentation does not describe: a reconciliation. The connector imports. At no point does it tell you whether QuickBooks agrees with Square at month end. That check is on you, and in most of the books we take over, nobody was doing it.
 
