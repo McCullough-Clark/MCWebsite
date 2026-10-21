@@ -66,6 +66,22 @@ The structure is clear, even if the exceptions take skill. A Square payout is th
 
 Then the month-end checks. Whatever Square has not paid out yet should equal the balance you are carrying for it, whether that is a clearing account or, if you keep money in Square Checking, that account reconciled to its own statement. A balance that ties confirms the money moved where it should. It does not by itself prove the classifications, so sales, tax, fees, and the loan balance also get checked against Square's reports, on the same basis and the same cutoff.
 
+## The Square loan, and why timing is the hard part
+
+The connector problems above are loud. The timing problems are quiet, and they are the ones that make Square books hard to trust even when every transaction imported correctly. A Square loan is the clearest example, and we have one client with a large one.
+
+**Square keeps two clocks.** When you have a Square loan, Square takes a fixed percentage of every card sale as repayment. Square's loan ledger applies that repayment on the date of the sale. The money, though, does not leave until the payout settles, usually the next business day, and the transfer report shows the deduction on that date. For most of the month nobody notices. At month end it matters. Sales on the 30th and 31st show as repaid on Square's loan dashboard in that month, but the cash was withheld from payouts dated the 1st and 2nd of the next one. Square's own help pages note that the loan dashboard and the transfer reports use different cutoffs.
+
+**So which number is the loan balance?** If you book repayments on the cash basis, as deductions from each payout, QuickBooks will never agree with Square's loan dashboard at month end, and every reconciliation ends with a difference somebody has to explain. If you book them on Square's ledger basis, the loan agrees but the cash does not, because a few days of repayment have been applied that have not been withheld yet. For our client that difference was a few hundred dollars every month, a different amount each time, made up of several day-shifted payments rather than one.
+
+**What we do.** The loan is booked on Square's ledger basis, so the loan balance in QuickBooks equals Square's loan dashboard at every month end. The month-edge difference goes to its own account, Square loan payments in transit, which carries over and clears the following month. The reconciliation shows that balance and what it is made of, so it is a known timing item, not a mystery.
+
+**The financing fee is the other half.** A Square loan has one fixed fee and no running interest, but the fee still has to reach the income statement over the life of the loan. We carry it as a contra to the loan and release it in proportion to repayments, so each month's financing cost matches that month's repayments and the net loan on the balance sheet is what you actually owe. When a client has been expensing it straight-line by hand, the first month on the tool includes a one-time true-up, shown and explained, never plugged.
+
+**Timing shows up in sales too.** Card sales settle a business day later, so a weekend at month end leaves two or three days of sales paid out in the next month. Those are real sales in the month they happened and real cash in the month after. The books carry them as in transit, and the reconciliation checks that figure against what Square shows as pending.
+
+**And accrual versus cash is a decision, not a default.** The same client invoices through Square and bills ahead, so invoices paid in a month are often for the next month's service. We built the accrual, posting the open invoices to receivables with an automatic reversal, and it was correct on paper. It also meant QuickBooks sales no longer matched Square sales, which was the one number the owner compared every month. The client chose consistency: sales in QuickBooks equal sales in Square, and the open invoices are listed on the monthly summary as information. Either answer can be right. What matters is that it is chosen on purpose, written down, and applied the same way every month.
+
 ## How we do it instead
 
 We built our own Square to QuickBooks connection after cleaning up a client's books by hand once too often. It is built around the reconciliation, not the import.
