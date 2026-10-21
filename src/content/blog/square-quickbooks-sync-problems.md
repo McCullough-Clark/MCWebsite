@@ -83,6 +83,6 @@ If it is importing cleanly, the queue is being worked, and someone reconciles it
 - The sales tax liability does not reconcile to Square's tax report
 - Nobody can say when Square activity was last reconciled
 
-If so, the fix is usually not a better bank rule. It is treating the sale and the payout as two different things, and checking every month that they meet.
+If so, the fix is usually not a better bank rule. It is treating the sale and the payout as two different things, and checking every month that they match.
 
 Not sure how your Square activity is being recorded? [See how we connect Square and other systems to QuickBooks](/systems-integration/), or [book a call](https://calendly.com/mcculloughclark/consult) and we will look at how sales, fees, loan deductions, and payouts are flowing into your books.
