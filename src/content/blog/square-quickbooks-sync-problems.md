@@ -24,15 +24,27 @@ On paper that is a reasonable design. The trouble is what people have run into u
 
 These are not old complaints about an old app. They come from the QuickBooks and Square community forums and the bookkeeping subreddits, dated December 2025 through August 2026, and each one is attributed to the person who reported it.
 
-The biggest one is that the migration re-imported history. In [a QuickBooks community thread that runs from April to August 2026](https://quickbooks.intuit.com/community/other-questions-9/square-connector-upgrade-broke-everything-93370), a bookkeeper describes an update on March 29 that, by their account, switched automatic syncing on and back-dated it two years. They had been entering Square by hand. They found 57 pages of transactions totaling over $150,000 in the Bank Deposits screen and said they would have to delete thousands of them manually. Others in the thread report the same thing through the summer, along with cash sales arriving one at a time and bulk accept failing. Live support opened tickets and could not fix it.
+### The migration re-imported history
 
-The second thing is by design, and it is the one that costs the most time. The connector is a review queue, and you are the reviewer. Intuit's documentation describes it. Every imported sale and every payout lands in a list to be reviewed. Transactions with every field filled in can be confirmed in bulk, but payments and payouts cannot be confirmed in the same batch, so it is payments first, then payouts, and the bulk action fails if anything selected still needs attention. Anything with missing information gets handled on its own. The only way around the queue is the auto-add setting, which posts what the connector is confident about without asking, and the bookkeeper above reported that the update switched that on for them without being asked. So the choice is to work the queue or trust the automation. If you use the connector without auto-add, somebody is working that queue every month, and at a busy location that is hundreds of transactions a week.
+This is the biggest one. In [a QuickBooks community thread that runs from April to August 2026](https://quickbooks.intuit.com/community/other-questions-9/square-connector-upgrade-broke-everything-93370), a bookkeeper describes an update on March 29 that, by their account, switched automatic syncing on and back-dated it two years. They had been entering Square by hand. They found 57 pages of transactions totaling over $150,000 in the Bank Deposits screen and said they would have to delete thousands of them manually. Others in the thread report the same thing through the summer, along with cash sales arriving one at a time and bulk accept failing. They reported that live support opened tickets and could not fix it.
 
-Sales tax is a smaller problem that adds up. Users in both forums report transactions arriving without sales tax, and others where the tax differs from Square by a few cents. Whatever the cause in a given setup, you end up with a sales tax liability in QuickBooks that does not agree with Square's tax report until someone investigates each difference.
+### It is a review queue, and you are the reviewer
 
-Then there are the connections that will not reconnect. In [a Square community thread from December 2025 to February 2026](https://community.squareup.com/t5/Hardware-Setup-Troubleshooting/Not-integrating-with-Quickbooks/m-p/828560), users who disconnected to fix something could not get reconnected. The connector showed as connected while nothing imported. Square said it was Intuit's app, Intuit said it was Square's data. In February one participant reported that a QuickBooks team lead fixed their connection on a video call and told them a team was working on problems with the new connector.
+This one is by design, and it costs the most time. Intuit's documentation describes it. Every imported sale and every payout lands in a list to be reviewed. Transactions with every field filled in can be confirmed in bulk, but payments and payouts cannot be confirmed in the same batch, so it is payments first, then payouts, and the bulk action fails if anything selected still needs attention. Anything with missing information gets handled on its own. The only way around the queue is the auto-add setting, which posts what the connector is confident about without asking, and the bookkeeper above reported that the update switched that on for them without being asked. So the choice is to work the queue or trust the automation. If you use the connector without auto-add, somebody is working that queue every month, and at a busy location that can be hundreds of transactions a week.
 
-It is also slow, with no way to refresh. The documentation says transactions appear for review within about two hours and that you cannot trigger an update yourself. Users in the 2026 thread report card transactions taking over a week to show up.
+### Sales tax missing or a few cents off
+
+This one is smaller, but it adds up. Users in both forums report transactions arriving without sales tax, and others where the tax differs from Square by a few cents. Whatever the cause in a given setup, you end up with a sales tax liability in QuickBooks that does not agree with Square's tax report until someone investigates each difference.
+
+### Connections that will not reconnect
+
+In [a Square community thread from December 2025 to February 2026](https://community.squareup.com/t5/Hardware-Setup-Troubleshooting/Not-integrating-with-Quickbooks/m-p/828560), users who disconnected to fix something could not get reconnected. The connector showed as connected while nothing imported. Square said it was Intuit's app, Intuit said it was Square's data. In February one participant reported that a QuickBooks team lead fixed their connection on a video call and told them a team was working on problems with the new connector.
+
+### Slow, with no way to refresh
+
+The documentation says transactions appear for review within about two hours and that you cannot trigger an update yourself. Users in the 2026 thread report card transactions taking over a week to show up.
+
+### What Reddit says
 
 Reddit over the past year says about the same. In an r/quickbooksonline discussion about using Square Checking with QuickBooks, [one commenter described the connector](https://www.reddit.com/r/quickbooksonline/comments/1txxy0m/comment/oq0s7uz/) as "extremely limited." In r/QuickBooks, [another wrote that it](https://www.reddit.com/r/QuickBooks/comments/1sqf6f0/comment/ohb9pmg/) "messed up months of imports and now it won't connect at all," and that support told them it was affecting a lot of customers.
 
@@ -42,7 +54,7 @@ Any one of those is a support headache. Together they are an accounting problem.
 
 Historical imports duplicate income when they are posted on top of sales already recorded, so every one of them has to be assessed before it is accepted. A review queue nobody has time for means months that are not actually posted, because a transaction sitting in For Review is not in the books. Tax that does not agree means a liability that will not reconcile to the return. A connection that quietly stops means a gap you find at year end.
 
-Underneath all of it is the thing the documentation does not describe, which is a reconciliation. The connector imports. The imported transactions still need a monthly reconciliation of sales, fees, payouts, liabilities, and the remaining Square balance, and that work is on you. In most of the books we take over, nobody was doing it.
+Underneath all of it is the thing the documentation does not describe, which is a reconciliation. The connector imports. The imported transactions still need a monthly reconciliation of sales, fees, payouts, liabilities, and the remaining Square balance, and that work is on you. In the Square books we have taken over, usually nobody was.
 
 ## What complete Square bookkeeping includes
 
@@ -52,15 +64,15 @@ Sales go to income by category, net of refunds, with each refund reversing whate
 
 Then the month-end checks. Whatever Square has not paid out yet should equal the balance you are carrying for it, whether that is a clearing account or, if you keep money in Square Checking, that account reconciled to its own statement. A balance that ties tells you the money moved where it should. It does not by itself prove the classifications, so sales, tax, fees, and the loan balance also get checked against Square's reports, on the same basis and the same cutoff.
 
-## How we do it instead
+## How we do it: the reconciliation first
 
-We built our own Square to QuickBooks connection after cleaning up a client's books by hand once too often. It is built around the reconciliation rather than the import, and it runs once a month, after month end.
+We built our own Square to QuickBooks process after cleaning up a client's books by hand once too often. It connects to Square's records directly, but it is not a live sync. It runs once a month, after month end, and it is built around the reconciliation rather than the import.
 
 It starts from Square's transfer records. Every settled sale is tied to the payout that funded it, and every payout is matched to the bank deposit. Anything not yet paid out at month end is carried as in transit, with the amount checked against what Square shows as pending.
 
 Each Square transaction becomes one sales receipt at gross. Income goes to the categories set up with you, tax, tips, and gift cards go to their liability accounts, and refunds are reversed in the period they were refunded. Each payout is split into its real pieces, with processing fees, instant transfer fees, and loan repayments each going to their own account. The payout to the bank is recorded as a transfer so the bank feed matches it instead of creating income a second time.
 
-There is no review queue. The account mappings and accounting decisions are set during setup. Each month the tool rebuilds the month from Square's own reports, gross to net, and compares it line by line with what is about to post. Known timing balances, like sales Square has not paid out yet at month end, are expected and shown. If an unexplained difference remains, nothing posts and you get the list of exceptions instead. After posting, it checks QuickBooks again to confirm the balances landed where they should. Routine transactions do not get individual approval. The only things a person looks at are what the reconciliation could not explain, and for our client so far that has been a thing or two a month, usually at the month edge.
+There is no review queue to work through. The account mappings and accounting decisions are set during setup, and we built in guards for everything else. Each month the tool rebuilds the month from Square's own reports, gross to net, and compares it line by line with what is about to post. Known timing balances, like sales Square has not paid out yet at month end, are expected and shown. If an unexplained difference remains, nothing posts and you get the list of exceptions instead. After posting, it checks QuickBooks again to confirm the balances landed where they should. Routine transactions do not get individual approval. The only things a person looks at are what the reconciliation could not explain, and for our client so far that has been a thing or two a month, usually at the month edge.
 
 Every receipt and journal entry the tool creates is recorded as a batch. If a month needs to be redone, the batch is reversed and rerun rather than deleted one transaction at a time. And every month you get a summary of what posted, what is in transit, how it compares to Square, and anything flagged for review, with the completed reconciliation and its supporting detail attached.
 
