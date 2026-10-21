@@ -2,7 +2,7 @@
 title: "Why the Square to QuickBooks sync makes a mess of your books, and what we do instead"
 date: 2026-10-20
 author: "Sharla Clark"
-summary: "Square's built-in QuickBooks connection is free and quick to turn on. The books it produces are wrong in the same ways every time. Here is what goes wrong, what correct looks like, and how we connect Square to QuickBooks so the numbers actually tie out."
+summary: "Whether you are thinking about Square's built-in QuickBooks connection, tried it and got a mess, or key Square sales in by hand, the problems are the same ones every time. Here is what goes wrong, what correct looks like, and how we connect Square to QuickBooks so the numbers actually tie out."
 tags:
   - quickbooks
   - square
@@ -10,9 +10,13 @@ tags:
 status: "Published"
 ---
 
-If you run sales through Square and keep your books in QuickBooks Online, somebody has probably suggested the built-in connection. It is free, it takes a few minutes to turn on, and for a while it looks like it is working. Sales show up in QuickBooks. Nobody has to key anything.
+If you run sales through Square and keep your books in QuickBooks Online, you are probably in one of three places:
 
-Then the first bank reconciliation does not tie, and the plug entries start.
+- Someone has suggested the built-in Square connection and you are wondering whether to turn it on.
+- You turned it on, it looked fine for a while, and now the bank does not reconcile and there are plug entries you cannot explain.
+- You gave up on it, or never trusted it, and someone is keying Square sales into QuickBooks by hand every month.
+
+This article is for all three. The built-in connection is free and takes a few minutes to turn on, and for a while it looks like it is working. Sales show up in QuickBooks. Nobody has to key anything. Then the first bank reconciliation does not tie, and the mess starts.
 
 We have inherited enough books with the built-in sync running to know the pattern. The problems are not random. They are the same handful every time, and they come from one design decision: the sync pushes sales into QuickBooks and leaves the money part for you to sort out.
 
@@ -71,6 +75,8 @@ The signs it is not working:
 - The Square loan balance in QuickBooks does not match the Square dashboard
 - Sales tax returns are prepared from the Square report instead of the books
 - Nobody can say when QuickBooks last agreed with Square
+
+If you are keying Square in by hand instead, the same list applies. Manual entry avoids the double counting, but it usually skips the payout side too, and it is the first thing to fall behind when the month gets busy.
 
 If any of those sound familiar, the fix is usually not a better bank rule. It is recording the sale and the payout as two different things, and checking that they meet.
 
