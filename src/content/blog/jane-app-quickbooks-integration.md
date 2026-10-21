@@ -68,7 +68,7 @@ Each Jane invoice is created in QuickBooks under a patient code rather than the 
 
 Money is routed by how it arrived. Jane Payments money goes to a Jane clearing account that ties to the payouts, and cash, Zelle, and Venmo each go to their own clearing account to be matched against the actual deposits. Fees are recorded as the expense they are.
 
-Credit memos and account credits are not posted on autopilot. They are listed by patient and invoice so each one gets recorded as what it is. We flag the items that need accounting judgment for review instead of guessing.
+Credit memos and account credits are not posted on autopilot. They are listed by patient and invoice so each one gets recorded as what it is. We built in guards that hold anything needing accounting judgment for our review before it posts, instead of guessing.
 
 Repeat runs check for transactions already imported and flag payments whose amount changed in Jane since the last run, rather than creating a second one. The tool never edits a payment on its own, because that payment may already be matched to a deposit that has been reconciled. If Jane shows a payment that QuickBooks is missing, it is applied dated to Jane's payment date rather than the invoice date, so the month-end receivable reflects when the money actually came in.
 
