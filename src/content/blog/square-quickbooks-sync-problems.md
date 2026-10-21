@@ -2,7 +2,7 @@
 title: "QuickBooks' new Square connector: what broke in 2026, and what we do instead"
 date: 2026-10-20
 author: "Sharla Clark"
-summary: "Intuit replaced its old Square app with Square Connector by QuickBooks, and 2026 has been a rough year for it. Here is what people are reporting, what complete Square bookkeeping has to include, where the loan and timing problems hide, and how we connect Square to QuickBooks so the month ties out."
+summary: "Intuit replaced its old Square app with Square Connector by QuickBooks, and 2026 has been a rough year for it. Here is what people are reporting, what complete Square bookkeeping has to include, and how we connect Square to QuickBooks so the month ties out."
 tags:
   - quickbooks
   - square
@@ -66,20 +66,6 @@ The structure is clear, even if the exceptions take skill. A Square payout is th
 
 Then the month-end checks. Whatever Square has not paid out yet should equal the balance you are carrying for it, whether that is a clearing account or, if you keep money in Square Checking, that account reconciled to its own statement. A balance that ties confirms the money moved where it should. It does not by itself prove the classifications, so sales, tax, fees, and the loan balance also get checked against Square's reports, on the same basis and the same cutoff.
 
-## The Square loan, and why timing is the hard part
-
-Even when every transaction imports correctly, different reporting cutoffs leave month-end balances that need explaining. One client's Square loan shows the problem well. They have a large one, and this is what their records showed.
-
-**Two reports, two cutoffs.** Square takes a fixed percentage of card sales as loan repayment. Square's own help pages note that the loan reports and the transfer reports use different cutoffs, and in this client's records that showed up every month end: the loan report applied repayments from sales on the 30th and 31st, while the transfer report showed those same deductions coming out of payouts dated the 1st and 2nd. The amount was a few hundred dollars, different each month, and made up of several day-shifted payments rather than one.
-
-**Where that difference lives.** We book the loan to agree with Square's loan report, so the loan balance in QuickBooks equals what Square says is still to be repaid at every month end. The month-edge difference goes to its own account, Square loan payments in transit, which carries over and clears in the following month. The reconciliation shows that balance and what it is made of, so it is a documented timing item rather than something to explain from scratch each month.
-
-**The fixed fee is tracked separately.** A Square loan has one fixed fee and no running interest. We keep the remaining repayment obligation and the unamortized fee as separate balances, so the books show both what is still payable to Square and the loan's accounting carrying amount, which is the obligation less the fee not yet recognized. For this client's reporting basis, the fee is recognized in proportion to repayments under a documented accounting policy. At setup we reconciled the opening loan and fee balances to Square, reviewed how the fee had been expensed until then, and documented the adjustment before anything posted.
-
-**Timing shows up in sales too.** With this client's transfer schedule, sales in the last day or two of the month reach the bank in the following month. They are sales in the month they happened. The books carry the unsettled amount as in transit, and the reconciliation checks it against what Square shows as pending.
-
-**Billing ahead needs a clear reporting policy.** The same client invoices through Square before the service is provided. For their cash-basis monthly reporting, we record invoice income when the payment is received, reconcile it to the gross payments in Square's transfer detail, and show the unpaid invoices separately in the monthly summary. Accrual reporting would be a different exercise: it would have to look at both earned but uncollected revenue and payments received for services not yet provided. Either way, the basis and the treatment are written down and applied the same way every month.
-
 ## How we do it instead
 
 We built our own Square to QuickBooks connection after cleaning up a client's books by hand once too often. It is built around the reconciliation, not the import, and it runs once a month, after month end.
@@ -90,7 +76,7 @@ We built our own Square to QuickBooks connection after cleaning up a client's bo
 
 **Every payout split into its real pieces.** Processing fees, instant transfer fees, and loan repayments each go to their own account, and the payout to the bank is recorded as a transfer so the bank feed matches it instead of creating income a second time.
 
-**There is no review queue. Routine transactions are checked automatically and exceptions are flagged.** The account mappings and accounting decisions are set during setup. Each month the tool rebuilds the month from Square's own reports, gross to net, and compares it line by line with what is about to post. Documented timing balances, like the in-transit amounts above, are expected and shown. If an unexplained difference remains, nothing posts and you get the list of exceptions instead. After posting, it checks QuickBooks again to confirm the balances landed where they should. Routine transactions do not need individual approval. The only things a person looks at are what the reconciliation could not explain, and for our client so far that has been a thing or two a month, usually at the month edge.
+**There is no review queue. Routine transactions are checked automatically and exceptions are flagged.** The account mappings and accounting decisions are set during setup. Each month the tool rebuilds the month from Square's own reports, gross to net, and compares it line by line with what is about to post. Documented timing balances, like sales Square has not paid out yet at month end, are expected and shown. If an unexplained difference remains, nothing posts and you get the list of exceptions instead. After posting, it checks QuickBooks again to confirm the balances landed where they should. Routine transactions do not need individual approval. The only things a person looks at are what the reconciliation could not explain, and for our client so far that has been a thing or two a month, usually at the month edge.
 
 **Every batch is tracked and can be reversed.** Every receipt and journal entry the tool creates is recorded as a batch. If a month needs to be redone, the batch is reversed and rerun, not deleted one transaction at a time.
 
