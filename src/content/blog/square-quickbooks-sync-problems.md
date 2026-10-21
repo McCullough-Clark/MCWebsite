@@ -18,7 +18,7 @@ Intuit introduced Square Connector by QuickBooks in 2025 to replace the old "Con
 
 On paper that is a reasonable design. In practice, people are running into a lot of problems with it.
 
-## Why the Square integration is not working for people in 2026
+## Why the Square integration is not working for people
 
 These are not old complaints about an old app. They come from the QuickBooks and Square community forums, dated December 2025 through August 2026, plus one from Intuit's own listing, and each one is attributed to its source.
 
