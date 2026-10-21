@@ -12,7 +12,7 @@ status: "Published"
 
 If you run your clinic on Jane and keep your books in QuickBooks Online, you have probably gone looking for the integration. There is no built-in one. [Jane's own help center says so](https://jane.app/guide/accounting-software-and-jane): Jane does not directly integrate with any accounting system. You get reports you can export, and the rest is up to you.
 
-So every Jane practice ends up with some kind of workaround, and each one has different tradeoffs. We keep the books for Jane clinics, and we built our own connection after living with those tradeoffs for a while. The three approaches below apply whether your books are in QuickBooks, Xero, FreshBooks, Wave, or Sage, since Jane does not sync with any of them, but the details here are for QuickBooks Online, which is what most of our clients use. This is what the options actually are.
+So every Jane practice ends up with some kind of workaround, and each one has different tradeoffs. We keep the books for Jane clinics, and we built our own connection after living with those tradeoffs for a while. The three approaches below apply whether your books are in QuickBooks, Xero, FreshBooks, Wave, or Sage, since Jane does not sync with any of them, but the details here are for QuickBooks Online, which is what most of our clients use.
 
 ## What Jane gives you to work with
 
