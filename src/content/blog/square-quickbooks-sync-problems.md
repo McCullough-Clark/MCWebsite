@@ -20,7 +20,7 @@ On paper that is a reasonable design. In practice, people are running into a lot
 
 ## Why the Square integration is not working for people
 
-Even though the new connector was built to do more than the old app, people are still having issues with it. These reports come from the QuickBooks and Square community forums, dated December 2025 through August 2026, plus one from Intuit's own listing, and each one is attributed to its source.
+Even though the new connector was built to do more than the old app, people are still having issues with it.
 
 ### The migration re-imported history
 
