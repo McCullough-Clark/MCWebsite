@@ -50,7 +50,7 @@ Any one of those is a support headache. Together they are an accounting problem.
 
 Historical imports duplicate income when they are posted on top of sales already recorded, so every one of them has to be assessed before it is accepted. A review queue nobody has time for means months that are not actually posted, because a transaction sitting in For Review is not in the books. Tax that does not agree means a liability that will not reconcile to the return. A connection that quietly stops means a gap you find at year end.
 
-Underneath all of it is the thing the documentation does not describe, which is a reconciliation. The connector imports. The imported transactions still need a monthly reconciliation of sales, fees, payouts, liabilities, and the remaining Square balance, and that work is on you. In the Square books we have taken over, usually nobody was.
+Underneath all of it is the thing the documentation does not describe, which is a reconciliation. The connector imports. The imported transactions still need a monthly reconciliation of sales, fees, payouts, liabilities, and the remaining Square balance, and that work is on you. In the Square books we have taken over, usually nobody was doing it.
 
 ## What complete Square bookkeeping includes
 
@@ -60,7 +60,7 @@ The structure is not complicated, even if the exceptions take some skill. A Squa
 - Sales tax collected goes to the sales tax liability.
 - Tips owed to employees go to a tips liability.
 - Gift cards sold go to a gift card liability, with redemptions coming back out of it.
-- Processing fees and instant transfer fees are expense.
+- Processing fees and instant transfer fees are expenses.
 - Square loan repayments go to the loan, with the loan's fixed fee recognized in a way that fits the reporting basis and the loan terms.
 - Each payout is matched to the bank deposit, never added on top of sales already recorded.
 
@@ -97,4 +97,4 @@ If it is importing cleanly, the queue is being worked, and someone reconciles it
 
 If so, the fix is usually not a better bank rule. It is treating the sale and the payout as two different things, and checking every month that they match.
 
-Not sure how your Square activity is being recorded? [See how we connect Square and other systems to QuickBooks](/systems-integration/), or [book a call](https://calendly.com/mcculloughclark/consult) and we will look at how sales, fees, loan deductions, and payouts are flowing into your books.
+Not sure how your Square activity is being recorded? [Learn about our system integration services](/systems-integration/), or [book a call](https://calendly.com/mcculloughclark/consult) and we will look at how sales, fees, loan deductions, and payouts are flowing into your books.

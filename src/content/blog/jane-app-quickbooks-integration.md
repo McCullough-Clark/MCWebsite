@@ -82,4 +82,4 @@ If you are a single practitioner with low volume, no packages or prepaid plans, 
 
 The summary entry gets harder to keep right as the practice gets more complicated: several practitioners, packages or gift cards, payments coming in several ways. When it drifts, there is nothing in QuickBooks to show where. If you have ever asked why QuickBooks does not match Jane, that is usually why. Whichever method you use, what matters is that someone compares the two systems every month, identifies the differences, and takes responsibility for resolving them. That is the part we built our process around.
 
-[See how we get Jane and other systems into QuickBooks](/systems-integration/), or [book a call](https://calendly.com/mcculloughclark/consult) and we will look at how your Jane activity is reaching your books now.
+[Learn about our system integration services](/systems-integration/), or [book a call](https://calendly.com/mcculloughclark/consult) and we will look at how your Jane activity is reaching your books now.
