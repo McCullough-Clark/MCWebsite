@@ -18,7 +18,7 @@ If you run sales through Square and keep your books in QuickBooks Online, you ar
 
 This article is for all three. The built-in connection is free and takes a few minutes to turn on, and for a while it looks like it is working. Sales show up in QuickBooks. Nobody has to key anything. Then the first bank reconciliation does not tie, and the mess starts.
 
-We have inherited enough books with the built-in sync running to know the pattern, and the QuickBooks and Square community forums are full of the same stories. The problems come from one design decision: the sync pushes sales into QuickBooks and leaves the money part for you to sort out.
+We have inherited enough books with the built-in sync running to know the pattern, and the QuickBooks and Square community forums and the bookkeeping subreddits are full of the same stories, most of them from the last year. The problems come from one design decision: the sync pushes sales into QuickBooks and leaves the money part for you to sort out.
 
 ## What goes wrong
 
