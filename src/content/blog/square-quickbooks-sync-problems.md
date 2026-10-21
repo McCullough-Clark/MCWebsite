@@ -60,9 +60,9 @@ Sales go to income by category, net of refunds, with each refund reversing whate
 
 Then the month-end checks. Whatever Square has not paid out yet should equal the balance you are carrying for it, whether that is a clearing account or, if you keep money in Square Checking, that account reconciled to its own statement. A balance that ties tells you the money moved where it should. It does not by itself prove the classifications, so sales, tax, fees, and the loan balance also get checked against Square's reports, on the same basis and the same cutoff.
 
-## How we do it: the reconciliation first
+## How we do it: nothing posts until it reconciles
 
-We built our own Square to QuickBooks process after cleaning up a client's books by hand once too often. It connects to Square's records directly, but it is not a live sync. It runs once a month, after month end, and it is built around the reconciliation rather than the import.
+We built our own Square to QuickBooks process after cleaning up a client's books by hand once too often. It connects to Square's records directly, but it is not a live sync. It runs once a month, after month end, and nothing posts to QuickBooks until the month reconciles to Square.
 
 It starts from Square's transfer records. Every payment Square processed is traced to the payout that includes it, and every payout is matched to the bank deposit. Cash and check payments recorded in Square do not pass through those payouts, so they are recorded and reconciled separately. Anything not yet paid out at month end is carried as in transit, with the amount checked against what Square shows as pending.
 
