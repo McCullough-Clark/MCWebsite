@@ -20,8 +20,6 @@ On paper that is a reasonable design. In practice, people are running into a lot
 
 ## Why the Square integration is not working for people
 
-Even though the new connector was built to do more than the old app, people are still having issues with it.
-
 ### The migration re-imported history
 
 This one can mean a large cleanup. In [a QuickBooks community thread that runs from April to August 2026](https://quickbooks.intuit.com/community/other-questions-9/square-connector-upgrade-broke-everything-93370), a bookkeeper describes an update on March 29 that, by their account, switched automatic syncing on and back-dated it two years. They had been entering Square by hand. They found 57 pages of transactions totaling over $150,000 in the Bank Deposits screen and said they would have to delete thousands of them manually. Others in the thread report the same thing through the summer, along with cash sales arriving one at a time and bulk accept failing. They reported that live support opened tickets and could not fix it.
