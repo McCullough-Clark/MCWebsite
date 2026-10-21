@@ -2,7 +2,7 @@
 title: "Jane app and QuickBooks: there is no built-in integration. Here is what to do"
 date: 2026-10-22
 author: "Sharla Clark"
-summary: "If you run your clinic on Jane and your books in QuickBooks Online, you have probably searched for the integration. Jane does not have a built-in one. Here are the three ways practices handle it, the tradeoffs of each, and how we connect Jane to QuickBooks so patient balances, payouts, and the bank all agree every month."
+summary: "If you run your clinic on Jane and your books in QuickBooks Online, Xero, or FreshBooks, you have probably searched for the integration. Jane does not have a built-in one for any of them. Here are the three ways practices handle it, the tradeoffs of each, and how we connect Jane to QuickBooks so patient balances, payouts, and the bank all agree every month."
 tags:
   - quickbooks
   - jane
