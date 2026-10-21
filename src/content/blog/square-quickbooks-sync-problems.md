@@ -1,6 +1,6 @@
 ---
 title: "QuickBooks Square connector not working? What broke in 2026, and what we do instead"
-date: 2026-10-20
+date: 2026-10-14
 author: "Sharla Clark"
 summary: "Intuit replaced its old Square app with Square Connector by QuickBooks, and 2026 has been a rough year for it. Here is what people are reporting, what complete Square bookkeeping has to include, and how we connect Square to QuickBooks so the month ties out."
 tags:
