@@ -2,7 +2,7 @@
 title: "Jane app and QuickBooks: there is no built-in integration. Here is what to do"
 date: 2026-10-22
 author: "Sharla Clark"
-summary: "If you run your clinic on Jane and your books in QuickBooks Online, Xero, or FreshBooks, you have probably searched for the integration. Jane does not have a built-in one for any of them. Here are the three ways practices handle it, the tradeoffs of each, and how we connect Jane to QuickBooks so patient balances, payouts, and the bank all agree every month."
+summary: "If you run your clinic on Jane and your books in QuickBooks Online, Xero, or FreshBooks, you have probably searched for the integration. Jane does not have a built-in one for any of them. Here are the three ways practices handle it, the tradeoffs of each, and how we move Jane's activity into QuickBooks each month so patient balances, payouts, and the bank all agree."
 tags:
   - quickbooks
   - jane
@@ -12,7 +12,7 @@ status: "Published"
 
 If you run your clinic on Jane and keep your books in QuickBooks Online, you have probably gone looking for the integration. There is no built-in one. [Jane's own help center says so](https://jane.app/guide/accounting-software-and-jane): Jane does not directly integrate with any accounting system. You get reports you can export, and the rest is up to you.
 
-So every Jane practice ends up with some kind of workaround, and each one has different tradeoffs. We keep the books for Jane clinics, and we built our own connection after living with those tradeoffs for a while. The three approaches below apply whether your books are in QuickBooks, Xero, FreshBooks, Wave, or Sage, since Jane does not sync with any of them, but the details here are for QuickBooks Online, which is what most of our clients use.
+So every Jane practice ends up with some kind of workaround, and each one has different tradeoffs. We keep the books for Jane clinics, and we built our own process, a middle step between Jane and QuickBooks, after living with those tradeoffs for a while. The three approaches below apply whether your books are in QuickBooks, Xero, FreshBooks, Wave, or Sage, since Jane does not sync with any of them, but the details here are for QuickBooks Online, which is what most of our clients use.
 
 ## What Jane gives you to work with
 
@@ -62,7 +62,7 @@ If you bill insurance, all of this gets bigger. A visit is split between what th
 
 ## How we do it instead
 
-We built our own connection between Jane and QuickBooks for practices that wanted the patient detail in QuickBooks without the fragility of the manual import. It runs monthly from Jane's own exports: the Sales Report, the Applied and Unapplied Payments report, the Accounts Receivable report, the Jane Payments payout report, and the Adjustments report. The whole thing is built around one check: at month end, Jane's receivable by patient and the QuickBooks receivable by patient agree, the net payments agree, or the exceptions are listed for a person to look at.
+We built our own process for practices that wanted the patient detail in QuickBooks without the fragility of the manual import. It is not a live connection. It is a middle step that runs monthly from Jane's own exports: the Sales Report, the Applied and Unapplied Payments report, the Accounts Receivable report, the Jane Payments payout report, and the Adjustments report. The whole thing is built around one check: at month end, Jane's receivable by patient and the QuickBooks receivable by patient agree, the net payments agree, or the exceptions are listed for a person to look at.
 
 Each Jane invoice is created in QuickBooks under a patient code rather than the patient's name, with Jane's invoice number, date, service item, and amount, and each payment is applied to the invoice it paid. The list that connects codes to names stays outside QuickBooks. So QuickBooks can answer "who owes us" by code, and the answer matches Jane. What is appropriate to send to QuickBooks still depends on the privacy requirements that apply to each practice.
 
@@ -82,4 +82,4 @@ If you are a single practitioner with low volume, no packages or prepaid plans, 
 
 If you have several practitioners, sell packages or gift cards, take payments several ways, or have ever asked why QuickBooks does not match Jane, the summary entry gets harder to keep right, and when it drifts there is nothing in QuickBooks to show where. Whichever method you use, what matters is that someone compares the two systems every month, identifies the differences, and takes responsibility for resolving them. That is the part we built our process around.
 
-[See how we connect Jane and other systems to QuickBooks](/systems-integration/), or [book a call](https://calendly.com/mcculloughclark/consult) and we will look at how your Jane activity is reaching your books now.
+[See how we get Jane and other systems into QuickBooks](/systems-integration/), or [book a call](https://calendly.com/mcculloughclark/consult) and we will look at how your Jane activity is reaching your books now.
