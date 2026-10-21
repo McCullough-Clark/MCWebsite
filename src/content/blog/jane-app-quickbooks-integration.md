@@ -38,7 +38,7 @@ On either basis, cash, Zelle, and Venmo payments that patients made outside Jane
 
 ### 2. Post a monthly summary
 
-Once a month someone takes the Billing Summary and the Daily Transactions report and posts one journal entry: revenue, the change in receivables, tax collected, fees, and cash by method. Done carefully, the totals come out right, and as with the first option, the patient-level detail stays in Jane, where you can still look up who owes you. Jane's own guide describes this approach as an alternative to importing invoices. What QuickBooks has is one receivable number, so the two systems can only be compared in total. The catch is in the words "done carefully." The entry depends on whoever builds it remembering that gift card sales are not revenue yet, that a credit memo is not cash, and that a refund has to account for any sales tax on it while Jane does not return the original processing fee.
+Once a month someone takes the Billing Summary and the Daily Transactions report and posts one journal entry: revenue, the change in receivables, tax collected, fees, and cash by method. Done carefully, the totals come out right, and as with the first option, you will need to go to Jane to look up who owes you. Jane's own guide describes this approach as an alternative to importing invoices. What QuickBooks has is one receivable number, so the two systems can only be compared in total. The catch is in the words "done carefully." The entry depends on whoever builds it remembering that gift card sales are not revenue yet, that a credit memo is not cash, and that a refund has to account for any sales tax on it while Jane does not return the original processing fee.
 
 ### 3. Import the invoices
 
