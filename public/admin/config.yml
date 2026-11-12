@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  repo: bloombooksoffice/MCWebsite
+  repo: McCullough-Clark/MCWebsite
   branch: main
   auth_type: pkce
   base_url: https://auth.decapbridge.com
